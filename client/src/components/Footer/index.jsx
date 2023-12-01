@@ -2,9 +2,7 @@
 const Footer = () => {
     return (
       <>
-        <h1>
-          This is app footer! 
-        </h1>
+        <footer>Basil</footer>
       </>
 
     );
