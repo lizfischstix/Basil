@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 
 // Construct our main GraphQL API endpoint
@@ -38,11 +39,9 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="app-container">
-        <div className="nav-container">
-          <Nav />
-        </div>
-        <div className="content-container">
+      <Header />
+      <Nav />
+        <div>
           <Outlet />
         </div>
       </div>
