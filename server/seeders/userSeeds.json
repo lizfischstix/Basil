@@ -1,0 +1,54 @@
+[
+  {
+    "email": "maggie@email.com",
+    "password": "pass1234",
+    "firstName": "Maggie",
+    "lastName": "Harrison",
+    "incomes": [
+      {
+        "amount": 2000,
+        "description": "First Paycheck"
+      },
+      {
+        "amount": 2000,
+        "description": "Second Paycheck"
+      },
+      {
+        "amount": 100,
+        "description": "Birthday gift"
+      }
+    ],
+    "expenses": [
+      {
+        "amount": 1200,
+        "description": "Rent",
+        "category": "Home"
+      },
+      {
+        "amount": 120,
+        "description": "Gym",
+        "category": "Health & Fitness"
+      },
+      {
+        "amount": 12,
+        "description": "Allergy meds",
+        "category": "Health & Fitness"
+      },
+      {
+        "amount": 230,
+        "description": "Groceries at Mariano's",
+        "category": "Food & Dining"
+      },
+      {
+        "amount": 385,
+        "description": "Spanish lessons",
+        "category": "Education"
+      },
+      {
+        "amount": 56,
+        "description": "Dinner with Hannah",
+        "category": "Food & Dining"
+      }
+    ]
+  }
+]
