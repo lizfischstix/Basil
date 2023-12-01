@@ -18,18 +18,31 @@ const Overview = () => {
   const { loading, data } = useQuery(QUERY_ME, {
     variables: { userId: userId },
   });
-  console.log(data);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
+  const userInfo = data.me;
+
   return (
     <>
-      <h1>OVERVIEW</h1>
       <button onClick={logout}> Logout </button>
-      <p>Hi, {`${data.me.firstName}`}</p>
-      <p>You are logged in.</p>
+      <h1>Hi, {`${userInfo.firstName}`}</h1>
+      <h2>Incomes</h2>
+      {userInfo.incomes.map((income) => (
+        <div key={income._id}>
+          <p>Description: {`${income.description}`}</p>
+          <p>Amount: ${`${income.amount}`}</p>
+        </div>
+      ))}
+      <h2>Expenses</h2>
+      {userInfo.expenses.map((expense) => (
+        <div key={expense._id}>
+          <p>Description: {`${expense.description}`}</p>
+          <p>Amount: ${`${expense.amount}`}</p>
+        </div>
+      ))}
     </>
   );
 };
