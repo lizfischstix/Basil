@@ -1,7 +1,5 @@
-
-const { User } = require('../models'); 
-const { signToken, AuthenticationError } = require('../utils/auth');
-
+const { User } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -36,6 +34,20 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addIncome: async (parent, { description, amount }, context) => {
+      if (context.user) {
+        const response = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { incomes: { description, amount } } },
+          { new: true }
+        );
+
+        console.log(response);
+        return response;
+      }
+      throw AuthenticationError;
     },
   },
 };

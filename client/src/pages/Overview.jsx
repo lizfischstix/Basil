@@ -13,6 +13,11 @@ const Overview = () => {
     Auth.logout();
   };
 
+  const addIncome = (event) => {
+    event.preventDefault();
+    window.location.assign('/income');
+  };
+
   const { loading, data } = useQuery(QUERY_ME);
 
   if (loading) {
@@ -26,6 +31,7 @@ const Overview = () => {
       <button onClick={logout}> Logout </button>
       <h1>Hi, {`${userInfo.firstName}`}</h1>
       <h2>Incomes</h2>
+      <button onClick={addIncome}> Add Income </button>
       {userInfo.incomes.map((income) => (
         <div key={income._id}>
           <p>Description: {`${income.description}`}</p>

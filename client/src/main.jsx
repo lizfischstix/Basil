@@ -8,31 +8,37 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Error from './pages/Error';
 import Overview from "./pages/Overview";
+import Income from "./pages/Income";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     error: <Error />,
     children: [
       {
         index: true,
-        element: <Home />
-      }, {
-        path: '/login',
-        element: <Login />
+        element: <Home />,
       },
       {
-        path: '/signup',
-        element: <Signup />
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/overview",
-        element: <Overview />
-      }
-    ]
-  }
-])
+        element: <Overview />,
+      },
+      {
+        path: "/income",
+        element: <Income />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
