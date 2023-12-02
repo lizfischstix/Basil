@@ -44,6 +44,7 @@ function App() {
         <div>
           <Outlet />
         </div>
+      </div>
       <Footer />
     </ApolloProvider>
   );
