@@ -13,11 +13,7 @@ const Overview = () => {
     Auth.logout();
   };
 
-  const userId = Auth.getUser()._id;
-
-  const { loading, data } = useQuery(QUERY_ME, {
-    variables: { userId: userId },
-  });
+  const { loading, data } = useQuery(QUERY_ME);
 
   if (loading) {
     return <div>Loading...</div>;
