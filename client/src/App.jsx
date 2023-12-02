@@ -9,6 +9,7 @@ import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { Drawer } from '@mui/material';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -39,6 +40,7 @@ function App() {
     <ApolloProvider client={client}>
       <div className="flex-column justify-flex-start min-100-vh">
       <Header />
+      <Drawer />
       <Nav />
       </div>
         <div>

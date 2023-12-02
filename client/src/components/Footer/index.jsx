@@ -19,7 +19,7 @@ const Footer = () => {
     // Cleanup the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
-
+//thanks for the code ChatGPT.
   return (
     <footer>
       <p className='text-center'>&copy; {currentYear} Basil🌿. All rights reserved.</p>
