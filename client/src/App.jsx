@@ -38,15 +38,15 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start min-100-vh">
-      <Header />
-      <Drawer />
-      <Nav />
-      </div>
-        <div>
+      <div className="min-vh-100">
+        <Header />
+        <div className='row'>
+          <Nav />
+
           <Outlet />
         </div>
-      <Footer />
+        <Footer />
+      </div>
     </ ApolloProvider>
   );
 }
