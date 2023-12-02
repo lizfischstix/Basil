@@ -1,13 +1,10 @@
 
 const Footer = () => {
-    return (
-      <>
-        <h1>
-          This is app footer! 
-        </h1>
-      </>
-
-    );
+  return (
+    <div className="footer text-center py-3 bg-light">
+      © 2023 My Awesome App
+    </div>
+  );
   };
   
   export default Footer;

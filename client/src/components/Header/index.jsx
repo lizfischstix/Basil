@@ -2,9 +2,11 @@
 const Header = () => {
     return (
       <>
-        <h1>
-          This is app header 
-        </h1>
+      <div className="jumbotron bg-info">
+        <h1>Budget Tracker</h1>
+        <h2 className="text-center">Hello User!</h2>      
+        <p className="text-center">Enjoy your life with budget tracker</p>
+      </div>
       </>
 
     );
