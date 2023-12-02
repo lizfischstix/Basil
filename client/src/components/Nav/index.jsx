@@ -17,15 +17,31 @@ export default function Nav({ isAuthenticated }) {
   };
 
   return (
-    
-    <Tabs value = { value } onChange = { handleChange } orientation = "vertical" aria- label= "icon tabs" >
-    <Link to="/"> <Tab icon={<HomeRoundedIcon />} aria-label="Home"/></Link>
-    <Link to="/login"><Tab icon={<LoginRoundedIcon />} aria-label="Log In" /></Link>
-    <Link to="/signup"><Tab icon={<AddBoxRoundedIcon />} aria-label="Log In" /></Link>
-    <Link to="/overview"><Tab icon={<SettingsRoundedIcon/>} aria-label='Dashboard' /></Link>
-    <Tab icon={<AssignmentRoundedIcon/>} aria-label='Transactions List' />
-    <Tab icon={<AutoGraphRoundedIcon/>} aria-label='Transactions Graphs' />
-    </Tabs >
+    <Tabs value={value} onChange={handleChange} orientation="vertical" aria-label="icon tabs">
+      <Link to="/">
+        <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
+      </Link>
+
+      {!isAuthenticated && (
+        <>
+          <Link to="/login">
+            <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
+          </Link>
+          <Link to="/signup">
+            <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
+          </Link>
+        </>
+      )}
+
+      {isAuthenticated && (
+        <>
+          <Link to="/overview">
+            <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
+          </Link>
+          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
+          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
+        </>
+      )}
+    </Tabs>
   );
 }
-
