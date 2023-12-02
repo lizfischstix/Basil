@@ -1,11 +1,13 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
 
 export default function Nav({ isAuthenticated }) {
   const [value, setValue] = React.useState(0);
@@ -15,14 +17,14 @@ export default function Nav({ isAuthenticated }) {
   };
 
   return (
-    { isAuthenticated ? (
+    
     <Tabs value = { value } onChange = { handleChange } orientation = "vertical" aria- label= "icon tabs" >
-    <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
-      
-    ) : (
-    <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
-  )
-}
+    <Link to="/"> <Tab icon={<HomeRoundedIcon />} aria-label="Home"/></Link>
+    <Link to="/login"><Tab icon={<LoginRoundedIcon />} aria-label="Log In" /></Link>
+    <Link to="/signup"><Tab icon={<AddBoxRoundedIcon />} aria-label="Log In" /></Link>
+    <Link to="/overview"><Tab icon={<SettingsRoundedIcon/>} aria-label='Dashboard' /></Link>
+    <Tab icon={<AssignmentRoundedIcon/>} aria-label='Transactions List' />
+    <Tab icon={<AutoGraphRoundedIcon/>} aria-label='Transactions Graphs' />
     </Tabs >
   );
 }
