@@ -1,26 +1,21 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_ME = gql`
-  query Me($userId: ID!) {
-  me(userId: $userId) {
-    _id
-    email
-    firstName
-    lastName
-    balance
-    incomes {
+  query me {
+    me {
       _id
-      amount
-      createAt
-      description
-    }
-    expenses {
-      _id
-      amount
-      category
-      createAt
-      description
+      email
+      expenses {
+        amount
+        description
+      }
+      firstName
+      lastName
+      incomes {
+        amount
+        description
+      }
+      balance
     }
   }
-}
 `;
