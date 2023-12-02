@@ -1,28 +1,10 @@
-import React from 'react';
-import {  Link } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="display-inline justify-center " >
-      <li>
-        <Link to="/">Overview</Link>
-      </li>
-      <li>
-        <Link to="/signup">Signup</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/category">Spending by Category</Link>
-      </li>
-      <li>
-        <Link to="/date">Spending by Date</Link>
-      </li>
-  </div>
+    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+        <h1>This is Nav for budget tracker</h1>
+    </header>
   );
 };
 
 export default Nav;
-
-
