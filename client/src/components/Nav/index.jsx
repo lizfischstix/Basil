@@ -1,25 +1,43 @@
-import React from 'react';
-import {  Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 const Nav = () => {
+  const [isLoggedIn, setLoggedIn] = useState(Auth.loggedIn());
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+    setLoggedIn(false);
+  };
+
   return (
-    <div className="display-inline justify-center " >
-      <li>
-        <Link to="/">Overview</Link>
-      </li>
-      <li>
-        <Link to="/signup">Signup</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-      <li>
-        <Link to="/category">Spending by Category</Link>
-      </li>
-      <li>
-        <Link to="/date">Spending by Date</Link>
-      </li>
-  </div>
+    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+      <Link to="/overview" className="btn btn-info mr-2">
+        Overview
+      </Link>
+      {isLoggedIn ? (
+        <>
+          <button className="btn btn-danger mr-2" onClick={logout}>
+          Logout
+          </button>
+          <Link to="/signup" className="btn btn-success">
+            Sign Up
+          </Link>
+        </>
+
+
+      ) : (
+        <>
+          <Link to="/login" className="btn btn-primary mr-2">
+            Login
+          </Link>
+          <Link to="/signup" className="btn btn-success">
+            Sign Up
+          </Link>
+        </>
+      )}
+    </header>
   );
 };
 

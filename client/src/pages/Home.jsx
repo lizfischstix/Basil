@@ -1,8 +1,8 @@
 const Home = () => {
     return (
       <>
-        <div className="container">
-          Hello Overview
+        <div className="container text-center">
+        🏠 Hello Overview
         </div>
       </>
 
