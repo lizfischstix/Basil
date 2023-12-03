@@ -42,7 +42,6 @@ function App() {
         <Header />
         <div className='row'>
           <Nav />
-
           <Outlet />
         </div>
         <Footer />

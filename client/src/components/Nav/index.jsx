@@ -22,7 +22,18 @@ export default function Nav({ isAuthenticated }) {
         <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
       </Link>
 
-      {!isAuthenticated && (
+      {isAuthenticated ? (
+        <>
+          <Link to="/logout">
+            <Tab icon={<LoginRoundedIcon />} aria-label="Log Out" />
+          </Link>
+          <Link to="/overview">
+            <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
+          </Link>
+          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
+          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
+        </>
+      ) : (
         <>
           <Link to="/login">
             <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
@@ -30,16 +41,6 @@ export default function Nav({ isAuthenticated }) {
           <Link to="/signup">
             <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
           </Link>
-        </>
-      )}
-
-      {isAuthenticated && (
-        <>
-          <Link to="/overview">
-            <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
-          </Link>
-          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
-          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
         </>
       )}
     </Tabs>

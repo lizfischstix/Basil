@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
+import { Container, TextField, Button, Typography, Paper, Link as MuiLink } from '@mui/material';
 
 function Signup(props) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
@@ -31,56 +37,66 @@ function Signup(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
-
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
+    <Container component="main" maxWidth="xs">
+      <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Typography component="h1" variant="h5" gutterBottom>
+          ⭐ Signup ⭐
+        </Typography>
+        <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
             id="firstName"
+            label="First Name"
+            name="firstName"
+            autoComplete="given-name"
+            autoFocus
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
             id="lastName"
+            label="Last Name"
+            name="lastName"
+            autoComplete="family-name"
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
-          <input
-            placeholder="youremail@test.com"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="email"
+            label="Email Address"
             name="email"
             type="email"
-            id="email"
+            autoComplete="email"
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="password"
+            label="Password"
             name="password"
             type="password"
-            id="pwd"
+            autoComplete="new-password"
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: '16px' }}>
+            Submit
+          </Button>
+        </form>
+        <Typography variant="body2" style={{ marginTop: '16px' }}>
+          <MuiLink component={Link} to="/login">
+            ← Go to Login
+          </MuiLink>
+        </Typography>
+      </Paper>
+    </Container>
   );
 }
 
