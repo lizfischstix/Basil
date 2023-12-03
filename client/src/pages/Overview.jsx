@@ -18,6 +18,11 @@ const Overview = () => {
     window.location.assign('/income');
   };
 
+  const updateIncome = (event, incomeId) => {
+    event.preventDefault();
+    window.location.assign(`/income/${incomeId}/update`);
+  }
+
   const { loading, data } = useQuery(QUERY_ME);
 
   if (loading) {
@@ -36,6 +41,8 @@ const Overview = () => {
         <div key={income._id}>
           <p>Description: {`${income.description}`}</p>
           <p>Amount: ${`${income.amount}`}</p>
+          <button onClick={(event) => updateIncome(event, income._id)}>Edit</button>
+          <button>Delete</button>
         </div>
       ))}
       <h2>Expenses</h2>

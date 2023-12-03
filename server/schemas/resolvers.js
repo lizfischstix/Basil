@@ -9,6 +9,20 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    income: async (parent, { incomeId }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+
+        console.log(user.incomes);
+        
+        const income = user.incomes.filter((income) => income._id.valueOf() === incomeId);
+
+        console.log(income);
+        
+        return income[0];
+      }
+      throw AuthenticationError;
+    },
   },
 
   Mutation: {
@@ -38,14 +52,26 @@ const resolvers = {
 
     addIncome: async (parent, { description, amount }, context) => {
       if (context.user) {
-        const response = await User.findOneAndUpdate(
+        return await User.findOneAndUpdate(
           { _id: context.user._id },
           { $push: { incomes: { description, amount } } },
           { new: true }
         );
+      }
+      throw AuthenticationError;
+    },
 
-        console.log(response);
-        return response;
+    updateIncome: async (
+      parent,
+      { incomeId, description, amount },
+      context
+    ) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id, "incomes._id": incomeId },
+          { $set: { "incomes.$": { description, amount } } },
+          { new: true }
+        );
       }
       throw AuthenticationError;
     },

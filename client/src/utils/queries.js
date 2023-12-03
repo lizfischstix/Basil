@@ -24,3 +24,15 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_INCOME = gql`
+  query income($incomeId: ID!) {
+    income(incomeId: $incomeId) {
+      _id
+      amount
+      createAt
+      description
+    }
+  }
+`;
+

@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Error from './pages/Error';
 import Overview from "./pages/Overview";
 import Income from "./pages/Income";
+import UpdateIncome from "./pages/UpdateIncome";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/income",
         element: <Income />,
+      },
+      {
+        path: "/income/:incomeId/update",
+        element: <UpdateIncome />,
       },
     ],
   },
