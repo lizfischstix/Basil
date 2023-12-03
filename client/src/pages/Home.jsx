@@ -1,8 +1,8 @@
 const Home = () => {
     return (
       <>
-        <div className="container text-center">
-        🏠 Hello Overview
+        <div className="container">
+          Hello world! Welcome to your new favorite budget managmet app.
         </div>
       </>
 

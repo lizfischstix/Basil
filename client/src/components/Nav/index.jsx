@@ -1,44 +1,47 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Auth from '../../utils/auth';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
+import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
+import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
+import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
 
-const Nav = () => {
-  const [isLoggedIn, setLoggedIn] = useState(Auth.loggedIn());
+export default function Nav({ isAuthenticated }) {
+  const [value, setValue] = React.useState(0);
 
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-    setLoggedIn(false);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
 
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
-      <Link to="/overview" className="btn btn-info mr-2">
-        Overview
+    <Tabs value={value} onChange={handleChange} orientation="vertical" aria-label="icon tabs">
+      <Link to="/">
+        <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
       </Link>
-      {isLoggedIn ? (
-        <>
-          <button className="btn btn-danger mr-2" onClick={logout}>
-          Logout
-          </button>
-          <Link to="/signup" className="btn btn-success">
-            Sign Up
-          </Link>
-        </>
 
-
-      ) : (
+      {!isAuthenticated && (
         <>
-          <Link to="/login" className="btn btn-primary mr-2">
-            Login
+          <Link to="/login">
+            <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
           </Link>
-          <Link to="/signup" className="btn btn-success">
-            Sign Up
+          <Link to="/signup">
+            <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
           </Link>
         </>
       )}
-    </header>
-  );
-};
 
-export default Nav;
+      {isAuthenticated && (
+        <>
+          <Link to="/overview">
+            <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
+          </Link>
+          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
+          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
+        </>
+      )}
+    </Tabs>
+  );
+}
