@@ -90,6 +90,18 @@ const resolvers = {
       throw AuthenticationError;
     },
   },
+
+  deleteIncome: async (parent, { incomeId }, context) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { "incomes": { _id: incomeId } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
 };
 
 module.exports = resolvers;

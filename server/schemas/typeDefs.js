@@ -43,7 +43,7 @@ const typeDefs = `
     addIncome(description: String, amount: Float!): User
     updateIncome(incomeId: ID!, description: String, amount: Float!): User
     addExpense(amount: Float!, description: String, category: String!): User
-    removeIncome(id: ID!): User 
+    deleteIncome(incomeId: ID!): User
     removeExpense(id: ID!): User
   }
 `;
