@@ -9,6 +9,8 @@ import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
 
+import Auth from "../../utils/auth";
+
 export default function Nav({ isAuthenticated }) {
   const [value, setValue] = React.useState(0);
 
@@ -16,31 +18,48 @@ export default function Nav({ isAuthenticated }) {
     setValue(newValue);
   };
 
+   const logout = (event) => {
+     event.preventDefault();
+     Auth.logout();
+   };
+
   return (
-    <Tabs value={value} onChange={handleChange} orientation="vertical" aria-label="icon tabs">
+    <Tabs
+      value={value}
+      onChange={handleChange}
+      orientation="vertical"
+      aria-label="icon tabs"
+    >
       <Link to="/">
         <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
       </Link>
 
-      {isAuthenticated ? (
-        
-          <Link to="/logout">
-            <Tab icon={<LoginRoundedIcon />} aria-label="Log Out" />
+      {Auth.loggedIn() ? (
+        <>
+          <Link to="/home">
+            <Tab icon={<LoginRoundedIcon />} aria-label="Log Out" onClick={logout}/>
           </Link>
           <Link to="/overview">
             <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
           </Link>
-          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
-          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
+          <Tab
+            icon={<AssignmentRoundedIcon />}
+            aria-label="Transactions List"
+          />
+          <Tab
+            icon={<AutoGraphRoundedIcon />}
+            aria-label="Transactions Graphs"
+          />
+        </>
       ) : (
-        
+        <>
           <Link to="/login">
             <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
           </Link>
           <Link to="/signup">
             <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
           </Link>
-    
+        </>
       )}
     </Tabs>
   );
