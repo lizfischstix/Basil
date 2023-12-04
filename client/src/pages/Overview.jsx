@@ -2,10 +2,12 @@ import React from "react";
 import Auth from "../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+
 import { DELETE_INCOME } from "../utils/mutations";
-import IncomeTable from "../components/incomeTable";
-import ExpenseTable from "../components/expenseTable";
-import { styled } from "@mui/system";
+import IncomeTable from '../components/incomeTable';
+import ExpenseTable from '../components/expenseTable';
+import { styled } from '@mui/system';
+import GraphDropdown  from '../components/graphs/graphDropdown';
 
 const Overview = () => {
   // Check if the user is logged in
@@ -83,6 +85,10 @@ const Overview = () => {
 
   return (
     <>
+      <div className="container" id="graphs" style={containerStyle}>
+        <GraphDropdown />
+      </div>
+
       <div className="container" style={containerStyle}>
         <h2 className="text-center">Income</h2>
         <StyledButton className="bg-info" onClick={(event) => addIncome(event)}>
