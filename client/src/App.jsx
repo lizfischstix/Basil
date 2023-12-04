@@ -12,7 +12,7 @@ import Header from './components/Header';
 import { Drawer } from '@mui/material';
 
 
-
+import DoGraphDropdown from './components/graphs/graphDropdown';
 
 
 // Construct our main GraphQL API endpoint
@@ -42,7 +42,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-
       <div className="min-vh-100">
         <Header />
         <div className='row'>

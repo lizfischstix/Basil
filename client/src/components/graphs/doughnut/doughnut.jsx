@@ -4,6 +4,8 @@ import spendingData from "../fakeData";
 import {Chart as ChartJS}from 'chart.js/auto';
 
 
+
+
 function makeDoughnut() {
   
   
