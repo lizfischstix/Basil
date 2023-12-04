@@ -27,6 +27,17 @@ const expenseSchema = new Schema({
   },
   category: {
     type: String,
+    enum: [
+      "Home",
+      "Food & Dining",
+      "Health & Fitness",
+      "Clothing",
+      "Education",
+      "Transportation",
+      "Entrertainment",
+      "Pet",
+      "Other",
+    ],
     required: true,
   },
   creatAt: {

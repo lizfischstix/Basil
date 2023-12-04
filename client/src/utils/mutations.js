@@ -67,3 +67,16 @@ export const UPDATE_INCOME = gql`
     }
   }
 `;
+
+export const ADD_EXPENSE = gql`
+  mutation addIncome($amount: Float!, $description: String) {
+    addIncome(amount: $amount, description: $description) {
+      incomes {
+        _id
+        amount
+        createAt
+        description
+      }
+    }
+  }
+`;

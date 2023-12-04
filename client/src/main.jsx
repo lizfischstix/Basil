@@ -37,6 +37,10 @@ const router = createBrowserRouter([
         path: "/income",
         element: <Income />,
       },
+      // {
+      //   path: "/expense",
+      //   element: <Expense />,
+      // },
       {
         path: "/income/:incomeId/update",
         element: <UpdateIncome />,
