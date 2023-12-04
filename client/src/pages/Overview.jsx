@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "../utils/auth";
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { DELETE_INCOME } from "../utils/mutations";
 import IncomeTable from "../components/incomeTable";
@@ -38,9 +38,15 @@ const Overview = () => {
     window.location.assign(`/income/${incomeId}/update`);
   };
 
+  const [deleteIncome, { error }] = useMutation(DELETE_INCOME,{
+    refetchQueries: [
+      QUERY_ME,
+      'me'
+    ]
+  });
+
   const removeIncome = async (event, incomeId) => {
     event.preventDefault();
-    const [deleteIncome, { error }] = useMutation(DELETE_INCOME);
 
     try {
       const { data } = await deleteIncome({ variables: { incomeId } });
@@ -49,7 +55,9 @@ const Overview = () => {
     }
   };
 
-  const { loading, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME, {
+    fetchPolicy: "no-cache",
+  });
 
   // Handle loading state
   if (loading) {
