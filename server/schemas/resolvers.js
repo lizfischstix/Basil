@@ -1,7 +1,5 @@
-
-const { User } = require('../models'); 
-const { signToken, AuthenticationError } = require('../utils/auth');
-
+const { User } = require("../models");
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -11,15 +9,29 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    income: async (parent, { incomeId }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+
+        console.log(user.incomes);
+        
+        const income = user.incomes.filter((income) => income._id.valueOf() === incomeId);
+
+        console.log(income);
+        
+        return income[0];
+      }
+      throw AuthenticationError;
+    },
   },
 
   Mutation: {
-    addUser: async (parent, { firstName,lastName, email, password }) => {
-      const user = await User.create({ firstName, lastName,email, password });
+    addUser: async (parent, { firstName, lastName, email, password }) => {
+      const user = await User.create({ firstName, lastName, email, password });
       const token = signToken(user);
       return { token, user };
     },
-    
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -36,6 +48,32 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+
+    addIncome: async (parent, { description, amount }, context) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { incomes: { description, amount } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    updateIncome: async (
+      parent,
+      { incomeId, description, amount },
+      context
+    ) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id, "incomes._id": incomeId },
+          { $set: { "incomes.$": { description, amount } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
     },
   },
 };

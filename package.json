@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server --ignore client",
-    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
     "build": "cd client && npm run build"
@@ -17,11 +17,10 @@
     "concurrently": "^5.1.0"
   },
   "engines": {
-    "node": "21.x",
-    "npm": "10.x"
-  },
   "dependencies": {
     "chart.js": "^4.4.0",
     "react-chartjs-2": "^5.2.0"
+    "node": "18.x",
+    "npm": "9.x"
   }
 }

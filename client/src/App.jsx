@@ -5,12 +5,11 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
 import { Outlet } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Header from './components/Header';
-
+import { Drawer } from '@mui/material';
 
 
 
@@ -43,12 +42,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Header />
-        <div>
+
+      <div className="min-vh-100">
+        <Header />
+        <div className='row'>
+          <Nav />
           <Outlet />
         </div>
-      <Footer />
-    </ApolloProvider>
+        <Footer />
+      </div>
+    </ ApolloProvider>
   );
 }
 
