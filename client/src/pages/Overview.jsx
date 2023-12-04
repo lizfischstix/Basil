@@ -24,6 +24,7 @@ const Overview = () => {
     event.preventDefault();
     window.location.assign("/income");
   };
+  
   const updateExpense = (event, expenseId) => {
     event.preventDefault();
     window.location.assign(`/expense/${expenseId}/update`);
