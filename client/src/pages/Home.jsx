@@ -5,6 +5,13 @@ import { Box, Paper} from '@mui/material';
 const Home = () => {
 
   return (
+
+      <>
+
+        <h3 className="container text-center">
+          Please login for more functions!
+        </h3>
+      </>
     <Box
       sx={{
         display: 'flex',

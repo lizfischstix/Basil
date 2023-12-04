@@ -11,6 +11,10 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import { Drawer } from '@mui/material';
 
+
+
+
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -38,6 +42,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+
       <div className="min-vh-100">
         <Header />
         <div className='row'>
