@@ -1,8 +1,11 @@
 import React from 'react';
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
-
 import { QUERY_ME } from "../utils/queries";
+import IncomeTable from '../components/incomeTable';
+import ExpenseTable from '../components/expenseTable';
+import { styled } from '@mui/system';
+
 
 const Overview = () => {
   // Check if the user is logged in
@@ -10,21 +13,42 @@ const Overview = () => {
     return <p>You need to be logged in to see this page.</p>;
   }
 
-
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
+  };
+
+  const addExpense = (event) => {
+    event.preventDefault();
+    window.location.assign('/expense');
   };
 
   const addIncome = (event) => {
     event.preventDefault();
     window.location.assign('/income');
   };
+  const updateExpense = (event, expenseId) => {
+    event.preventDefault();
+    window.location.assign(`/expense/${expenseId}/update`);
+  };
+
+  const deleteExpense = (event, expenseId) => {
+    event.preventDefault();
+    // Implement the logic to delete the expense, then navigate to the desired page
+    // Example: history.push('/expenses');
+};
 
   const updateIncome = (event, incomeId) => {
-    event.preventDefault();
-    window.location.assign(`/income/${incomeId}/update`);
-  }
+  event.preventDefault();
+  window.location.assign(`/income/${incomeId}/update`);
+}
+
+  const deleteIncome = (event, incomeId) => {
+  event.preventDefault();
+  // Implement the logic to delete the income, then navigate to the desired page
+  // Example: history.push('/incomes');
+}
+
 
   const { loading, data } = useQuery(QUERY_ME);
 
@@ -37,28 +61,34 @@ const Overview = () => {
   // User data is available
   const userInfo = data.me;
 
+  const StyledButton = styled('button')({
+     padding: '8px',
+     fontSize: '15px',
+  });
+
+  const containerStyle = {
+    border: '1px solid #ddd', // Add a border with a light gray color
+    borderRadius: '8px', // Add rounded corners
+    marginBottom: '20px', // Add some spacing between containers
+    padding: '20px', // Add internal padding
+    marginTop: '50px',
+  };
+
   return (
     <>
-      <h2>Incomes</h2>
-      <button onClick={addIncome}> Add Income </button>
-      {userInfo.incomes.map((income) => (
-        <div key={income._id}>
-          <p>Description: {`${income.description}`}</p>
-          <p>Amount: ${`${income.amount}`}</p>
-          <button onClick={(event) => updateIncome(event, income._id)}>Edit</button>
-          <button>Delete</button>
-        </div>
-      ))}
-      {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
+      <div className="container" style={containerStyle}>
+        <h2 className="text-center">Income</h2>
+        <StyledButton className="bg-info" onClick={(event) => addIncome(event)}>Add Income</StyledButton>
+        <IncomeTable data={userInfo.incomes} onUpdate={updateIncome} onDelete={deleteIncome} />
+        {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
+      </div>
 
-      <h2>Expenses</h2>
-      {userInfo.expenses.map((expense) => (
-        <div key={expense._id}>
-          <p>Description: {`${expense.description}`}</p>
-          <p>Amount: ${`${expense.amount}`}</p>
-        </div>
-      ))}
-      {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
+      <div className="container" style={containerStyle}>
+        <h2 className="text-center">Expenses</h2>
+        <StyledButton className="bg-danger" onClick={(event) => addExpense(event)}>Add Expense</StyledButton>
+        <ExpenseTable data={userInfo.expenses} onUpdate={updateExpense} onDelete={deleteExpense} />
+        {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
+      </div>
     </>
   );
 };
