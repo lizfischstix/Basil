@@ -10,10 +10,10 @@ const incomeSchema = new Schema({
   description: {
     type: String,
   },
-  creatAt: {
+  createdAt: {
     type: Date,
     default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
+    // get: (timestamp) => dateFormat(timestamp),
   },
 });
 

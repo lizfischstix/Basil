@@ -17,7 +17,13 @@ const StyledButton = styled('button')({
 
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
 
-    
+  console.log(data);
+
+  const formatDate = (timestamp) => {
+    console.log(timestamp);
+    return new Date(timestamp);
+  };
+
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -33,14 +39,27 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
           {data.map((income) => (
             <TableRow
               key={income._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">{income.createAt}</TableCell>
+              <TableCell
+                component="th"
+                scope="row"
+              >{`${formatDate(income.createdAt)}`}</TableCell>
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">
-                <StyledButton className="bg-info" onClick={(event) => onUpdate(event, income._id)}>Edit</StyledButton>
-                <StyledButton className="bg-danger" onClick={(event) => onDelete(event, income._id)}>Delete</StyledButton>
+                <StyledButton
+                  className="bg-info"
+                  onClick={(event) => onUpdate(event, income._id)}
+                >
+                  Edit
+                </StyledButton>
+                <StyledButton
+                  className="bg-danger"
+                  onClick={(event) => onDelete(event, income._id)}
+                >
+                  Delete
+                </StyledButton>
               </TableCell>
             </TableRow>
           ))}

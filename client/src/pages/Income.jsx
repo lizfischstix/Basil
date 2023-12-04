@@ -60,7 +60,7 @@ const Income = () => {
               label=""
               variant="outlined"
               type="date"
-              name="date"
+              name="createdAt"
             />
           </Grid>
 

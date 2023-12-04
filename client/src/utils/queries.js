@@ -11,7 +11,7 @@ export const QUERY_ME = gql`
       incomes {
         _id
         amount
-        createAt
+        createdAt
         description
       }
       expenses {

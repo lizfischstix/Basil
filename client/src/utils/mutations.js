@@ -39,13 +39,21 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_INCOME = gql`
-  mutation addIncome($amount: Float!, $description: String) {
-    addIncome(amount: $amount, description: $description) {
+  mutation addIncome(
+    $amount: Float!
+    $createdAt: String!
+    $description: String
+  ) {
+    addIncome(
+      amount: $amount
+      createdAt: $createdAt
+      description: $description
+    ) {
       incomes {
         _id
         amount
-        createAt
         description
+        createdAt
       }
     }
   }
@@ -74,7 +82,7 @@ export const DELETE_INCOME = gql`
       incomes {
         _id
         amount
-        createAt
+        createdAt
         description
       }
     }

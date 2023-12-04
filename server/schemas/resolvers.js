@@ -68,11 +68,11 @@ const resolvers = {
       return { token, user };
     },
 
-    addIncome: async (parent, { description, amount }, context) => {
+    addIncome: async (parent, { description, amount, createdAt }, context) => {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { incomes: { description, amount } } },
+          { $push: { incomes: { description, amount, createdAt } } },
           { new: true }
         );
       }
