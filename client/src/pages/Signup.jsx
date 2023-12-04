@@ -37,10 +37,11 @@ function Signup(props) {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+  
+   <Container className='pt-3' component="main" maxWidth="xs">
       <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Typography component="h1" variant="h5" gutterBottom>
-          ⭐ Signup ⭐
+        start budgeting with Basil today
         </Typography>
         <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
           <TextField
@@ -97,6 +98,7 @@ function Signup(props) {
         </Typography>
       </Paper>
     </Container>
+   
   );
 }
 

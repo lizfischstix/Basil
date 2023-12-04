@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Andika';
+    src: url('./Fonts/Andika-R.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Amatic-R';
+    src: url('./Fonts/AmaticSC-Regular.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Amatic-B';
+    src: url('./Fonts/AmaticSC-Bold.ttf') format('truetype'),
+}
+.basil {
+    font-size: 2rem;
+    font-family: 'Amatic-B';
+
+}
+.header {
+    padding: 50px;
+    padding-top: 100px;
+    background-image: url('./Images/BasilHeader.png');
+    max-width: 100%;
+    height: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.headerText {
+    display: flex;
+    justify-content: center;
+    font-size: 8rem;
+    font-family: 'Amatic-B';
+    color:#3c5318;
+    padding-bottom: 2px;
+}
+
+.footer {
+    margin-top: auto;
+    max-height: 100%;
+}
+
+#root{
+    background-color: #FFFDD0;  
+    font-family: 'andika';
+    min-height: 100vh;
+   }
+
+  
