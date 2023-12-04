@@ -10,7 +10,22 @@ const Overview = () => {
     return <p>You need to be logged in to see this page.</p>;
   }
 
-  // Fetch user data
+
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
+  const addIncome = (event) => {
+    event.preventDefault();
+    window.location.assign('/income');
+  };
+
+  const updateIncome = (event, incomeId) => {
+    event.preventDefault();
+    window.location.assign(`/income/${incomeId}/update`);
+  }
+
   const { loading, data } = useQuery(QUERY_ME);
 
   // Handle loading state
@@ -25,10 +40,13 @@ const Overview = () => {
   return (
     <>
       <h2>Incomes</h2>
+      <button onClick={addIncome}> Add Income </button>
       {userInfo.incomes.map((income) => (
         <div key={income._id}>
           <p>Description: {`${income.description}`}</p>
           <p>Amount: ${`${income.amount}`}</p>
+          <button onClick={(event) => updateIncome(event, income._id)}>Edit</button>
+          <button>Delete</button>
         </div>
       ))}
       {userInfo.incomes.length === 0 && <p>No incomes found.</p>}

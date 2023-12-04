@@ -4,18 +4,35 @@ export const QUERY_ME = gql`
   query me {
     me {
       _id
+      balance
       email
-      expenses {
-        amount
-        description
-      }
       firstName
       lastName
       incomes {
+        _id
         amount
+        createAt
         description
       }
-      balance
+      expenses {
+        _id
+        amount
+        category
+        createAt
+        description
+      }
     }
   }
 `;
+
+export const QUERY_INCOME = gql`
+  query income($incomeId: ID!) {
+    income(incomeId: $incomeId) {
+      _id
+      amount
+      createAt
+      description
+    }
+  }
+`;
+
