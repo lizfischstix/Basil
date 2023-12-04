@@ -1,7 +1,5 @@
-
-const { User } = require('../models'); 
+const { User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
-
 
 const resolvers = {
   Query: {
@@ -9,7 +7,7 @@ const resolvers = {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
-      throw AuthenticationError;
+      throw new AuthenticationError('User not authenticated');
     },
   },
 
@@ -24,13 +22,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw AuthenticationError;
+        throw new AuthenticationError('Invalid credentials');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw new AuthenticationError('Invalid credentials');
       }
 
       const token = signToken(user);

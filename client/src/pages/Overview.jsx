@@ -11,18 +11,12 @@ const Overview = () => {
   }
 
   // Fetch user data
-  const { loading, error, data } = useQuery(QUERY_ME);
+  const { loading, data } = useQuery(QUERY_ME);
 
   // Handle loading state
   if (loading) {
     // You can use loading skeletons or placeholders here
     return <div>Loading...</div>;
-  }
-
-  // Handle error state
-  if (error) {
-    console.error("Error fetching user data:", error);
-    return <p>An error occurred while fetching data.</p>;
   }
 
   // User data is available

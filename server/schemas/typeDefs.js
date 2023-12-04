@@ -1,5 +1,4 @@
 
-
 const typeDefs = `
   type User {
     _id: ID!
@@ -34,8 +33,8 @@ const typeDefs = `
 
   type Query {
     me: User
-    incomes:[Income]
-    expenses:[Expense]
+    Incomes: [Income]
+    Expenses: [Expense]
   }
 
   type Mutation {
