@@ -7,6 +7,20 @@ const resolvers = {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
       }
+      throw new AuthenticationError('User not authenticated');
+    },
+    income: async (parent, { incomeId }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+
+        console.log(user.incomes);
+        
+        const income = user.incomes.filter((income) => income._id.valueOf() === incomeId);
+
+        console.log(income);
+        
+        return income[0];
+      }
       throw AuthenticationError;
     },
     income: async (parent, { incomeId }, context) => {
@@ -36,13 +50,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw AuthenticationError;
+        throw new AuthenticationError('Invalid credentials');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw new AuthenticationError('Invalid credentials');
       }
 
       const token = signToken(user);
