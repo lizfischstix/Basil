@@ -67,3 +67,16 @@ export const UPDATE_INCOME = gql`
     }
   }
 `;
+
+export const DELETE_INCOME = gql`
+  mutation deleteIncome($incomeId: ID!) {
+    deleteIncome(incomeId: $incomeId) {
+      incomes {
+        _id
+        amount
+        createAt
+        description
+      }
+    }
+  }
+`;

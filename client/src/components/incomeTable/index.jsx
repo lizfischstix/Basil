@@ -39,8 +39,8 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">
-                <StyledButton className="bg-info" onClick={() => onUpdate(income._id)}>Edit</StyledButton>
-                <StyledButton className="bg-danger" onClick={() => onDelete(income._id)}>Delete</StyledButton>
+                <StyledButton className="bg-info" onClick={(event) => onUpdate(event, income._id)}>Edit</StyledButton>
+                <StyledButton className="bg-danger" onClick={(event) => onDelete(event, income._id)}>Delete</StyledButton>
               </TableCell>
             </TableRow>
           ))}
