@@ -69,17 +69,13 @@ export const UPDATE_INCOME = gql`
 `;
 
 export const DELETE_INCOME = gql`
-  mutation deleteIncome($incomeId: ID!, $amount: Float!, $description: String) {
-    deleteIncome(
-      incomeId: $incomeId
-      amount: $amount
-      description: $description
-    ) {
+  mutation deleteIncome($incomeId: ID!) {
+    deleteIncome(incomeId: $incomeId) {
       incomes {
         _id
         amount
-        description
         createAt
+        description
       }
     }
   }

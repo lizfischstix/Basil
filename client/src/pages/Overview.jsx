@@ -38,17 +38,16 @@ const Overview = () => {
     window.location.assign(`/income/${incomeId}/update`);
   };
 
-  // const removeIncome = (event, incomeId) => {
-  //   event.preventDefault();
-  //   const [deleteIncome, { error }] = useMutation(DELETE_INCOME);
+  const removeIncome = async (event, incomeId) => {
+    event.preventDefault();
+    const [deleteIncome, { error }] = useMutation(DELETE_INCOME);
 
-  //   const {data} = await deleteIncome()
-    
-  
-
-  // };
-
-  
+    try {
+      const { data } = await deleteIncome({ variables: { incomeId } });
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const { loading, data } = useQuery(QUERY_ME);
 
