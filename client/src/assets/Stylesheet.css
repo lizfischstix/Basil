@@ -7,17 +7,18 @@
     src: url('./Fonts/AmaticSC-Regular.ttf') format('truetype'),
 }
 @font-face {
-    font-family: 'Amatic-B';
-    src: url('./Fonts/AmaticSC-Bold.ttf') format('truetype'),
+    font-family: 'Lobster2';
+    src: url(../assets/Fonts/LobsterTwo-Bold.ttf) format('truetype'),
 }
+
 .basil {
     font-size: 2rem;
-    font-family: 'Amatic-B';
+    font-family: 'Lobster2';
 
 }
 .header {
     padding: 50px;
-    padding-top: 100px;
+    padding-top: 50px;
     background-image: url('./Images/BasilHeader.png');
     max-width: 100%;
     height: fill;
@@ -30,16 +31,12 @@
 .headerText {
     display: flex;
     justify-content: center;
-    font-size: 8rem;
-    font-family: 'Amatic-B';
+    font-size: 12rem;
+    font-family: 'Lobster2';
     color:#3c5318;
-    padding-bottom: 2px;
+    padding-bottom: 2rem;
 }
 
-.footer {
-    margin-top: auto;
-    max-height: 100%;
-}
 
 #root{
     background-color: #FFFDD0;  
