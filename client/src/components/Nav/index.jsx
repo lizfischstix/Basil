@@ -23,7 +23,7 @@ export default function Nav({ isAuthenticated }) {
       </Link>
 
       {isAuthenticated ? (
-        <>
+        
           <Link to="/logout">
             <Tab icon={<LoginRoundedIcon />} aria-label="Log Out" />
           </Link>
@@ -32,16 +32,15 @@ export default function Nav({ isAuthenticated }) {
           </Link>
           <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List" />
           <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs" />
-        </>
       ) : (
-        <>
+        
           <Link to="/login">
             <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
           </Link>
           <Link to="/signup">
             <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
           </Link>
-        </>
+    
       )}
     </Tabs>
   );
