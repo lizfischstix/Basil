@@ -13,6 +13,7 @@ const Overview = () => {
     return <p>You need to be logged in to see this page.</p>;
   }
 
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
