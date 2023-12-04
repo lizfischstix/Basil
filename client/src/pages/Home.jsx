@@ -1,12 +1,14 @@
-const Home = () => {
-    return (
-      <>
-        <div className="container">
-          Hello Overview
-        </div>
-      </>
+import React from 'react';
 
-    );
-  };
+const Home = () => {
   
-  export default Home;
+  return (
+      <>
+        <h3 className="container text-center">
+          Please login for more functions!
+        </h3>
+      </>
+  );
+};
+
+export default Home;

@@ -1,8 +1,12 @@
+import React from 'react';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+
+// Import Material-UI components
+import { Container, TextField, Button, Typography, Paper, Link as MuiLink } from '@mui/material';
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -30,41 +34,51 @@ function Login(props) {
   };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
+    <Container component="main" maxWidth="xs">
+      <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Typography component="h1" variant="h5" gutterBottom>
+          ⭐ Login ⭐
+        </Typography>
+        <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="email"
+            label="Email Address"
             name="email"
             type="email"
-            id="email"
+            autoComplete="email"
+            autoFocus
             onChange={handleChange}
           />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="password"
+            label="Password"
             name="password"
             type="password"
-            id="pwd"
+            autoComplete="current-password"
             onChange={handleChange}
           />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+          {error ? (
+            <Typography variant="body2" color="error" align="center" style={{ marginTop: '16px' }}>
+              The provided credentials are incorrect
+            </Typography>
+          ) : null}
+          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: '16px' }}>
+            Submit
+          </Button>
+        </form>
+        <Typography variant="body2" style={{ marginTop: '16px' }}>
+          <MuiLink component={Link} to="/signup">
+            ← Go to Signup
+          </MuiLink>
+        </Typography>
+      </Paper>
+    </Container>
   );
 }
 
