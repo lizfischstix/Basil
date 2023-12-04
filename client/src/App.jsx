@@ -12,6 +12,10 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 
 
+
+
+
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,7 +44,6 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Header />
-      <Nav />
         <div>
           <Outlet />
         </div>
