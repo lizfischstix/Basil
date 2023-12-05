@@ -105,9 +105,12 @@ const Overview = () => {
 
   return (
     <>
-    
       <div id="hello" style={containerStyle}>
         <Hello userInfo={userInfo} />
+      </div>
+          
+      <div className="container" id="graphs" style={containerStyle} justifyContent="center">
+        <GraphDropdown />
       </div>
 
       <div className="container" style={buttoncontainer}>
