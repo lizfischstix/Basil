@@ -11,6 +11,7 @@ import Overview from "./pages/Overview";
 import Income from "./pages/Income";
 import UpdateIncome from "./pages/UpdateIncome";
 import Expense from './pages/Expense.jsx';
+import  Transaction  from './pages/TransactionList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
         path: "/income/:incomeId/update",
         element: <UpdateIncome />,
       },
+      {
+        path:"/transaction",
+        element:<Transaction />
+      }
     ],
   },
 ]);

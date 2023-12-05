@@ -9,6 +9,10 @@ import ExpenseTable from '../components/expenseTable';
 import { styled } from '@mui/system';
 import GraphDropdown  from '../components/graphs/graphDropdown';
 
+import Button from '@mui/material/Button';
+import InputIcon from '@mui/icons-material/Input';
+import OutputIcon from '@mui/icons-material/Output';
+
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
@@ -83,6 +87,13 @@ const Overview = () => {
     padding: "20px", // Add internal padding
     marginTop: "50px",
   };
+  const buttoncontainer = {
+    display: 'flex',
+   justifyContent: 'center',
+   alignItems: 'center',
+   marginBottom: '20px', 
+   gap: '50px',
+  }
 
   return (
     <>
@@ -90,11 +101,17 @@ const Overview = () => {
         <GraphDropdown />
       </div>
 
+      <div className="container" style = {buttoncontainer}>
+        <Button  variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)}>
+        Add Income
+        </Button>
+        <Button  variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
+        Add Expense
+        </Button>
+      </div>
+
       <div className="container" style={containerStyle}>
         <h2 className="text-center">Income</h2>
-        <StyledButton className="bg-info" onClick={(event) => addIncome(event)}>
-          Add Income
-        </StyledButton>
         <IncomeTable
           data={userInfo.incomes}
           onUpdate={updateIncome}
@@ -105,12 +122,6 @@ const Overview = () => {
 
       <div className="container" style={containerStyle}>
         <h2 className="text-center">Expenses</h2>
-        <StyledButton
-          className="bg-danger"
-          onClick={(event) => addExpense(event)}
-        >
-          Add Expense
-        </StyledButton>
         <ExpenseTable
           data={userInfo.expenses}
           onUpdate={updateExpense}

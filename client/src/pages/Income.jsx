@@ -3,6 +3,7 @@ import Auth from "../utils/auth";
 import { ADD_INCOME } from "../utils/mutations";
 import React from 'react';
 import { TextField, Button, Container, Box, Grid } from '@mui/material';
+import InputIcon from '@mui/icons-material/Input';
 
 const Income = () => {
   const [addIncome, { error }] = useMutation(ADD_INCOME);
@@ -63,8 +64,8 @@ const Income = () => {
           </Grid>
 
           <Grid item xs={15}>
-            <Button variant="contained" color="primary" type="submit">
-              Add Income
+            <Button  variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)}>
+            Add Income
             </Button>
           </Grid>
         </Grid>
