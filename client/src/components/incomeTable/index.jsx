@@ -1,28 +1,20 @@
 // IncomeTable.js
-import React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { styled } from '@mui/system';
+import React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import { styled } from "@mui/system";
 
-const StyledButton = styled('button')({
-  padding: '8px',
-  fontSize: '15px',
-  margin: '0 10px', // Add margin between buttons
+const StyledButton = styled("button")({
+  padding: "8px",
+  fontSize: "15px",
+  margin: "0 10px", // Add margin between buttons
 });
 
-
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
-
-  console.log(data);
-
-  const formatDate = (timestamp) => {
-    console.log(timestamp);
-    return new Date(timestamp);
-  };
 
   return (
     <TableContainer>
@@ -44,7 +36,7 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
               <TableCell
                 component="th"
                 scope="row"
-              >{`${formatDate(income.createdAt)}`}</TableCell>
+              >{`${income.createdAt}`}</TableCell>
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">

@@ -30,7 +30,7 @@ export const QUERY_INCOME = gql`
     income(incomeId: $incomeId) {
       _id
       amount
-      createAt
+      createdAt
       description
     }
   }
