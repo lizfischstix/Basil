@@ -9,6 +9,7 @@ const resolvers = {
       }
       throw new AuthenticationError("User not authenticated");
     },
+
     income: async (parent, { incomeId }, context) => {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
@@ -21,12 +22,26 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    
     // expenses: async (parent, args, context) => {
     //   if (context.user) {
     //     const user = await User.findOne({ _id: context.user._id });
     //   }
     //   throw AuthenticationError;
     // },
+
+    expense: async (parent, { expenseId }, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id });
+
+        const expense = user.expenses.filter(
+          (expense) => expense._id.valueOf() === expenseId
+        );
+
+        return expense[0];
+      }
+      throw AuthenticationError;
+    },
   },
 
   Mutation: {
@@ -100,6 +115,36 @@ const resolvers = {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           { $push: { expenses: { description, amount, category, createdAt } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    updateExpense: async (
+      parent,
+      { expenseId, description, amount, createdAt, category },
+      context
+    ) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id, "expenses._id": expenseId },
+          {
+            $set: {
+              "expenses.$": { description, amount, createdAt, category },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    deleteExpense: async (parent, { expenseId }, context) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { expenses: { _id: expenseId } } },
           { new: true }
         );
       }

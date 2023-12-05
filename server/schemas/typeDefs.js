@@ -33,8 +33,7 @@ const typeDefs = `
   type Query {
     me: User
     income(incomeId: ID!): Income
-    incomes:[Income]
-    expenses:[Expense]
+    expense(expenseId: ID!): Expense
   }
 
   type Mutation {
@@ -42,9 +41,10 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addIncome(description: String, amount: Float!, createdAt:String!): User
     updateIncome(incomeId: ID!, description: String, amount: Float!, createdAt:String!): User
-    addExpense(amount: Float!, description: String, category: String!, createdAt:String!): User
     deleteIncome(incomeId: ID!): User
-    removeExpense(id: ID!): User
+    addExpense(amount: Float!, description: String, category: String!, createdAt:String!): User
+    updateExpense(expenseId: ID!, description: String, amount: Float!, createdAt:String!, category: String!): User
+    deleteExpense(expenseId: ID!): User
   }
 `;
 
