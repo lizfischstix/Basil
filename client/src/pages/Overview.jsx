@@ -101,11 +101,6 @@ const Overview = () => {
 
   return (
     <>
-
-      <div className="container" id="graphs" style={containerStyle}>
-        <GraphDropdown />
-      </div>
-
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
