@@ -7,15 +7,18 @@
     "incomes": [
       {
         "amount": 2000,
-        "description": "First Paycheck"
+        "description": "First Paycheck",
+        "createdAt": "2023-12-04T00:00:00.000+00:00"
       },
       {
         "amount": 2000,
-        "description": "Second Paycheck"
+        "description": "Second Paycheck",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 100,
-        "description": "Birthday gift"
+        "description": "Birthday gift",
+        "createdAt": "2023-11-14T00:00:00.000+00:00"
       }
     ],
     "expenses": [

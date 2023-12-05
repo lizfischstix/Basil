@@ -1,6 +1,6 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
-const dateFormat = require('../utils/helper');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
+const dateFormat = require("../utils/helper");
 
 const incomeSchema = new Schema({
   amount: {
@@ -12,8 +12,7 @@ const incomeSchema = new Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now,
-    get: (timestamp) => dateFormat(timestamp),
+    get: (createdAtDate) => dateFormat(createdAtDate),
   },
 });
 
@@ -73,9 +72,8 @@ const userSchema = new Schema({
   expenses: [expenseSchema],
 });
 
-
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -87,6 +85,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;
