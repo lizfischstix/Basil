@@ -9,7 +9,7 @@ import ExpenseTable from '../components/expenseTable';
 import { Grid, Typography, Paper} from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 
-const Overview = () => {
+const Transaction = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
     return <p>You need to be logged in to see this page.</p>;
@@ -99,4 +99,4 @@ const Overview = () => {
   );
 };
 
-export default Overview;
+export default Transaction;
