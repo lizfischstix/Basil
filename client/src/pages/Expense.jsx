@@ -30,80 +30,78 @@ const Expense = () => {
   }
 
   return (
-
-      <Container maxWidth="sm" justifyContent="center">
-        <Box mt={3}>
-          <form onSubmit={handleFormSubmit}>
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Description"
-                  variant="outlined"
-                  name="description"
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label="Amount"
-                  variant="outlined"
-                  name="amount"
-                />
-              </Grid>
-
-              <Grid item xs={12}>
-                <Select
-                  fullWidth
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Category"
-                  name="category"
-                >
-                  <MenuItem value={"Home"}>Home</MenuItem>
-                  <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
-                  <MenuItem value={"Health & Fitness"}> Health & Fitness </MenuItem>
-                  <MenuItem value={"Clothing"}>Clothing</MenuItem>
-                  <MenuItem value={"Education"}>Education</MenuItem>
-                  <MenuItem value={"Transportation"}>Transportation</MenuItem>
-                  <MenuItem value={"Entrertainment"}>Entrertainment</MenuItem>
-                  <MenuItem value={"Pet"}>Pet</MenuItem>
-                  <MenuItem value={"Other"}>Other</MenuItem>
-                </Select>
-              </Grid>
-
-              <Grid item xs={12}>
-                <TextField
-                  fullWidth
-                  label=""
-                  variant="outlined"
-                  type="date"
-                  name="createdAt"
-                />
-              </Grid>
-
-              <Grid item xs={15}>
-                <Button
-                  variant="outlined"
-                  startIcon={<OutputIcon />}
-                  type="submit"
-                >
-                  Add Expense
-                </Button>
-              </Grid>
+    <Container maxWidth="sm" justifyContent="center">
+      <Box mt={3} style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+        <form onSubmit={handleFormSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Description"
+                variant="outlined"
+                name="description"
+              />
             </Grid>
-          </form>
-
-          {error && (
-            <Box mt={2} color="red">
-              {error.message}
-            </Box>
-          )}
-        </Box>
-      </Container>
-     
-  );
+  
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Amount"
+                variant="outlined"
+                name="amount"
+              />
+            </Grid>
+  
+            <Grid item xs={12}>
+              <Select
+                fullWidth
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Category"
+                name="category"
+              >
+                <MenuItem value={"Home"}>Home</MenuItem>
+                <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
+                <MenuItem value={"Health & Fitness"}>Health & Fitness</MenuItem>
+                <MenuItem value={"Clothing"}>Clothing</MenuItem>
+                <MenuItem value={"Education"}>Education</MenuItem>
+                <MenuItem value={"Transportation"}>Transportation</MenuItem>
+                <MenuItem value={"Entertainment"}>Entertainment</MenuItem>
+                <MenuItem value={"Pet"}>Pet</MenuItem>
+                <MenuItem value={"Other"}>Other</MenuItem>
+              </Select>
+            </Grid>
+  
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label=""
+                variant="outlined"
+                type="date"
+                name="createdAt"
+              />
+            </Grid>
+  
+            <Grid item xs={12} style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <Button
+                variant="outlined"
+                startIcon={<OutputIcon />}
+                type="submit"
+              >
+                Add Expense
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+  
+        {error && (
+          <Box mt={2} color="red">
+            {error.message}
+          </Box>
+        )}
+      </Box>
+    </Container>
+  );  
 };
 
 export default Expense;
