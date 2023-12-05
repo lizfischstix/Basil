@@ -38,7 +38,7 @@ function Signup(props) {
 
   return (
   
-   <Container className='pt-3' component="main" maxWidth="xs">
+   <Container className='pt-3' component="main" maxWidth="xs" justifyContent="center">
       <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <Typography component="h1" variant="h5" gutterBottom>
         start budgeting with Basil today

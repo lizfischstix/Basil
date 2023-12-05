@@ -8,6 +8,7 @@ import Link from '@mui/material/Link';
 
 function Copyright() {
   return (
+    <Container justifyContent="center">
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
       <Link color="inherit" href="https://basil-budget-e685e272efd5.herokuapp.com/">
@@ -16,6 +17,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+    </Container>
   );
 }
 
@@ -24,7 +26,7 @@ const defaultTheme = createTheme();
 
 export default function StickyFooter() {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={defaultTheme} justifyContent='center'>
       <Box
         sx={{
           display: 'flex',

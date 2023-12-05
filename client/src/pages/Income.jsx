@@ -29,8 +29,8 @@ const Income = () => {
   }
 
   return (
-    <>
-    <Container maxWidth="sm">
+    
+    <Container maxWidth="sm" justifyContent="center">
     <Box mt={3}>
       <form onSubmit={handleFormSubmit}>
         <Grid container spacing={2}>
@@ -77,7 +77,6 @@ const Income = () => {
       )}
     </Box>
   </Container>
-  </>
   );
 };
 
