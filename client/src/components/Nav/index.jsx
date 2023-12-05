@@ -8,6 +8,7 @@ import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
+import { Tooltip } from '@mui/material';
 
 import Auth from "../../utils/auth";
 
@@ -31,25 +32,28 @@ export default function Nav({ isAuthenticated }) {
       aria-label="icon tabs"
     >
       <Link to="/">
-        <Tab icon={<HomeRoundedIcon />} aria-label="Home" />
+      <Tooltip title='Home' placement='bottom'><Tab icon={<HomeRoundedIcon />} aria-label="Home" /></Tooltip>
       </Link>
 
       {Auth.loggedIn() ? (
         <>
+        
           <Link to="/home">
-            <Tab icon={<LoginRoundedIcon />} aria-label="Log Out" onClick={logout}/>
+          <Tooltip title='Log Out' placement='bottom'><Tab icon={<LoginRoundedIcon />} aria-label="Home" onClick={logout}/></Tooltip>
           </Link>
+          
           <Link to="/overview">
-            <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" />
+          <Tooltip title='Dashboard' placement='bottom'> <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" /></Tooltip>
           </Link>
-          <Tab
+          
+          <Tooltip title='Transaction List' placement='bottom'> <Tab
             icon={<AssignmentRoundedIcon />}
             aria-label="Transactions List"
-          />
-          <Tab
+          /></Tooltip>
+          <Tooltip title='Spending Graphs' placement='bottom'> <Tab
             icon={<AutoGraphRoundedIcon />}
             aria-label="Transactions Graphs"
-          />
+          /></Tooltip>
         </>
       ) : (
         <>

@@ -10,9 +10,9 @@ function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary">
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Basil 🌿
-      </Link>{}
+      <Link color="inherit" href="https://basil-budget-e685e272efd5.herokuapp.com/">
+        Basil 🌿 
+       </Link>{}
       {new Date().getFullYear()}
       {'.'}
     </Typography>
@@ -29,7 +29,7 @@ export default function StickyFooter() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          minHeight: '100vh',
+          // minHeight: '0vh',
         }}
       >
         <CssBaseline />
@@ -42,10 +42,6 @@ export default function StickyFooter() {
             py: 3,
             px: 2,
             mt: 'auto',
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[200]
-                : theme.palette.grey[800],
           }}
         >
           <Container maxWidth="sm">
