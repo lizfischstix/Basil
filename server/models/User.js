@@ -39,7 +39,7 @@ const expenseSchema = new Schema({
     ],
     required: true,
   },
-  creatAt: {
+  createdAt: {
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),

@@ -22,7 +22,7 @@ const typeDefs = `
     amount: Float!
     description: String
     category: String!
-    createAt: String
+    createdAt: String
   }
 
   type Auth {

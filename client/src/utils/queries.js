@@ -18,7 +18,7 @@ export const QUERY_ME = gql`
         _id
         amount
         category
-        createAt
+        createdAt
         description
       }
     }

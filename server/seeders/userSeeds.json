@@ -25,32 +25,38 @@
       {
         "amount": 1200,
         "description": "Rent",
-        "category": "Home"
+        "category": "Home",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 120,
         "description": "Gym",
-        "category": "Health & Fitness"
+        "category": "Health & Fitness",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 12,
         "description": "Allergy meds",
-        "category": "Health & Fitness"
+        "category": "Health & Fitness",
+        "createdAt": "2023-12-11T00:00:00.000+00:00"
       },
       {
         "amount": 230,
         "description": "Groceries at Mariano's",
-        "category": "Food & Dining"
+        "category": "Food & Dining",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 385,
         "description": "Spanish lessons",
-        "category": "Education"
+        "category": "Education",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 56,
         "description": "Dinner with Hannah",
-        "category": "Food & Dining"
+        "category": "Food & Dining",
+        "createdAt": "2023-12-20T00:00:00.000+00:00"
       }
     ]
   }
