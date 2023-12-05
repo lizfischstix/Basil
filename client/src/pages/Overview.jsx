@@ -99,8 +99,9 @@ const Overview = () => {
 
   return (
     <>
+      <div className="container" id="graphs" style={containerStyle} justifyContent="center">
 
-      <div className="container" id="graphs" style={containerStyle}>
+
         <GraphDropdown />
       </div>
 
