@@ -12,9 +12,6 @@ import Header from './components/Header';
 import { Drawer } from '@mui/material';
 
 
-import DoGraphDropdown from './components/graphs/graphDropdown';
-
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',

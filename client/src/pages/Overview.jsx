@@ -2,16 +2,16 @@ import React from "react";
 import Auth from "../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
+import { DELETE_INCOME, DELETE_EXPENSE } from "../utils/mutations";
+import IncomeTable from "../components/incomeTable";
+import ExpenseTable from "../components/expenseTable";
+import { styled } from "@mui/system";
+import GraphDropdown from "../components/graphs/graphDropdown";
 
-import { DELETE_INCOME } from "../utils/mutations";
-import IncomeTable from '../components/incomeTable';
-import ExpenseTable from '../components/expenseTable';
-import { styled } from '@mui/system';
-import GraphDropdown  from '../components/graphs/graphDropdown';
 
-import Button from '@mui/material/Button';
-import InputIcon from '@mui/icons-material/Input';
-import OutputIcon from '@mui/icons-material/Output';
+import Button from "@mui/material/Button";
+import InputIcon from "@mui/icons-material/Input";
+import OutputIcon from "@mui/icons-material/Output";
 
 const Overview = () => {
   // Check if the user is logged in
@@ -28,16 +28,23 @@ const Overview = () => {
     event.preventDefault();
     window.location.assign("/income");
   };
-  
+
   const updateExpense = (event, expenseId) => {
     event.preventDefault();
     window.location.assign(`/expense/${expenseId}/update`);
   };
 
-  const deleteExpense = (event, expenseId) => {
+  const [deleteExpense, { err }] = useMutation(DELETE_EXPENSE, {
+    refetchQueries: [QUERY_ME, "me"],
+  });
+
+  const removeExpense = async (event, expenseId) => {
     event.preventDefault();
-    // Implement the logic to delete the expense, then navigate to the desired page
-    // Example: history.push('/expenses');
+     try {
+       const { data } = await deleteExpense({ variables: { expenseId } });
+     } catch (error) {
+       console.error(error);
+     }
   };
 
   const updateIncome = (event, incomeId) => {
@@ -45,11 +52,8 @@ const Overview = () => {
     window.location.assign(`/income/${incomeId}/update`);
   };
 
-  const [deleteIncome, { error }] = useMutation(DELETE_INCOME,{
-    refetchQueries: [
-      QUERY_ME,
-      'me'
-    ]
+  const [deleteIncome, { error }] = useMutation(DELETE_INCOME, {
+    refetchQueries: [QUERY_ME, "me"],
   });
 
   const removeIncome = async (event, incomeId) => {
@@ -75,41 +79,52 @@ const Overview = () => {
   // User data is available
   const userInfo = data.me;
 
-  const StyledButton = styled("button")({
-    padding: "8px",
-    fontSize: "15px",
-  });
-
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
     marginBottom: "20px", // Add some spacing between containers
     padding: "20px", // Add internal padding
-    marginTop: "50px",
+    marginTop: "20px",
+    background: "white",
   };
+
   const buttoncontainer = {
-    display: 'flex',
-   justifyContent: 'center',
-   alignItems: 'center',
-   marginBottom: '20px', 
-   gap: '50px',
-  }
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: "20px",
+    gap: "50px",
+  };
+
 
   return (
     <>
       <div className="container" id="graphs" style={containerStyle} justifyContent="center">
+
+
         <GraphDropdown />
       </div>
 
-      <div className="container" style = {buttoncontainer}>
-        <Button  variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)}>
-        Add Income
+      <div className="container" style={buttoncontainer}>
+        <Button
+          variant="outlined"
+          startIcon={<InputIcon />}
+          onClick={(event) => addIncome(event)}
+        >
+          Add Income
         </Button>
-        <Button  variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
-        Add Expense
+        <Button
+          variant="outlined"
+          startIcon={<OutputIcon />}
+          onClick={(event) => addExpense(event)}
+        >
+          Add Expense
         </Button>
       </div>
-
+      <div id="graphs" style={containerStyle}>
+        <GraphDropdown />
+      </div>
+      <main>
       <div className="container" style={containerStyle}>
         <h2 className="text-center">Income</h2>
         <IncomeTable
@@ -125,10 +140,11 @@ const Overview = () => {
         <ExpenseTable
           data={userInfo.expenses}
           onUpdate={updateExpense}
-          onDelete={deleteExpense}
+          onDelete={removeExpense}
         />
         {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
       </div>
+      </main>
     </>
   );
 };
