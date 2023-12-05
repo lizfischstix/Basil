@@ -118,3 +118,43 @@ export const ADD_EXPENSE = gql`
     }
   }
 `;
+
+export const UPDATE_EXPENSE = gql`
+  mutation updateExpense(
+    $expenseId: ID!
+    $amount: Float!
+    $createdAt: String!
+    $category: String!
+    $description: String
+  ) {
+    updateExpense(
+      expenseId: $expenseId
+      amount: $amount
+      createdAt: $createdAt
+      category: $category
+      description: $description
+    ) {
+      expenses {
+        _id
+        amount
+        description
+        category
+        createdAt
+      }
+    }
+  }
+`;
+
+export const DELETE_EXPENSE = gql`
+  mutation deleteExpense($expenseId: ID!) {
+    deleteExpense(expenseId: $expenseId) {
+      expenses {
+        _id
+        amount
+        description
+        category
+        createdAt
+      }
+    }
+  }
+`;
