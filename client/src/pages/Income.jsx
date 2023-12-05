@@ -16,6 +16,8 @@ const Income = () => {
     // Convert string to number
     formEntries.amount = +formEntries.amount;
 
+    console.log(formEntries);
+
     try {
       const { data } = await addIncome({ variables: { ...formEntries } });
     } catch (error) {
@@ -64,7 +66,7 @@ const Income = () => {
           </Grid>
 
           <Grid item xs={15}>
-            <Button  variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)}>
+            <Button  variant="outlined" startIcon={<InputIcon />} type="submit">
             Add Income
             </Button>
           </Grid>

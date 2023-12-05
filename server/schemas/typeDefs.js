@@ -41,10 +41,10 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     addIncome(description: String, amount: Float!, createdAt:String!): User
     updateIncome(incomeId: ID!, description: String, amount: Float!, createdAt:String!): User
+    deleteIncome(incomeId: ID!): User
     addExpense(amount: Float!, description: String, category: String!, createdAt:String!): User
     updateExpense(expenseId: ID!, description: String, amount: Float!, createdAt:String!, category: String!): User
-    deleteIncome(incomeId: ID!): User
-    removeExpense(id: ID!): User
+    deleteExpense(expenseId: ID!): User
   }
 `;
 

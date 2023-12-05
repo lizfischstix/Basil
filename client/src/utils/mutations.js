@@ -144,3 +144,17 @@ export const UPDATE_EXPENSE = gql`
     }
   }
 `;
+
+export const DELETE_EXPENSE = gql`
+  mutation deleteExpense($expenseId: ID!) {
+    deleteExpense(expenseId: $expenseId) {
+      expenses {
+        _id
+        amount
+        description
+        category
+        createdAt
+      }
+    }
+  }
+`;

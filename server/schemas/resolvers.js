@@ -122,7 +122,22 @@ const resolvers = {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id, "expenses._id": expenseId },
-          { $set: { "expenses.$": { description, amount, createdAt, category } } },
+          {
+            $set: {
+              "expenses.$": { description, amount, createdAt, category },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    deleteExpense: async (parent, { expenseId }, context) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { expenses: { _id: expenseId } } },
           { new: true }
         );
       }

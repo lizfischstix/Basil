@@ -86,8 +86,12 @@ const Expense = () => {
               </Grid>
 
               <Grid item xs={15}>
-                <Button  variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
-                Add Expense
+                <Button
+                  variant="outlined"
+                  startIcon={<OutputIcon />}
+                  type="submit"
+                >
+                  Add Expense
                 </Button>
               </Grid>
             </Grid>
