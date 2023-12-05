@@ -46,13 +46,32 @@ function makeDoughnut() {
   }
 
   const userExpenses = data.me.expenses;
+  const categoryUserExpenses = data.me.expenses.categories;
+  userExpenses.map(expense => expense.category)
+  console.log(userExpenses)
+  
+  const aggregateExpenses = userExpenses.reduce((result,expense)=> {
+    const{category, amount} = expense
+    console.log(category, amount)
+    const existingCategory = result.find((item)=> item.category === category)
+    if (existingCategory){
+      existingCategory.amount += amount
+    }else {
+      result.push({category, amount})
+    }
+
+    return result
+
+  }, [])
+
+  console.log(aggregateExpenses)
 
   const userData = {
-    labels: userExpenses.map(expense => expense.category),
+    labels: aggregateExpenses.map(expense => expense.category),
     datasets: [{
       label: "Spending Category",
-      data: userExpenses.map(expense => expense.amount),
-      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue']
+      data: aggregateExpenses.map(expense => expense.amount),
+      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue', 'red', 'white']
     }]
   };
 
@@ -63,46 +82,3 @@ function makeDoughnut() {
 export default makeDoughnut; 
 
 
-// import { Doughnut } from "react-chartjs-2";
-// import { useState, useEffect } from 'react';
-// import spendingData from "../fakeData";
-// import { Chart as ChartJS } from 'chart.js/auto';
-// import { useQuery, useMutation } from "@apollo/client";
-// import { QUERY_ME } from '../../../utils/queries';
-
-// function makeDoughnut() {
-//   const { loading, data } = useQuery(QUERY_ME, {
-//     fetchPolicy: "no-cache",
-//   });
-
-//   useEffect(() => {
-//     if (!loading && data) {
-//       const userExpenses = data.me.expenses;
-//       setUserData({
-//         labels: userExpenses.categories,
-//         datasets: [{
-//           label: "Spending Category",
-//           data: userExpenses.amounts,
-//           backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue']
-//         }]
-//       });
-//     }
-//   }, [loading, data]);
-
-//   const [userData, setUserData] = useState({
-//     labels: [],
-//     datasets: [{
-//       label: "Spending Category",
-//       data: [],
-//       backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue']
-//     }]
-//   });
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-
-//   return <Doughnut data={userData} />;
-// }
-
-// export default makeDoughnut;

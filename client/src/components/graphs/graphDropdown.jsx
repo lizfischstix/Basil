@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import makeDoughnut from './doughnut/Doughnut.jsx'
-import makePie from './pie/pie.jsx'
-import makeBar from './bar/bar.jsx'
+import { useState } from 'react';
+import makeDoughnut from './doughnut/doughnut.jsx';
+import makePie from './pie/pie.jsx';
+import makeBar from './bar/bar.jsx';
 import { useScrollTrigger } from '@mui/material'
 
 

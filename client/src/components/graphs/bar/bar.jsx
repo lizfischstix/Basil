@@ -15,14 +15,34 @@ function makeBar() {
     return <div>Loading...</div>;
   }
 
+
   const userExpenses = data.me.expenses;
+  const categoryUserExpenses = data.me.expenses.categories;
+  userExpenses.map(expense => expense.category)
+  console.log(userExpenses)
+  
+  const aggregateExpenses = userExpenses.reduce((result,expense)=> {
+    const{category, amount} = expense
+    console.log(category, amount)
+    const existingCategory = result.find((item)=> item.category === category)
+    if (existingCategory){
+      existingCategory.amount += amount
+    }else {
+      result.push({category, amount})
+    }
+
+    return result
+
+  }, [])
+
+  console.log(aggregateExpenses)
 
   const userData = {
-    labels: userExpenses.map(expense => expense.category),
+    labels: aggregateExpenses.map(expense => expense.category),
     datasets: [{
       label: "Spending Category",
-      data: userExpenses.map(expense => expense.amount),
-      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue']
+      data: aggregateExpenses.map(expense => expense.amount),
+      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue', 'red', 'white']
     }]
   };
 
@@ -31,3 +51,5 @@ function makeBar() {
 }
 
 export default makeBar; 
+
+
