@@ -94,3 +94,27 @@ export const DELETE_INCOME = gql`
     }
   }
 `;
+
+export const ADD_EXPENSE = gql`
+  mutation addExpense(
+    $amount: Float!
+    $category: String!
+    $createdAt: String!
+    $description: String
+  ) {
+    addExpense(
+      amount: $amount
+      category: $category
+      createdAt: $createdAt
+      description: $description
+    ) {
+      expenses {
+        _id
+        amount
+        description
+        category
+        createdAt
+      }
+    }
+  }
+`;
