@@ -39,30 +39,44 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_INCOME = gql`
-  mutation addIncome($amount: Float!, $description: String) {
-    addIncome(amount: $amount, description: $description) {
-      incomes {
-        _id
-        amount
-        createAt
-        description
-      }
-    }
-  }
-`;
-
-export const UPDATE_INCOME = gql`
-  mutation updateIncome($incomeId: ID!, $amount: Float!, $description: String) {
-    updateIncome(
-      incomeId: $incomeId
+  mutation addIncome(
+    $amount: Float!
+    $createdAt: String!
+    $description: String
+  ) {
+    addIncome(
       amount: $amount
+      createdAt: $createdAt
       description: $description
     ) {
       incomes {
         _id
         amount
         description
-        createAt
+        createdAt
+      }
+    }
+  }
+`;
+
+export const UPDATE_INCOME = gql`
+  mutation updateIncome(
+    $incomeId: ID!
+    $amount: Float!
+    $description: String
+    $createdAt: String!
+  ) {
+    updateIncome(
+      incomeId: $incomeId
+      amount: $amount
+      description: $description
+      createdAt: $createdAt
+    ) {
+      incomes {
+        _id
+        amount
+        description
+        createdAt
       }
     }
   }
@@ -74,8 +88,32 @@ export const DELETE_INCOME = gql`
       incomes {
         _id
         amount
-        createAt
+        createdAt
         description
+      }
+    }
+  }
+`;
+
+export const ADD_EXPENSE = gql`
+  mutation addExpense(
+    $amount: Float!
+    $category: String!
+    $createdAt: String!
+    $description: String
+  ) {
+    addExpense(
+      amount: $amount
+      category: $category
+      createdAt: $createdAt
+      description: $description
+    ) {
+      expenses {
+        _id
+        amount
+        description
+        category
+        createdAt
       }
     }
   }

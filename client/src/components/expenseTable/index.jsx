@@ -31,7 +31,7 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
         <TableBody>
           {data.map((expense) => (
             <TableRow key={expense._id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row">{expense.createAt}</TableCell>
+              <TableCell component="th" scope="row">{expense.createdAt}</TableCell>
               <TableCell align="right">{`${expense.description}`}</TableCell>
               <TableCell align="right">${`${expense.amount}`}</TableCell>
               <TableCell align="right">{`${expense.category}`}</TableCell>

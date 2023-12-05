@@ -7,47 +7,56 @@
     "incomes": [
       {
         "amount": 2000,
-        "description": "First Paycheck"
+        "description": "First Paycheck",
+        "createdAt": "2023-12-04T00:00:00.000+00:00"
       },
       {
         "amount": 2000,
-        "description": "Second Paycheck"
+        "description": "Second Paycheck",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 100,
-        "description": "Birthday gift"
+        "description": "Birthday gift",
+        "createdAt": "2023-11-14T00:00:00.000+00:00"
       }
     ],
     "expenses": [
       {
         "amount": 1200,
         "description": "Rent",
-        "category": "Home"
+        "category": "Home",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 120,
         "description": "Gym",
-        "category": "Health & Fitness"
+        "category": "Health & Fitness",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 12,
         "description": "Allergy meds",
-        "category": "Health & Fitness"
+        "category": "Health & Fitness",
+        "createdAt": "2023-12-11T00:00:00.000+00:00"
       },
       {
         "amount": 230,
         "description": "Groceries at Mariano's",
-        "category": "Food & Dining"
+        "category": "Food & Dining",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 385,
         "description": "Spanish lessons",
-        "category": "Education"
+        "category": "Education",
+        "createdAt": "2023-12-21T00:00:00.000+00:00"
       },
       {
         "amount": 56,
         "description": "Dinner with Hannah",
-        "category": "Food & Dining"
+        "category": "Food & Dining",
+        "createdAt": "2023-12-20T00:00:00.000+00:00"
       }
     ]
   }

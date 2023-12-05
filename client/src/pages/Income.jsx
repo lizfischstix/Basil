@@ -4,10 +4,8 @@ import { ADD_INCOME } from "../utils/mutations";
 import React from 'react';
 import { TextField, Button, Container, Box, Grid } from '@mui/material';
 
-
-
 const Income = () => {
-  const [addUser, { error }] = useMutation(ADD_INCOME);
+  const [addIncome, { error }] = useMutation(ADD_INCOME);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +16,7 @@ const Income = () => {
     formEntries.amount = +formEntries.amount;
 
     try {
-      const { data } = await addUser({ variables: { ...formEntries } });
+      const { data } = await addIncome({ variables: { ...formEntries } });
     } catch (error) {
       console.error(error);
     }
@@ -60,7 +58,7 @@ const Income = () => {
               label=""
               variant="outlined"
               type="date"
-              name="date"
+              name="createdAt"
             />
           </Grid>
 

@@ -13,13 +13,9 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
 
-        console.log(user.incomes);
-
         const income = user.incomes.filter(
           (income) => income._id.valueOf() === incomeId
         );
-
-        console.log(income);
 
         return income[0];
       }
@@ -29,13 +25,9 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
 
-        console.log(user.incomes);
-
         const income = user.incomes.filter(
           (income) => income._id.valueOf() === incomeId
         );
-
-        console.log(income);
 
         return income[0];
       }
@@ -68,11 +60,11 @@ const resolvers = {
       return { token, user };
     },
 
-    addIncome: async (parent, { description, amount }, context) => {
+    addIncome: async (parent, { description, amount, createdAt }, context) => {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $push: { incomes: { description, amount } } },
+          { $push: { incomes: { description, amount, createdAt } } },
           { new: true }
         );
       }
@@ -81,13 +73,13 @@ const resolvers = {
 
     updateIncome: async (
       parent,
-      { incomeId, description, amount },
+      { incomeId, description, amount, createdAt },
       context
     ) => {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id, "incomes._id": incomeId },
-          { $set: { "incomes.$": { description, amount } } },
+          { $set: { "incomes.$": { description, amount, createdAt } } },
           { new: true }
         );
       }
@@ -99,6 +91,21 @@ const resolvers = {
         return await User.findOneAndUpdate(
           { _id: context.user._id },
           { $pull: { incomes: { _id: incomeId } } },
+          { new: true }
+        );
+      }
+      throw AuthenticationError;
+    },
+
+    addExpense: async (
+      parent,
+      { amount, description, category, createdAt },
+      context
+    ) => {
+      if (context.user) {
+        return await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $push: { expenses: { description, amount, category, createdAt } } },
           { new: true }
         );
       }
