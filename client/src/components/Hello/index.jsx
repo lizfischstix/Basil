@@ -17,7 +17,7 @@ const balance = totalIncome - totalExpense;
   return (
     <>
       <h2>Hi, {userInfo.firstName}!</h2>
-      <h4>Balance: ${balance}</h4>
+      <h4>Current balance: ${balance}</h4>
       <h5>Total Income: ${totalIncome}</h5>
       <h5>Total Expense: ${totalExpense}</h5>
     </>
