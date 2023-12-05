@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import makeDoughnut from './doughnut/doughnut.jsx'
+import makeDoughnut from './doughnut/Doughnut.jsx'
 import makePie from './pie/pie.jsx'
 import makeBar from './bar/bar.jsx'
 import { useScrollTrigger } from '@mui/material'
@@ -7,12 +7,13 @@ import { useScrollTrigger } from '@mui/material'
 
 
 
-const GraphDropdown=()=> {
+const GraphDropdown = () => {
     const [graphType, setGraphType] = useState("doughnut");
-    const handleOnchange = (e) =>{
-console.log(e.target.value);
-setGraphType(e.target.value)}
-    return(
+    const handleOnchange = (e) => {
+        console.log(e.target.value);
+        setGraphType(e.target.value)
+    }
+    return (
         <>
             <select name="graph" id="graph" onChange={handleOnchange}>
                 <option value="doughnut" >Doughnut Graph</option>
@@ -20,10 +21,10 @@ setGraphType(e.target.value)}
                 <option value="bar">Bar Graph</option>
             </select>
             {
-                graphType === "doughnut"? (makeDoughnut())
-                :graphType === "pie"? (makePie())
-                :(makeBar())
-                
+                graphType === "doughnut" ? (makeDoughnut())
+                    : graphType === "pie" ? (makePie())
+                        : (makeBar())
+
             }
         </>
     )

@@ -36,14 +36,14 @@ export const QUERY_INCOME = gql`
   }
 `;
 
-export const QUERY_EXPENSES = gql`
-  query expenses($expenseId: ID!) {
-    expense(expenseId: $expenseId) {
-      _id
-      amount
-      createdAt
-      description
-    }
-  }
-`;
+// export const QUERY_EXPENSES = gql`
+//   query expenses($expenseId: ID!) {
+//     expense(expenseId: $expenseId) {
+//       _id
+//       amount
+//       createdAt
+//       description
+//     }
+//   }
+// `;
 

@@ -12,7 +12,7 @@ import Header from './components/Header';
 import { Drawer } from '@mui/material';
 
 
-import DoGraphDropdown from './components/graphs/graphDropdown';
+import DoGraphDropdown from './components/graphs/GraphDropdown';
 
 
 // Construct our main GraphQL API endpoint

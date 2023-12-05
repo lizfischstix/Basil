@@ -21,18 +21,12 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    income: async (parent, { incomeId }, context) => {
-      if (context.user) {
-        const user = await User.findOne({ _id: context.user._id });
-
-        const income = user.incomes.filter(
-          (income) => income._id.valueOf() === incomeId
-        );
-
-        return income[0];
-      }
-      throw AuthenticationError;
-    },
+    // expenses: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const user = await User.findOne({ _id: context.user._id });
+    //   }
+    //   throw AuthenticationError;
+    // },
   },
 
   Mutation: {

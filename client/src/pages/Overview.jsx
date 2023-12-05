@@ -7,7 +7,7 @@ import { DELETE_INCOME } from "../utils/mutations";
 import IncomeTable from '../components/incomeTable';
 import ExpenseTable from '../components/expenseTable';
 import { styled } from '@mui/system';
-import GraphDropdown  from '../components/graphs/graphDropdown';
+import GraphDropdown  from '../components/graphs/GraphDropdown';
 
 const Overview = () => {
   // Check if the user is logged in
