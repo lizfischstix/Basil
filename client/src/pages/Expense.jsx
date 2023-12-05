@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_EXPENSE } from "../utils/mutations";
 import React from 'react';
-import { TextField, Button, Container, Box, Grid, Select, MenuItem } from '@mui/material';
+import { TextField, Button, Container, Box, Grid, Select, MenuItem, InputLabel, FormControl} from '@mui/material';
 import OutputIcon from '@mui/icons-material/Output';
 
 const Expense = () => {
@@ -63,9 +63,7 @@ const Expense = () => {
                 >
                   <MenuItem value={"Home"}>Home</MenuItem>
                   <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
-                  <MenuItem value={"Health & Fitness"}>
-                    Health & Fitness
-                  </MenuItem>
+                  <MenuItem value={"Health & Fitness"}> Health & Fitness </MenuItem>
                   <MenuItem value={"Clothing"}>Clothing</MenuItem>
                   <MenuItem value={"Education"}>Education</MenuItem>
                   <MenuItem value={"Transportation"}>Transportation</MenuItem>
