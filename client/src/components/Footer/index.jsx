@@ -5,10 +5,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import { Grid } from '@mui/material';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary">
+   
+    <Typography variant="body2" color="text.secondary" justifyContent="center">
       {'Copyright © '}
       <Link color="inherit" href="https://basil-budget-e685e272efd5.herokuapp.com/">
         Basil 🌿 
@@ -16,6 +18,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+   
   );
 }
 
@@ -25,11 +28,10 @@ const defaultTheme = createTheme();
 export default function StickyFooter() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Box
+      <Box justifyContent='center'
         sx={{
           display: 'flex',
-          flexDirection: 'column',
-          // minHeight: '0vh',
+          flexDirection: 'fluid',
         }}
       >
         <CssBaseline />
