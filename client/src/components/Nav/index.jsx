@@ -32,28 +32,25 @@ export default function Nav({ isAuthenticated }) {
       aria-label="icon tabs"
     >
       <Link to="/">
-      <Tooltip title='Home' placement='bottom'><Tab icon={<HomeRoundedIcon />} aria-label="Home" /></Tooltip>
+      <Tooltip title='Home' placement='bottom' arrow><Tab icon={<HomeRoundedIcon />} aria-label="Home" /></Tooltip>
       </Link>
 
       {Auth.loggedIn() ? (
         <>
         
           <Link to="/home">
-          <Tooltip title='Log Out' placement='bottom'><Tab icon={<LoginRoundedIcon />} aria-label="Home" onClick={logout}/></Tooltip>
+          <Tooltip title='Log Out' placement='bottom' arrow><Tab icon={<LoginRoundedIcon />} aria-label="Home" onClick={logout}/></Tooltip>
           </Link>
           
           <Link to="/overview">
-          <Tooltip title='Dashboard' placement='bottom'> <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" /></Tooltip>
+          <Tooltip title='Dashboard' placement='bottom' arrow> <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" /></Tooltip>
           </Link>
           
-          <Link to="/transaction">
-          <Tooltip title='Transaction List' placement='bottom'> <Tab
+          <Tooltip title='Transaction List' placement='bottom' arrow> <Tab
             icon={<AssignmentRoundedIcon />}
             aria-label="Transactions List"
           /></Tooltip>
-          </Link>
-          
-          <Tooltip title='Spending Graphs' placement='bottom'> <Tab
+          <Tooltip title='Spending Graphs' placement='bottom' arrow> <Tab
             icon={<AutoGraphRoundedIcon />}
             aria-label="Transactions Graphs"
           /></Tooltip>
@@ -61,10 +58,10 @@ export default function Nav({ isAuthenticated }) {
       ) : (
         <>
           <Link to="/login">
-            <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
+          <Tooltip title='Log In' placement='bottom' arrow>  <Tab icon={<LoginRoundedIcon />} aria-label="Log In" /></Tooltip>
           </Link>
           <Link to="/signup">
-            <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
+          <Tooltip title='Sign Up' placement='bottom' arrow>  <Tab icon={<AddBoxRoundedIcon/>} aria-label="Sign Up" /></Tooltip>
           </Link>
         </>
       )}
