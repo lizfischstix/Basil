@@ -46,10 +46,13 @@ export default function Nav({ isAuthenticated }) {
           <Tooltip title='Dashboard' placement='bottom'> <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" /></Tooltip>
           </Link>
           
+          <Link to="/transaction">
           <Tooltip title='Transaction List' placement='bottom'> <Tab
             icon={<AssignmentRoundedIcon />}
             aria-label="Transactions List"
           /></Tooltip>
+          </Link>
+          
           <Tooltip title='Spending Graphs' placement='bottom'> <Tab
             icon={<AutoGraphRoundedIcon />}
             aria-label="Transactions Graphs"

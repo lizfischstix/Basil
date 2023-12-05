@@ -3,6 +3,7 @@ import Auth from "../utils/auth";
 import { ADD_EXPENSE } from "../utils/mutations";
 import React from 'react';
 import { TextField, Button, Container, Box, Grid, Select, MenuItem } from '@mui/material';
+import OutputIcon from '@mui/icons-material/Output';
 
 const Expense = () => {
   const [addExpense, { error }] = useMutation(ADD_EXPENSE);
@@ -85,8 +86,8 @@ const Expense = () => {
               </Grid>
 
               <Grid item xs={15}>
-                <Button variant="contained" color="primary" type="submit">
-                  Add Expense
+                <Button  variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
+                Add Expense
                 </Button>
               </Grid>
             </Grid>
