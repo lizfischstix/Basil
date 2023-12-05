@@ -5,8 +5,8 @@ import Tab from '@mui/material/Tab';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import LoginRoundedIcon from '@mui/icons-material/LoginRounded';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
-import SettingsRoundedIcon from '@mui/icons-material/SettingsRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
+import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
 import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
 import { Tooltip } from '@mui/material';
 
@@ -32,36 +32,36 @@ export default function Nav({ isAuthenticated }) {
       aria-label="icon tabs"
     >
       <Link to="/">
-      <Tooltip title='Home' placement='bottom'><Tab icon={<HomeRoundedIcon />} aria-label="Home" /></Tooltip>
+      <Tooltip title='Home' placement='bottom' arrow><Tab icon={<EnergySavingsLeafIcon  />} aria-label="Home" /></Tooltip>
       </Link>
 
       {Auth.loggedIn() ? (
         <>
-        
-          <Link to="/home">
-          <Tooltip title='Log Out' placement='bottom'><Tab icon={<LoginRoundedIcon />} aria-label="Home" onClick={logout}/></Tooltip>
-          </Link>
-          
           <Link to="/overview">
-          <Tooltip title='Dashboard' placement='bottom'> <Tab icon={<SettingsRoundedIcon />} aria-label="Overview" /></Tooltip>
+          <Tooltip title='Dashboard' placement='bottom' arrow> <Tab icon={<HomeRoundedIcon />} aria-label="Overview" /></Tooltip>
           </Link>
           
-          <Tooltip title='Transaction List' placement='bottom'> <Tab
-            icon={<AssignmentRoundedIcon />}
-            aria-label="Transactions List"
-          /></Tooltip>
-          <Tooltip title='Spending Graphs' placement='bottom'> <Tab
-            icon={<AutoGraphRoundedIcon />}
-            aria-label="Transactions Graphs"
-          /></Tooltip>
+          <Link to="/transaction">
+          <Tooltip title='Transaction List' placement='bottom' arrow> 
+          <Tab icon={<AssignmentRoundedIcon />} aria-label="Transactions List"/></Tooltip>
+          </Link>
+          
+          <Link to="/graphpage">
+          <Tooltip title='Spending Graphs' placement='bottom' arrow> 
+          <Tab icon={<AutoGraphRoundedIcon />} aria-label="Transactions Graphs"/></Tooltip>
+          </Link>
+
+          <Link to="/home">
+          <Tooltip title='Log Out' placement='bottom' arrow><Tab icon={<LoginRoundedIcon />} aria-label="Home" onClick={logout}/></Tooltip>
+          </Link>
         </>
       ) : (
         <>
           <Link to="/login">
-            <Tab icon={<LoginRoundedIcon />} aria-label="Log In" />
+          <Tooltip title='Log In' placement='bottom' arrow>  <Tab icon={<LoginRoundedIcon />} aria-label="Log In" /></Tooltip>
           </Link>
           <Link to="/signup">
-            <Tab icon={<AddBoxRoundedIcon />} aria-label="Sign Up" />
+          <Tooltip title='Sign Up' placement='bottom' arrow>  <Tab icon={<AddBoxRoundedIcon/>} aria-label="Sign Up" /></Tooltip>
           </Link>
         </>
       )}

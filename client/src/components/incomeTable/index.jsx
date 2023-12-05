@@ -6,13 +6,9 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { styled } from "@mui/system";
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
-const StyledButton = styled("button")({
-  padding: "8px",
-  fontSize: "15px",
-  margin: "0 10px", // Add margin between buttons
-});
 
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
 
@@ -40,18 +36,8 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">
-                <StyledButton
-                  className="bg-info"
-                  onClick={(event) => onUpdate(event, income._id)}
-                >
-                  Edit
-                </StyledButton>
-                <StyledButton
-                  className="bg-danger"
-                  onClick={(event) => onDelete(event, income._id)}
-                >
-                  Delete
-                </StyledButton>
+                <EditIcon sx={{ marginRight: '5px' }}  onClick={(event) => onUpdate(event, income._id)}>Edit</EditIcon>
+                <DeleteIcon sx={{ marginLeft: '5px' }} onClick={(event) => onDelete(event, income._id)}>Delete</DeleteIcon>
               </TableCell>
             </TableRow>
           ))}
