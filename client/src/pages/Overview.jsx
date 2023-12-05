@@ -6,7 +6,6 @@ import { QUERY_ME } from "../utils/queries";
 import { DELETE_INCOME } from "../utils/mutations";
 import IncomeTable from '../components/incomeTable';
 import ExpenseTable from '../components/expenseTable';
-import { styled } from '@mui/system';
 import GraphDropdown  from '../components/graphs/graphDropdown';
 
 import Button from '@mui/material/Button';
@@ -75,18 +74,15 @@ const Overview = () => {
   // User data is available
   const userInfo = data.me;
 
-  const StyledButton = styled("button")({
-    padding: "8px",
-    fontSize: "15px",
-  });
-
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
     marginBottom: "20px", // Add some spacing between containers
     padding: "20px", // Add internal padding
-    marginTop: "50px",
+    marginTop: "20px",
+    background: "white",
   };
+
   const buttoncontainer = {
     display: 'flex',
    justifyContent: 'center',
@@ -95,12 +91,9 @@ const Overview = () => {
    gap: '50px',
   }
 
+
   return (
     <>
-      <div className="container" id="graphs" style={containerStyle}>
-        <GraphDropdown />
-      </div>
-
       <div className="container" style = {buttoncontainer}>
         <Button  variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)}>
         Add Income
@@ -109,7 +102,10 @@ const Overview = () => {
         Add Expense
         </Button>
       </div>
-
+      <div id="graphs" style={containerStyle}>
+        <GraphDropdown />
+      </div>
+      <main>
       <div className="container" style={containerStyle}>
         <h2 className="text-center">Income</h2>
         <IncomeTable
@@ -129,6 +125,7 @@ const Overview = () => {
         />
         {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
       </div>
+      </main>
     </>
   );
 };
