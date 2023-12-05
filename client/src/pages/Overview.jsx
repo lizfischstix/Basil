@@ -2,8 +2,6 @@ import React from "react";
 import Auth from "../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
-
-
 import { DELETE_INCOME, DELETE_EXPENSE } from "../utils/mutations";
 import IncomeTable from "../components/incomeTable";
 import ExpenseTable from "../components/expenseTable";

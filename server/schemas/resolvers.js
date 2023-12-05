@@ -22,6 +22,13 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    
+    // expenses: async (parent, args, context) => {
+    //   if (context.user) {
+    //     const user = await User.findOne({ _id: context.user._id });
+    //   }
+    //   throw AuthenticationError;
+    // },
 
     expense: async (parent, { expenseId }, context) => {
       if (context.user) {
