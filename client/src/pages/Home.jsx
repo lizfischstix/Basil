@@ -5,6 +5,10 @@ import { Box, Paper} from '@mui/material';
 const Home = () => {
 
   return (
+      <>
+        <h3 className="container text-center">
+          Please login for more functions!
+        </h3>
     <Box
       sx={{
         display: 'flex',
@@ -24,6 +28,7 @@ const Home = () => {
       <Paper varient='elevation'>"Five stars for this brilliant budgeting app! Its simplicity and effectiveness makes using it FUN! From tracking expenses to setting goals, it's the financial companion everyone needs. A total game-changer!" -Olivia H.</Paper>
       <Paper varient='elevation'>"Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.</Paper>
     </Box>
+    </>
   );
 };
 

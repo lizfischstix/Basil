@@ -1,21 +1,11 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
-import { UPDATE_INCOME } from "../utils/mutations";
-import { QUERY_INCOME } from "../utils/queries";
-import { useParams } from "react-router-dom";
-import { TextField, Button, Container, Box, Grid } from "@mui/material";
-import formatDateForDefaultValue from "../utils/dateFormate";
+import { ADD_EXPENSE } from "../utils/mutations";
+import React from 'react';
+import { TextField, Button, Container, Box, Grid, Select, MenuItem } from '@mui/material';
 
-const UpdateIncome = () => {
-  if (!Auth.loggedIn()) {
-    return <p>You need to be logged in to see this page.</p>;
-  }
-
-  const { incomeId } = useParams();
-
-  const { loading, data } = useQuery(QUERY_INCOME, { variables: { incomeId } });
-
-  const [updateIncome, { error }] = useMutation(UPDATE_INCOME);
+const Expense = () => {
+  const [addExpense, { error }] = useMutation(ADD_EXPENSE);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -26,22 +16,17 @@ const UpdateIncome = () => {
     formEntries.amount = +formEntries.amount;
 
     try {
-      const { data } = await updateIncome({
-        variables: { ...formEntries, incomeId },
-      });
-      window.location.assign("/overview");
+      const { data } = await addExpense({ variables: { ...formEntries } });
     } catch (error) {
       console.error(error);
     }
+
+    window.location.assign("/overview");
   };
 
-  if (loading) {
-    return <div>Loading...</div>;
+  if (!Auth.loggedIn()) {
+    return <p>You need to be logged in to see this page.</p>;
   }
-
-  const incomeInfo = data.income;
-
-  const date = formatDateForDefaultValue(incomeInfo.createdAt);
 
   return (
     <>
@@ -55,7 +40,6 @@ const UpdateIncome = () => {
                   label="Description"
                   variant="outlined"
                   name="description"
-                  defaultValue={incomeInfo.description}
                 />
               </Grid>
 
@@ -65,8 +49,29 @@ const UpdateIncome = () => {
                   label="Amount"
                   variant="outlined"
                   name="amount"
-                  defaultValue={incomeInfo.amount}
                 />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Select
+                  fullWidth
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Category"
+                  name="category"
+                >
+                  <MenuItem value={"Home"}>Home</MenuItem>
+                  <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
+                  <MenuItem value={"Health & Fitness"}>
+                    Health & Fitness
+                  </MenuItem>
+                  <MenuItem value={"Clothing"}>Clothing</MenuItem>
+                  <MenuItem value={"Education"}>Education</MenuItem>
+                  <MenuItem value={"Transportation"}>Transportation</MenuItem>
+                  <MenuItem value={"Entrertainment"}>Entrertainment</MenuItem>
+                  <MenuItem value={"Pet"}>Pet</MenuItem>
+                  <MenuItem value={"Other"}>Other</MenuItem>
+                </Select>
               </Grid>
 
               <Grid item xs={12}>
@@ -76,13 +81,12 @@ const UpdateIncome = () => {
                   variant="outlined"
                   type="date"
                   name="createdAt"
-                  defaultValue={date}
                 />
               </Grid>
 
               <Grid item xs={15}>
                 <Button variant="contained" color="primary" type="submit">
-                  Save Income
+                  Add Expense
                 </Button>
               </Grid>
             </Grid>
@@ -99,4 +103,4 @@ const UpdateIncome = () => {
   );
 };
 
-export default UpdateIncome;
+export default Expense;

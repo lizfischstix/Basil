@@ -21,6 +21,11 @@
     "npm": "9.x"
   },
   "dependencies": {
+    "chart.js": "^4.4.0",
+    "react-chartjs-2": "^5.2.0",
+    
     "react-animated-css": "^1.2.1"
   }
 }
+
+

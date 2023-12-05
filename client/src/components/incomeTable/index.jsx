@@ -1,23 +1,21 @@
 // IncomeTable.js
-import React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { styled } from '@mui/system';
+import React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import { styled } from "@mui/system";
 
-const StyledButton = styled('button')({
-  padding: '8px',
-  fontSize: '15px',
-  margin: '0 10px', // Add margin between buttons
+const StyledButton = styled("button")({
+  padding: "8px",
+  fontSize: "15px",
+  margin: "0 10px", // Add margin between buttons
 });
-
 
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
 
-    
   return (
     <TableContainer>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -33,14 +31,27 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
           {data.map((income) => (
             <TableRow
               key={income._id}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell component="th" scope="row">{income.createAt}</TableCell>
+              <TableCell
+                component="th"
+                scope="row"
+              >{`${income.createdAt}`}</TableCell>
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">
-                <StyledButton className="bg-info" onClick={() => onUpdate(income._id)}>Edit</StyledButton>
-                <StyledButton className="bg-danger" onClick={() => onDelete(income._id)}>Delete</StyledButton>
+                <StyledButton
+                  className="bg-info"
+                  onClick={(event) => onUpdate(event, income._id)}
+                >
+                  Edit
+                </StyledButton>
+                <StyledButton
+                  className="bg-danger"
+                  onClick={(event) => onDelete(event, income._id)}
+                >
+                  Delete
+                </StyledButton>
               </TableCell>
             </TableRow>
           ))}
