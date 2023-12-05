@@ -13,13 +13,9 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
 
-        console.log(user.incomes);
-
         const income = user.incomes.filter(
           (income) => income._id.valueOf() === incomeId
         );
-
-        console.log(income);
 
         return income[0];
       }
@@ -29,13 +25,9 @@ const resolvers = {
       if (context.user) {
         const user = await User.findOne({ _id: context.user._id });
 
-        console.log(user.incomes);
-
         const income = user.incomes.filter(
           (income) => income._id.valueOf() === incomeId
         );
-
-        console.log(income);
 
         return income[0];
       }
@@ -81,13 +73,13 @@ const resolvers = {
 
     updateIncome: async (
       parent,
-      { incomeId, description, amount },
+      { incomeId, description, amount, createdAt},
       context
     ) => {
       if (context.user) {
         return await User.findOneAndUpdate(
           { _id: context.user._id, "incomes._id": incomeId },
-          { $set: { "incomes.$": { description, amount } } },
+          { $set: { "incomes.$": { description, amount, createdAt } } },
           { new: true }
         );
       }

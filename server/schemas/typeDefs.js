@@ -41,7 +41,7 @@ const typeDefs = `
     addUser(email: String!, password: String!, firstName: String!, lastName: String!): Auth
     login(email: String!, password: String!): Auth
     addIncome(description: String, amount: Float!, createdAt:String!): User
-    updateIncome(incomeId: ID!, description: String, amount: Float!): User
+    updateIncome(incomeId: ID!, description: String, amount: Float!, createdAt:String!): User
     addExpense(amount: Float!, description: String, category: String!): User
     deleteIncome(incomeId: ID!): User
     removeExpense(id: ID!): User

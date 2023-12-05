@@ -4,8 +4,6 @@ import { ADD_INCOME } from "../utils/mutations";
 import React from 'react';
 import { TextField, Button, Container, Box, Grid } from '@mui/material';
 
-
-
 const Income = () => {
   const [addUser, { error }] = useMutation(ADD_INCOME);
 

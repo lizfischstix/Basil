@@ -3,6 +3,8 @@ import Auth from "../utils/auth";
 import { UPDATE_INCOME } from "../utils/mutations";
 import { QUERY_INCOME } from "../utils/queries";
 import { useParams } from "react-router-dom";
+import { TextField, Button, Container, Box, Grid } from "@mui/material";
+import formatDateForDefaultValue from "../utils/dateFormate";
 
 const UpdateIncome = () => {
   if (!Auth.loggedIn()) {
@@ -24,14 +26,14 @@ const UpdateIncome = () => {
     formEntries.amount = +formEntries.amount;
 
     try {
-      const { data } = await updateIncome({ variables: { ...formEntries, incomeId } });
+      const { data } = await updateIncome({
+        variables: { ...formEntries, incomeId },
+      });
+      window.location.assign("/overview");
     } catch (error) {
       console.error(error);
     }
-
-    window.location.assign("/overview");
   };
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -39,20 +41,60 @@ const UpdateIncome = () => {
 
   const incomeInfo = data.income;
 
+  const date = formatDateForDefaultValue(incomeInfo.createdAt);
+
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="description">Description:</label>
-        <input
-          type="text"
-          defaultValue={incomeInfo.description}
-          name="description"
-        />
-        <label htmlFor="amount">Amount:</label>
-        <input type="text" defaultValue={incomeInfo.amount} name="amount" />
-        <button type="submit">Update income</button>
-      </form>
-      {error && <div>{error.message}</div>}
+      <Container maxWidth="sm">
+        <Box mt={3}>
+          <form onSubmit={handleFormSubmit}>
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label="Description"
+                  variant="outlined"
+                  name="description"
+                  defaultValue={incomeInfo.description}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label="Amount"
+                  variant="outlined"
+                  name="amount"
+                  defaultValue={incomeInfo.amount}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  label=""
+                  variant="outlined"
+                  type="date"
+                  name="createdAt"
+                  defaultValue={date}
+                />
+              </Grid>
+
+              <Grid item xs={15}>
+                <Button variant="contained" color="primary" type="submit">
+                  Save Income
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+
+          {error && (
+            <Box mt={2} color="red">
+              {error.message}
+            </Box>
+          )}
+        </Box>
+      </Container>
     </>
   );
 };

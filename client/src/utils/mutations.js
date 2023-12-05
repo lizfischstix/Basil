@@ -60,17 +60,23 @@ export const ADD_INCOME = gql`
 `;
 
 export const UPDATE_INCOME = gql`
-  mutation updateIncome($incomeId: ID!, $amount: Float!, $description: String) {
+  mutation updateIncome(
+    $incomeId: ID!
+    $amount: Float!
+    $description: String
+    $createdAt: String!
+  ) {
     updateIncome(
       incomeId: $incomeId
       amount: $amount
       description: $description
+      createdAt: $createdAt
     ) {
       incomes {
         _id
         amount
         description
-        createAt
+        createdAt
       }
     }
   }
