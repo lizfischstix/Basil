@@ -32,8 +32,8 @@ const ExpenseTable = ({ data, onUpdate, onDelete }) => {
               <TableCell align="right">${`${expense.amount}`}</TableCell>
               <TableCell align="right">{`${expense.category}`}</TableCell>
               <TableCell align="right">
-                <EditIcon sx={{ marginRight: '5px' }}  onClick={(event) => onUpdate(event, expense._id)}>Edit</EditIcon>
-                <DeleteIcon sx={{ marginLeft: '5px' }} onClick={(event) => onDelete(event, expense._id)}>Delete</DeleteIcon>
+                <EditIcon sx={{ marginRight: '5px' }}  color="primary" onClick={(event) => onUpdate(event, expense._id)}>Edit</EditIcon>
+                <DeleteIcon sx={{ marginLeft: '5px' }} color="secondary" onClick={(event) => onDelete(event, expense._id)}>Delete</DeleteIcon>
               </TableCell>
             </TableRow>
           ))}

@@ -75,7 +75,7 @@ const Transaction = () => {
   <>
     <Paper elevation={3} style={{ padding: '16px', marginLeft: '400px',marginTop:'100px' }}>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <AddCircleIcon onClick={addIncome} />
+      <AddCircleIcon onClick={addIncome} color="success" />
       <Typography variant="h5" align="center">
         Income
       </Typography>
@@ -86,7 +86,7 @@ const Transaction = () => {
 
   <Paper elevation={3} style={{ padding: '16px', marginLeft: '50px',marginTop:'100px' }}>
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-      <AddCircleIcon onClick={addExpense} />
+      <AddCircleIcon onClick={addExpense} color="success" />
       <Typography variant="h5" align="center">
         Expenses
       </Typography>

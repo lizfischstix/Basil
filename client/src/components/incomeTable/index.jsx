@@ -36,8 +36,8 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
               <TableCell align="right">{`${income.description}`}</TableCell>
               <TableCell align="right">${`${income.amount}`}</TableCell>
               <TableCell align="right">
-                <EditIcon sx={{ marginRight: '5px' }}  onClick={(event) => onUpdate(event, income._id)}>Edit</EditIcon>
-                <DeleteIcon sx={{ marginLeft: '5px' }} onClick={(event) => onDelete(event, income._id)}>Delete</DeleteIcon>
+                <EditIcon sx={{ marginRight: '5px' }} color="primary"  onClick={(event) => onUpdate(event, income._id)}>Edit</EditIcon>
+                <DeleteIcon sx={{ marginLeft: '5px' }} color="secondary" onClick={(event) => onDelete(event, income._id)}>Delete</DeleteIcon>
               </TableCell>
             </TableRow>
           ))}
