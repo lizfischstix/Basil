@@ -87,6 +87,7 @@ const Expense = () => {
                 variant="outlined"
                 startIcon={<OutputIcon />}
                 type="submit"
+                color="success"
               >
                 Add Expense
               </Button>

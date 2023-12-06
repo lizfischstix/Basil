@@ -81,7 +81,7 @@ const UpdateIncome = () => {
               </Grid>
 
               <Grid item xs={15}>
-                <Button variant="contained" color="primary" type="submit" style={{ textAlign: 'center', marginBottom: '20px' }}>
+                <Button variant="contained" color="success" type="submit" style={{ textAlign: 'center', marginBottom: '20px' }}>
                   Save Income
                 </Button>
               </Grid>

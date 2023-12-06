@@ -111,10 +111,10 @@ const Overview = () => {
   
         {/* Buttons Section */}
         <div className="container text-center mt-3">
-          <Button variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)} style={{ marginRight: '30px' }}>
+          <Button variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event) } color="success" style={{ marginRight: '30px' }}>
             Add Income
           </Button>
-          <Button variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
+          <Button variant="outlined" startIcon={<OutputIcon />} color="success" onClick={(event) => addExpense(event)}>
             Add Expense
           </Button>
         </div>

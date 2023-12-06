@@ -65,7 +65,7 @@ const Income = () => {
             </Grid>
   
             <Grid item xs={12} style={{ marginBottom: '20px' }} container justifyContent="center">
-              <Button variant="outlined" startIcon={<InputIcon />} type="submit">
+              <Button variant="outlined" startIcon={<InputIcon />} type="submit" color="success">
                 Add Income
               </Button>
             </Grid>
