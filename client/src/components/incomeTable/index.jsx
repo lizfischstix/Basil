@@ -9,15 +9,15 @@ import TableRow from "@mui/material/TableRow";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import currencyFormater from "../../utils/currencyFormater";
-
+import { pink } from "@mui/material/colors";
 
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
 
   return (
-    <TableContainer >
-      <Table sx={{ minWidth: 650}} aria-label="simple table">
+    <TableContainer>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          <TableRow >
+          <TableRow>
             <TableCell>Date</TableCell>
             <TableCell align="right">Description</TableCell>
             <TableCell align="right">Amount</TableCell>
@@ -35,10 +35,22 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
                 scope="row"
               >{`${income.createdAt}`}</TableCell>
               <TableCell align="right">{`${income.description}`}</TableCell>
-              <TableCell align="right">{currencyFormater(income.amount)}</TableCell>
               <TableCell align="right">
-                <EditIcon sx={{ marginRight: '5px' }} color="secondary"  onClick={(event) => onUpdate(event, income._id)}>Edit</EditIcon>
-                <DeleteIcon sx={{ marginLeft: '5px' }}  onClick={(event) => onDelete(event, income._id)}>Delete</DeleteIcon>
+                {currencyFormater(income.amount)}
+              </TableCell>
+              <TableCell align="right">
+                <EditIcon
+                  sx={{ marginRight: "5px" }}
+                  onClick={(event) => onUpdate(event, income._id)}
+                >
+                  Edit
+                </EditIcon>
+                <DeleteIcon
+                  sx={{ marginLeft: "5px", color: pink[500] }}
+                  onClick={(event) => onDelete(event, income._id)}
+                >
+                  Delete
+                </DeleteIcon>
               </TableCell>
             </TableRow>
           ))}
