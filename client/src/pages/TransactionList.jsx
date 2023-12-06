@@ -77,10 +77,10 @@ const Transaction = () => {
 
   return (
     <>
-      <Paper
-        elevation={3}
-        style={{ padding: "16px", marginLeft: "400px", marginTop: "100px" }}
-      >
+    <Grid container spacing={2} justifyContent="center" alignItems="flex-start">
+    {/* First table - Income */}
+    <Grid item xs={12} md={8} xl={6}>
+      <Paper elevation={3} style={{ padding: "16px", overflowX: "auto" }}>
         <div
           style={{
             display: "flex",
@@ -101,11 +101,11 @@ const Transaction = () => {
           {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
         </div>
       </Paper>
+    </Grid>
 
-      <Paper
-        elevation={3}
-        style={{ padding: "16px", marginLeft: "50px", marginTop: "100px" }}
-      >
+    {/* Second table - Expenses */}
+    <Grid item xs={12} md={8} xl={6}>
+      <Paper elevation={3} style={{ padding: "16px",  overflowX: "auto" }}>
         <div
           style={{
             display: "flex",
@@ -126,8 +126,11 @@ const Transaction = () => {
           {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
         </div>
       </Paper>
-    </>
+    </Grid>
+  </Grid>
+</>
   );
 };
+
 
 export default Transaction;

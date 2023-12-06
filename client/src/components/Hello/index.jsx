@@ -1,5 +1,10 @@
-import currencyFormater from "../../utils/currencyFormater";
 
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import currencyFormater from "../../utils/currencyFormater";
 const Hello = ({ userInfo }) => {
   let totalIncome = 0;
 
@@ -15,12 +20,31 @@ const Hello = ({ userInfo }) => {
 
   const balance = totalIncome - totalExpense;
 
+  const Item = styled(Paper)(({ theme }) => ({
+
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.primary,
+  }));
   return (
     <>
-      <h2>Hi, {userInfo.firstName}!</h2>
-      <h4>Balance: {currencyFormater(balance)}</h4>
-      <h5>Total Income: {currencyFormater(totalIncome)}</h5>
-      <h5>Total Expense: {currencyFormater(totalExpense)}</h5>
+
+      <Box sx={{ flexGrow: 2, textAlign: 'center' }}>
+        <Grid container spacing={8}>
+          <Grid item xs={12}>
+            <Item>Hello, {userInfo.firstName}!</Item>
+          </Grid>
+          <Grid item xs={12}>
+            <Item>Current balance: ${balance}</Item>
+          </Grid>
+          <Grid item xs={6}>
+            <Item>Total Income: ${totalIncome}</Item>
+          </Grid>
+          <Grid item xs={6}>
+            <Item>Total Expense: ${totalExpense}</Item>
+          </Grid>
+        </Grid>
+      </Box>
     </>
   );
 };
