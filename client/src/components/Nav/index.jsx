@@ -28,8 +28,8 @@ export default function Nav({ isAuthenticated }) {
     <Tabs
       value={value}
       onChange={handleChange}
-      orientation="vertical"
       aria-label="icon tabs"
+      
     >
       <Link to="/">
       <Tooltip title='Home' placement='bottom' arrow><Tab icon={<EnergySavingsLeafIcon  />} aria-label="Home" /></Tooltip>
