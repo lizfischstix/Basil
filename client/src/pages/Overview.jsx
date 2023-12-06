@@ -3,13 +3,6 @@ import Auth from "../utils/auth";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { DELETE_INCOME, DELETE_EXPENSE } from "../utils/mutations";
-import IncomeTable from "../components/incomeTable";
-import ExpenseTable from "../components/expenseTable";
-import { styled } from "@mui/system";
-import GraphDropdown from "../components/graphs/graphDropdown";
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
@@ -112,6 +105,7 @@ const Overview = () => {
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
+          color="success" 
           startIcon={<InputIcon />}
           onClick={(event) => addIncome(event)}
         >
@@ -119,6 +113,7 @@ const Overview = () => {
         </Button>
         <Button
           variant="outlined"
+          color="success" 
           startIcon={<OutputIcon />}
           onClick={(event) => addExpense(event)}
         >

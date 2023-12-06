@@ -5,6 +5,7 @@ import { QUERY_EXPENSE } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { TextField, Button, Container, Box, Grid, Select, MenuItem } from "@mui/material";
 import formatDateForDefaultValue from "../utils/dateFormate";
+import InputIcon from '@mui/icons-material/Input';
 
 const UpdateExpense = () => {
   if (!Auth.loggedIn()) {
@@ -103,8 +104,8 @@ const UpdateExpense = () => {
                 />
               </Grid>
 
-              <Grid item xs={15}>
-                <Button variant="contained" color="success" type="submit" style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <Grid item xs={15} style={{ marginBottom: '20px' }} container justifyContent="center" >
+                <Button variant="outlined" type="submit" color="success" startIcon={<InputIcon />} >
                   Save Expense
                 </Button>
               </Grid>
