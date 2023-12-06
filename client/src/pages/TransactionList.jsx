@@ -88,7 +88,7 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addIncome} />
+          <AddCircleIcon onClick={addIncome} color="success" />
           <Typography variant="h5" align="center">
             Income
           </Typography>
@@ -113,7 +113,7 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addExpense} />
+          <AddCircleIcon onClick={addExpense} color="success" />
           <Typography variant="h5" align="center">
             Expenses
           </Typography>
