@@ -39,7 +39,7 @@ function makePie() {
     datasets: [{
       label: "Spending Category",
       data: aggregateExpenses.map(expense => expense.amount),
-      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue', 'red', 'white']
+      backgroundColor: ['#902b68', '#32620E', '#68902b', '#9dcd5a', '#f3e9d2', 'rgb(144,43,104, .7)', 'rgb(144,43,104, .3)', 'black']
     }]
   };
 
