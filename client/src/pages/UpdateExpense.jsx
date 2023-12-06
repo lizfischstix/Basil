@@ -3,7 +3,17 @@ import Auth from "../utils/auth";
 import { UPDATE_EXPENSE } from "../utils/mutations";
 import { QUERY_EXPENSE } from "../utils/queries";
 import { useParams } from "react-router-dom";
-import { TextField, Button, Container, Box, Grid, Select, MenuItem } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Container,
+  Box,
+  Grid,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+} from "@mui/material";
 import formatDateForDefaultValue from "../utils/dateFormate";
 import InputIcon from '@mui/icons-material/Input';
 
@@ -76,27 +86,32 @@ const UpdateExpense = () => {
               </Grid>
 
               <Grid item xs={12}>
-                <Select
-                  fullWidth
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label="Category"
-                  name="category"
-                  defaultValue={expenseInfo.category}
-                  color="success"
-                >
-                  <MenuItem value={"Home"}>Home</MenuItem>
-                  <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
-                  <MenuItem value={"Health & Fitness"}>
-                    Health & Fitness
-                  </MenuItem>
-                  <MenuItem value={"Clothing"}>Clothing</MenuItem>
-                  <MenuItem value={"Education"}>Education</MenuItem>
-                  <MenuItem value={"Transportation"}>Transportation</MenuItem>
-                  <MenuItem value={"Entrertainment"}>Entrertainment</MenuItem>
-                  <MenuItem value={"Pet"}>Pet</MenuItem>
-                  <MenuItem value={"Other"}>Other</MenuItem>
-                </Select>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label" color="success">
+                    Category
+                  </InputLabel>
+                  <Select
+                    fullWidth
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Category"
+                    name="category"
+                    defaultValue={expenseInfo.category}
+                    color="success"
+                  >
+                    <MenuItem value={"Home"}>Home</MenuItem>
+                    <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
+                    <MenuItem value={"Health & Fitness"}>
+                      Health & Fitness
+                    </MenuItem>
+                    <MenuItem value={"Clothing"}>Clothing</MenuItem>
+                    <MenuItem value={"Education"}>Education</MenuItem>
+                    <MenuItem value={"Transportation"}>Transportation</MenuItem>
+                    <MenuItem value={"Entrertainment"}>Entrertainment</MenuItem>
+                    <MenuItem value={"Pet"}>Pet</MenuItem>
+                    <MenuItem value={"Other"}>Other</MenuItem>
+                  </Select>
+                </FormControl>
               </Grid>
 
               <Grid item xs={12}>
