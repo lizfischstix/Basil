@@ -1,11 +1,11 @@
+
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-
+import currencyFormater from "../../utils/currencyFormater";
 const Hello = ({ userInfo }) => {
-
   let totalIncome = 0;
 
   for (let i = 0; i < userInfo.incomes.length; i++) {
@@ -19,6 +19,7 @@ const Hello = ({ userInfo }) => {
   }
 
   const balance = totalIncome - totalExpense;
+
   const Item = styled(Paper)(({ theme }) => ({
 
     padding: theme.spacing(1),
@@ -27,6 +28,7 @@ const Hello = ({ userInfo }) => {
   }));
   return (
     <>
+
       <Box sx={{ flexGrow: 2, textAlign: 'center' }}>
         <Grid container spacing={8}>
           <Grid item xs={12}>

@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import currencyFormater from "../../utils/currencyFormater";
 
 
 const IncomeTable = ({ data, onUpdate, onDelete }) => {
@@ -34,7 +35,7 @@ const IncomeTable = ({ data, onUpdate, onDelete }) => {
                 scope="row"
               >{`${income.createdAt}`}</TableCell>
               <TableCell align="right">{`${income.description}`}</TableCell>
-              <TableCell align="right">${`${income.amount}`}</TableCell>
+              <TableCell align="right">{currencyFormater(income.amount)}</TableCell>
               <TableCell align="right">
                 <EditIcon sx={{ marginRight: '5px' }}  onClick={(event) => onUpdate(event, income._id)}>Edit</EditIcon>
                 <DeleteIcon sx={{ marginLeft: '5px' }} onClick={(event) => onDelete(event, income._id)}>Delete</DeleteIcon>
