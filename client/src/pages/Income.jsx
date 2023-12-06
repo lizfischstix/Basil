@@ -32,7 +32,11 @@ const Income = () => {
   }
 
   return (
-    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white',marginTop:'30px' }} >
+    <Container
+      maxWidth="sm"
+      justifyContent="center"
+      style={{ backgroundColor: "white", marginTop: "30px" }}
+    >
       <Box mt={3}>
         <form onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
@@ -42,18 +46,20 @@ const Income = () => {
                 label="Description"
                 variant="outlined"
                 name="description"
+                color="success"
               />
             </Grid>
-  
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 label="Amount"
                 variant="outlined"
                 name="amount"
+                color="success"
               />
             </Grid>
-  
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -61,17 +67,29 @@ const Income = () => {
                 variant="outlined"
                 type="date"
                 name="createdAt"
+                color="success"
               />
             </Grid>
-  
-            <Grid item xs={12} style={{ marginBottom: '20px' }} container justifyContent="center">
-              <Button variant="outlined" startIcon={<InputIcon />} type="submit" color="success">
+
+            <Grid
+              item
+              xs={12}
+              style={{ marginBottom: "20px" }}
+              container
+              justifyContent="center"
+            >
+              <Button
+                variant="outlined"
+                startIcon={<InputIcon />}
+                type="submit"
+                color="success"
+              >
                 Add Income
               </Button>
             </Grid>
           </Grid>
         </form>
-  
+
         {error && (
           <Box mt={2} color="red">
             {error.message}
