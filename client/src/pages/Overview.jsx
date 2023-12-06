@@ -105,7 +105,7 @@ const Overview = () => {
 
   return (
     <>
-    <div className="{text-center}" id="hello" style={containerStyle}>
+    <div className="text-center" id="hello" style={containerStyle}>
         <Hello userInfo={userInfo} />
       </div>
 
