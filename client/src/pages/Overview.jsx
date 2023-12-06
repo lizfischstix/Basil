@@ -84,8 +84,6 @@ const Overview = () => {
   // User data is available
   const userInfo = data.me;
 
-
-
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
@@ -105,58 +103,51 @@ const Overview = () => {
 
   return (
     <>
-      <div id="hello" style={containerStyle}>
-        <Hello userInfo={userInfo} />
-      </div>
-          
-      <div className="container" id="graphs" style={containerStyle} justifyContent="center">
-        <GraphDropdown />
-      </div>
-
-      <div className="container" style={buttoncontainer}>
-        <Button
-          variant="outlined"
-          startIcon={<InputIcon />}
-          onClick={(event) => addIncome(event)}
-        >
-          Add Income
-        </Button>
-        <Button
-          variant="outlined"
-          startIcon={<OutputIcon />}
-          onClick={(event) => addExpense(event)}
-        >
-          Add Expense
-        </Button>
-      </div>
-
-      <div id="graphs" style={containerStyle}>
-        <GraphDropdown />
-      </div>
-
-      <main>
-        <div className="container" style={containerStyle}>
-          <h2 className="text-center">Income</h2>
-          <IncomeTable
-            data={userInfo.incomes}
-            onUpdate={updateIncome}
-            onDelete={removeIncome}
-          />
-          {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
+      <div className="container">
+        {/* Hello Section */}
+        <div className="text-center" id="hello" style={containerStyle}>
+          <Hello userInfo={userInfo} />
         </div>
-
-        <div className="container" style={containerStyle}>
-          <h2 className="text-center">Expenses</h2>
-          <ExpenseTable
-            data={userInfo.expenses}
-            onUpdate={updateExpense}
-            onDelete={removeExpense}
-          />
-          {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
+  
+        {/* Buttons Section */}
+        <div className="container text-center mt-3">
+          <Button variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event)} style={{ marginRight: '30px' }}>
+            Add Income
+          </Button>
+          <Button variant="outlined" startIcon={<OutputIcon />} onClick={(event) => addExpense(event)}>
+            Add Expense
+          </Button>
         </div>
-      </main>
+      </div>
+  
+      {/* Graphs and Tables Section */}
+      <div className="container mt-3" style={{ display: 'flex'}}>
+        {/* Graphs on the Left */}
+        <div id="graphs" style={{ ...containerStyle, flex: 3, marginRight: '50px' }}>
+          <GraphDropdown />
+          {/* Adjust the width and height based on your requirements */}
+        </div>
+  
+        {/* Tables on the Right */}
+        <div style={{ ...containerStyle, flex: 3}}>
+          <div>
+            <h2 className="text-center">Income</h2>
+            <IncomeTable data={userInfo.incomes} onUpdate={updateIncome} onDelete={removeIncome} />
+            {/* Adjust the width based on your requirements */}
+            {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
+          </div>
+  
+          <div>
+            <h2 className="text-center">Expenses</h2>
+            <ExpenseTable data={userInfo.expenses} onUpdate={updateExpense} onDelete={removeExpense} />
+            {/* Adjust the width based on your requirements */}
+            {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
+          </div>
+        </div>
+      </div>
     </>
-  );
+  );  
+  
 };
 
 export default Overview;

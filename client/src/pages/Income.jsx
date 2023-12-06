@@ -32,7 +32,7 @@ const Income = () => {
   }
 
   return (
-    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white' }}>
+    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white',marginTop:'30px' }} >
       <Box mt={3}>
         <form onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>

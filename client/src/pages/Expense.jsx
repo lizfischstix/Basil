@@ -30,7 +30,7 @@ const Expense = () => {
   }
 
   return (
-    <Container maxWidth="sm" justifyContent="center">
+    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white',marginTop:'20px' }}>
       <Box mt={3} style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
         <form onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>

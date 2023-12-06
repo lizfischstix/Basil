@@ -34,7 +34,7 @@ function Login(props) {
   };
 
   return (
-      <Container component="main" maxWidth="xs" justifyContent="center">
+      <Container component="main" maxWidth="xs" justifyContent="center" style={{ marginTop: '30px' }}>
         <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Typography component="h1" variant="h5" gutterBottom>
             Log In
