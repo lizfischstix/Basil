@@ -37,13 +37,29 @@ function Signup(props) {
   };
 
   return (
-  
-   <Container className='pt-3' component="main" maxWidth="xs" justifyContent="center" style={{ marginTop: '20px' }}>
-      <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Container
+      className="pt-3"
+      component="main"
+      maxWidth="xs"
+      justifyContent="center"
+      style={{ marginTop: "20px" }}
+    >
+      <Paper
+        elevation={3}
+        style={{
+          padding: "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <Typography component="h1" variant="h5" gutterBottom>
-        start budgeting with Basil today
+          Start Budgeting With Basil Today
         </Typography>
-        <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
+        <form
+          onSubmit={handleFormSubmit}
+          style={{ width: "100%", marginTop: "16px" }}
+        >
           <TextField
             variant="outlined"
             margin="normal"
@@ -54,6 +70,7 @@ function Signup(props) {
             autoComplete="given-name"
             autoFocus
             onChange={handleChange}
+            color="success"
           />
           <TextField
             variant="outlined"
@@ -64,6 +81,7 @@ function Signup(props) {
             name="lastName"
             autoComplete="family-name"
             onChange={handleChange}
+            color="success"
           />
           <TextField
             variant="outlined"
@@ -75,6 +93,7 @@ function Signup(props) {
             type="email"
             autoComplete="email"
             onChange={handleChange}
+            color="success"
           />
           <TextField
             variant="outlined"
@@ -86,19 +105,20 @@ function Signup(props) {
             type="password"
             autoComplete="new-password"
             onChange={handleChange}
+            color="success"
           />
-          <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: '16px' }}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="outlined"
+            color="success"
+            style={{ marginTop: "16px" }}
+          >
             Submit
           </Button>
         </form>
-        <Typography variant="body2" style={{ marginTop: '16px' }}>
-          <MuiLink component={Link} to="/login">
-            ← Go to Login
-          </MuiLink>
-        </Typography>
       </Paper>
     </Container>
-   
   );
 }
 

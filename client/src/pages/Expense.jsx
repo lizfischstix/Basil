@@ -51,6 +51,7 @@ const Expense = () => {
                 label="Description"
                 variant="outlined"
                 name="description"
+                color="success"
               />
             </Grid>
 
@@ -60,6 +61,7 @@ const Expense = () => {
                 label="Amount"
                 variant="outlined"
                 name="amount"
+                color="success"
               />
             </Grid>
 
@@ -98,6 +100,7 @@ const Expense = () => {
                 variant="outlined"
                 type="date"
                 name="createdAt"
+                color="success"
               />
             </Grid>
 

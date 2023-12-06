@@ -70,6 +70,7 @@ const UpdateExpense = () => {
                   variant="outlined"
                   name="description"
                   defaultValue={expenseInfo.description}
+                  color="success"
                 />
               </Grid>
 
@@ -80,6 +81,7 @@ const UpdateExpense = () => {
                   variant="outlined"
                   name="amount"
                   defaultValue={expenseInfo.amount}
+                  color="success"
                 />
               </Grid>
 
@@ -120,6 +122,7 @@ const UpdateExpense = () => {
                   type="date"
                   name="createdAt"
                   defaultValue={date}
+                  color="success"
                 />
               </Grid>
 
