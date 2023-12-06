@@ -46,7 +46,10 @@ const UpdateExpense = () => {
 
   return (
     <>
-      <Container maxWidth="sm" style={{ backgroundColor: 'white',marginTop:'30px' }}>
+      <Container
+        maxWidth="sm"
+        style={{ backgroundColor: "white", marginTop: "30px" }}
+      >
         <Box mt={3}>
           <form onSubmit={handleFormSubmit}>
             <Grid container spacing={2}>
@@ -57,6 +60,7 @@ const UpdateExpense = () => {
                   variant="outlined"
                   name="description"
                   defaultValue={expenseInfo.description}
+                  color="success"
                 />
               </Grid>
 
@@ -67,6 +71,7 @@ const UpdateExpense = () => {
                   variant="outlined"
                   name="amount"
                   defaultValue={expenseInfo.amount}
+                  color="success"
                 />
               </Grid>
 
@@ -78,6 +83,7 @@ const UpdateExpense = () => {
                   label="Category"
                   name="category"
                   defaultValue={expenseInfo.category}
+                  color="success"
                 >
                   <MenuItem value={"Home"}>Home</MenuItem>
                   <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
@@ -101,11 +107,23 @@ const UpdateExpense = () => {
                   type="date"
                   name="createdAt"
                   defaultValue={date}
+                  color="success"
                 />
               </Grid>
 
-              <Grid item xs={15} style={{ marginBottom: '20px' }} container justifyContent="center" >
-                <Button variant="outlined" type="submit" color="success" startIcon={<InputIcon />} >
+              <Grid
+                item
+                xs={15}
+                style={{ marginBottom: "20px" }}
+                container
+                justifyContent="center"
+              >
+                <Button
+                  variant="outlined"
+                  type="submit"
+                  color="success"
+                  startIcon={<InputIcon />}
+                >
                   Save Expense
                 </Button>
               </Grid>

@@ -30,8 +30,19 @@ const Expense = () => {
   }
 
   return (
-    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white',marginTop:'20px' }}>
-      <Box mt={3} style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+    <Container
+      maxWidth="sm"
+      justifyContent="center"
+      style={{ backgroundColor: "white", marginTop: "20px" }}
+    >
+      <Box
+        mt={3}
+        style={{
+          backgroundColor: "white",
+          padding: "20px",
+          borderRadius: "8px",
+        }}
+      >
         <form onSubmit={handleFormSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -40,18 +51,20 @@ const Expense = () => {
                 label="Description"
                 variant="outlined"
                 name="description"
+                color="success"
               />
             </Grid>
-  
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 label="Amount"
                 variant="outlined"
                 name="amount"
+                color="success"
               />
             </Grid>
-  
+
             <Grid item xs={12}>
               <Select
                 fullWidth
@@ -59,6 +72,7 @@ const Expense = () => {
                 id="demo-simple-select"
                 label="Category"
                 name="category"
+                color="success"
               >
                 <MenuItem value={"Home"}>Home</MenuItem>
                 <MenuItem value={"Food & Dining"}>Food & Dining</MenuItem>
@@ -71,7 +85,7 @@ const Expense = () => {
                 <MenuItem value={"Other"}>Other</MenuItem>
               </Select>
             </Grid>
-  
+
             <Grid item xs={12}>
               <TextField
                 fullWidth
@@ -79,10 +93,15 @@ const Expense = () => {
                 variant="outlined"
                 type="date"
                 name="createdAt"
+                color="success"
               />
             </Grid>
-  
-            <Grid item xs={12} style={{ textAlign: 'center', marginBottom: '20px' }}>
+
+            <Grid
+              item
+              xs={12}
+              style={{ textAlign: "center", marginBottom: "20px" }}
+            >
               <Button
                 variant="outlined"
                 startIcon={<OutputIcon />}
@@ -94,7 +113,7 @@ const Expense = () => {
             </Grid>
           </Grid>
         </form>
-  
+
         {error && (
           <Box mt={2} color="red">
             {error.message}
