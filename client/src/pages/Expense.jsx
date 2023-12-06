@@ -22,7 +22,7 @@ const Expense = () => {
       console.error(error);
     }
 
-    window.location.assign("/overview");
+    window.location.assign("/transaction");
   };
 
   if (!Auth.loggedIn()) {
