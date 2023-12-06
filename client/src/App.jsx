@@ -39,8 +39,8 @@ function App() {
     <ApolloProvider client={client}>
       <div className="min-vh-100" >
         <Header />
-        <Nav  id="top-container"/>
-        <div className='row' style={{justifyContent: "center"}}>
+        <div className='row'>
+          <Nav id="nav-bar"/>
           <Outlet />
         </div>
         <Footer />

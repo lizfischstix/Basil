@@ -34,46 +34,75 @@ function Login(props) {
   };
 
   return (
-      <Container component="main" maxWidth="xs" justifyContent="center" style={{ marginTop: '30px' }}>
-        <Paper elevation={3} style={{ padding: '20px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Typography component="h1" variant="h5" gutterBottom>
-            Log In
-          </Typography>
-          <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              type="email"
-              autoComplete="email"
-              autoFocus
-              onChange={handleChange}
-            />
-            <TextField
-              variant="outlined"
-              margin="normal"
-              fullWidth
-              id="password"
-              label="Password"
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              onChange={handleChange}
-            />
-            {error ? (
-              <Typography variant="body2" color="error" align="center" style={{ marginTop: '16px' }}>
-                The provided credentials are incorrect
-              </Typography>
-            ) : null}
-            <Button type="submit" fullWidth variant="contained" color="primary" style={{ marginTop: '16px' }}>
-              Submit
-            </Button>
-          </form>
-        </Paper>
-      </Container>
+    <Container
+      component="main"
+      maxWidth="xs"
+      justifyContent="center"
+      style={{ marginTop: "30px" }}
+    >
+      <Paper
+        elevation={3}
+        style={{
+          padding: "20px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography component="h1" variant="h5" gutterBottom>
+          Log In
+        </Typography>
+        <form
+          onSubmit={handleFormSubmit}
+          style={{ width: "100%", marginTop: "16px" }}
+        >
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            type="email"
+            autoComplete="email"
+            autoFocus
+            onChange={handleChange}
+            color="success"
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            fullWidth
+            id="password"
+            label="Password"
+            name="password"
+            type="password"
+            autoComplete="current-password"
+            onChange={handleChange}
+            color="success"
+          />
+          {error ? (
+            <Typography
+              variant="body2"
+              color="error"
+              align="center"
+              style={{ marginTop: "16px" }}
+            >
+              The provided credentials are incorrect
+            </Typography>
+          ) : null}
+          <Button
+            type="submit"
+            fullWidth
+            variant="outlined"
+            color="success"
+            style={{ marginTop: "16px" }}
+          >
+            Submit
+          </Button>
+        </form>
+      </Paper>
+    </Container>
   );
 }
 
