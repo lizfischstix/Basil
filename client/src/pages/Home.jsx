@@ -11,6 +11,7 @@ const Home = () => {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
+        
         '& > :not(style)': {
 
           m: 4,

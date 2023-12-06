@@ -47,6 +47,8 @@ const Overview = () => {
     padding: "20px", // Add internal padding
     marginTop: "20px",
     background: "white",
+    display: "flex",
+    justifyContent: "center"
   };
 
   const buttoncontainer = {

@@ -26,7 +26,7 @@ const Graph = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Grid item xs={5}>
+          <Grid item xs={9} sm={8}>
             <div id="graphs" style={containerStyle}>
               <GraphDropdown />
             </div>

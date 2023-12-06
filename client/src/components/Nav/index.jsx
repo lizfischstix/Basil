@@ -29,7 +29,7 @@ export default function Nav({ isAuthenticated }) {
     <Tabs
       value={value}
       onChange={handleChange}
-      orientation="vertical"
+      orientation="horizontal"
       aria-label="icon tabs"
     >
       <Link to="/">
