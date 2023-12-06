@@ -29,6 +29,8 @@ export default function Nav({ isAuthenticated }) {
     <Tabs
       value={value}
       onChange={handleChange}
+
+      orientation="horizontal"
       aria-label="icon tabs"
       orientation="vertical"
       indicatorColor= {{color: green[900]}}

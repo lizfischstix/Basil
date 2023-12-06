@@ -37,7 +37,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="min-vh-100">
+      <div className="min-vh-100" >
         <Header />
         <div className='row'>
           <Nav id="nav-bar"/>
