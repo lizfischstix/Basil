@@ -67,6 +67,7 @@ const Overview = () => {
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
+          color="success" 
           startIcon={<InputIcon />}
           onClick={(event) => addIncome(event)}
         >
@@ -74,6 +75,7 @@ const Overview = () => {
         </Button>
         <Button
           variant="outlined"
+          color="success" 
           startIcon={<OutputIcon />}
           onClick={(event) => addExpense(event)}
         >

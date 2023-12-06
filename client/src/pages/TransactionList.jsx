@@ -90,8 +90,8 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addIncome} color="success" />
-          <Typography variant="h5" align="center">
+          <AddCircleIcon onClick={addIncome} color="success"  sx={{ fontSize: 30 }} />
+          <Typography variant="h4" align="center">
             Income
           </Typography>
           <IncomeTable
@@ -115,8 +115,8 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addExpense} color="success" />
-          <Typography variant="h5" align="center">
+          <AddCircleIcon onClick={addExpense} color="success"  sx={{ fontSize: 30 }}  />
+          <Typography variant="h4" align="center">
             Expenses
           </Typography>
           <ExpenseTable
