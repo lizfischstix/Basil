@@ -7,11 +7,12 @@ import IncomeTable from "../components/incomeTable";
 import ExpenseTable from "../components/expenseTable";
 import { styled } from "@mui/system";
 import GraphDropdown from "../components/graphs/graphDropdown";
-
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
-
 import Hello from "../components/Hello";
 
 const Overview = () => {
@@ -102,15 +103,12 @@ const Overview = () => {
     marginBottom: "20px",
     gap: "50px",
   };
+  
 
   return (
     <>
-      <div id="hello" style={containerStyle}>
+    <div className="{text-center}" id="hello" style={containerStyle}>
         <Hello userInfo={userInfo} />
-      </div>
-          
-      <div className="container" id="graphs" style={containerStyle} justifyContent="center">
-        <GraphDropdown />
       </div>
 
       <div className="container" style={buttoncontainer}>
@@ -130,31 +128,6 @@ const Overview = () => {
         </Button>
       </div>
 
-      <div id="graphs" style={containerStyle}>
-        <GraphDropdown />
-      </div>
-
-      <main>
-        <div className="container" style={containerStyle}>
-          <h2 className="text-center">Income</h2>
-          <IncomeTable
-            data={userInfo.incomes}
-            onUpdate={updateIncome}
-            onDelete={removeIncome}
-          />
-          {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
-        </div>
-
-        <div className="container" style={containerStyle}>
-          <h2 className="text-center">Expenses</h2>
-          <ExpenseTable
-            data={userInfo.expenses}
-            onUpdate={updateExpense}
-            onDelete={removeExpense}
-          />
-          {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
-        </div>
-      </main>
     </>
   );
 };
