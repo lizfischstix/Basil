@@ -30,7 +30,7 @@ const UpdateExpense = () => {
       const { data } = await updateExpense({
         variables: { ...formEntries, expenseId },
       });
-      window.location.assign("/overview");
+      window.location.assign("/transaction");
     } catch (error) {
       console.error(error);
     }
