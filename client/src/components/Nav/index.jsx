@@ -29,8 +29,9 @@ export default function Nav({ isAuthenticated }) {
     <Tabs
       value={value}
       onChange={handleChange}
-      orientation="vertical"
       aria-label="icon tabs"
+      orientation="vertical"
+      
     >
       <Link to="/">
       <Tooltip title='Home' placement='bottom' arrow><Tab icon={<EnergySavingsLeafIcon sx={{ color: green[900], fontSize: 30 }}  />} aria-label="Home" /></Tooltip>

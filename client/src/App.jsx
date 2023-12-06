@@ -40,7 +40,7 @@ function App() {
       <div className="min-vh-100">
         <Header />
         <div className='row'>
-          <Nav />
+          <Nav id="nav-bar"/>
           <Outlet />
         </div>
         <Footer />
