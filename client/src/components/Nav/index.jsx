@@ -32,7 +32,7 @@ export default function Nav({ isAuthenticated }) {
 
       orientation="horizontal"
       aria-label="icon tabs"
-      orientation="vertical"
+      orientation="horizontal"
       indicatorColor= {{color: green[900]}}
     >
       <Link to="/">
