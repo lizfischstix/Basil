@@ -7,11 +7,12 @@ import IncomeTable from "../components/incomeTable";
 import ExpenseTable from "../components/expenseTable";
 import { styled } from "@mui/system";
 import GraphDropdown from "../components/graphs/graphDropdown";
-
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
-
 import Hello from "../components/Hello";
 
 const Overview = () => {
@@ -100,51 +101,31 @@ const Overview = () => {
     marginBottom: "20px",
     gap: "50px",
   };
+  
 
   return (
     <>
-      <div className="container">
-        {/* Hello Section */}
-        <div className="text-center" id="hello" style={containerStyle}>
-          <Hello userInfo={userInfo} />
-        </div>
-  
-        {/* Buttons Section */}
-        <div className="container text-center mt-3">
-          <Button variant="outlined" startIcon={<InputIcon />} onClick={(event) => addIncome(event) } color="success" style={{ marginRight: '30px' }}>
-            Add Income
-          </Button>
-          <Button variant="outlined" startIcon={<OutputIcon />} color="success" onClick={(event) => addExpense(event)}>
-            Add Expense
-          </Button>
-        </div>
+    <div className="{text-center}" id="hello" style={containerStyle}>
+        <Hello userInfo={userInfo} />
       </div>
-  
-      {/* Graphs and Tables Section */}
-      <div className="container mt-3" style={{ display: 'flex'}}>
-        {/* Graphs on the Left */}
-        <div id="graphs" style={{ ...containerStyle, flex: 3, marginRight: '50px' }}>
-          <GraphDropdown />
-          {/* Adjust the width and height based on your requirements */}
-        </div>
-  
-        {/* Tables on the Right */}
-        <div style={{ ...containerStyle, flex: 3}}>
-          <div>
-            <h2 className="text-center">Income</h2>
-            <IncomeTable data={userInfo.incomes} onUpdate={updateIncome} onDelete={removeIncome} />
-            {/* Adjust the width based on your requirements */}
-            {userInfo.incomes.length === 0 && <p>No incomes found.</p>}
-          </div>
-  
-          <div>
-            <h2 className="text-center">Expenses</h2>
-            <ExpenseTable data={userInfo.expenses} onUpdate={updateExpense} onDelete={removeExpense} />
-            {/* Adjust the width based on your requirements */}
-            {userInfo.expenses.length === 0 && <p>No expenses found.</p>}
-          </div>
-        </div>
+
+      <div className="container" style={buttoncontainer}>
+        <Button
+          variant="outlined"
+          startIcon={<InputIcon />}
+          onClick={(event) => addIncome(event)}
+        >
+          Add Income
+        </Button>
+        <Button
+          variant="outlined"
+          startIcon={<OutputIcon />}
+          onClick={(event) => addExpense(event)}
+        >
+          Add Expense
+        </Button>
       </div>
+
     </>
   );  
   
