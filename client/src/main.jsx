@@ -12,11 +12,8 @@ import Income from "./pages/Income";
 import UpdateIncome from "./pages/UpdateIncome";
 import Expense from './pages/Expense.jsx';
 import  Transaction  from './pages/TransactionList.jsx';
-
 import UpdateExpense from './pages/UpdateExpense.jsx';
-
 import GraphPage from './pages/GraphPage.jsx';
-
 
 const router = createBrowserRouter([
   {

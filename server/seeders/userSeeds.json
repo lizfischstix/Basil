@@ -3,61 +3,61 @@
     "email": "maggie@email.com",
     "password": "pass1234",
     "firstName": "Maggie",
-    "lastName": "Harrison",
+    "lastName": "Miranda",
     "incomes": [
       {
         "amount": 2000,
         "description": "First Paycheck",
-        "createdAt": "2023-12-04T00:00:00.000+00:00"
-      },
-      {
-        "amount": 2000,
-        "description": "Second Paycheck",
-        "createdAt": "2023-12-21T00:00:00.000+00:00"
+        "createdAt": "2023-12-01T00:00:00.000+00:00"
       },
       {
         "amount": 100,
         "description": "Birthday gift",
-        "createdAt": "2023-11-14T00:00:00.000+00:00"
+        "createdAt": "2023-12-03T00:00:00.000+00:00"
+      },
+      {
+        "amount": 2000,
+        "description": "Second Paycheck",
+        "createdAt": "2023-12-15T00:00:00.000+00:00"
       }
     ],
     "expenses": [
       {
-        "amount": 1200,
-        "description": "Rent",
-        "category": "Home",
-        "createdAt": "2023-12-21T00:00:00.000+00:00"
-      },
-      {
-        "amount": 120,
-        "description": "Gym",
-        "category": "Health & Fitness",
-        "createdAt": "2023-12-21T00:00:00.000+00:00"
+        "amount": 385,
+        "description": "Spanish lessons",
+        "category": "Education",
+        "createdAt": "2023-12-01T00:00:00.000+00:00"
       },
       {
         "amount": 12,
         "description": "Allergy meds",
         "category": "Health & Fitness",
-        "createdAt": "2023-12-11T00:00:00.000+00:00"
+        "createdAt": "2023-12-02T00:00:00.000+00:00"
       },
       {
         "amount": 230,
-        "description": "Groceries at Mariano's",
+        "description": "Groceries",
         "category": "Food & Dining",
-        "createdAt": "2023-12-21T00:00:00.000+00:00"
+        "createdAt": "2023-12-02T00:00:00.000+00:00"
       },
       {
-        "amount": 385,
-        "description": "Spanish lessons",
-        "category": "Education",
-        "createdAt": "2023-12-21T00:00:00.000+00:00"
+        "amount": 120,
+        "description": "Gym",
+        "category": "Health & Fitness",
+        "createdAt": "2023-12-03T00:00:00.000+00:00"
       },
       {
         "amount": 56,
         "description": "Dinner with Hannah",
         "category": "Food & Dining",
-        "createdAt": "2023-12-20T00:00:00.000+00:00"
-      }
+        "createdAt": "2023-12-04T00:00:00.000+00:00"
+      },
+      {
+        "amount": 1200,
+        "description": "Rent",
+        "category": "Home",
+        "createdAt": "2023-12-05T00:00:00.000+00:00"
+      } 
     ]
   }
 ]

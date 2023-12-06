@@ -1,10 +1,14 @@
 import React from 'react';
 import { Grid, Box } from '@mui/material';
 import GraphDropdown from '../components/graphs/graphDropdown';
-
-
+import Auth from "../utils/auth";
 
 const Graph = () => {
+  // Check if the user is logged in
+  if (!Auth.loggedIn()) {
+    return <p>You need to be logged in to see this page.</p>;
+  }
+  
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
@@ -15,20 +19,20 @@ const Graph = () => {
   };
   return (
     <>
-        <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
-          <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Grid item xs={5}>
-              <div id="graphs" style={containerStyle}>
-                <GraphDropdown />
-              </div>
-            </Grid>
+      <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item xs={5}>
+            <div id="graphs" style={containerStyle}>
+              <GraphDropdown />
+            </div>
           </Grid>
-        </Box>
+        </Grid>
+      </Box>
     </>
   );
 };

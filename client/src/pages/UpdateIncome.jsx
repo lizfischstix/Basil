@@ -29,7 +29,7 @@ const UpdateIncome = () => {
       const { data } = await updateIncome({
         variables: { ...formEntries, incomeId },
       });
-      window.location.assign("/overview");
+      window.location.assign("/transaction");
     } catch (error) {
       console.error(error);
     }

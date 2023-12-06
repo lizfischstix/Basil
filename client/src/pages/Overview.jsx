@@ -1,15 +1,7 @@
 import React from "react";
 import Auth from "../utils/auth";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
-import { DELETE_INCOME, DELETE_EXPENSE } from "../utils/mutations";
-import IncomeTable from "../components/incomeTable";
-import ExpenseTable from "../components/expenseTable";
-import { styled } from "@mui/system";
-import GraphDropdown from "../components/graphs/graphDropdown";
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import Button from "@mui/material/Button";
 import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
@@ -29,43 +21,6 @@ const Overview = () => {
   const addIncome = (event) => {
     event.preventDefault();
     window.location.assign("/income");
-  };
-
-  const updateExpense = (event, expenseId) => {
-    event.preventDefault();
-    window.location.assign(`/expense/${expenseId}/update`);
-  };
-
-  const [deleteExpense, { err }] = useMutation(DELETE_EXPENSE, {
-    refetchQueries: [QUERY_ME, "me"],
-  });
-
-  const removeExpense = async (event, expenseId) => {
-    event.preventDefault();
-    try {
-      const { data } = await deleteExpense({ variables: { expenseId } });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const updateIncome = (event, incomeId) => {
-    event.preventDefault();
-    window.location.assign(`/income/${incomeId}/update`);
-  };
-
-  const [deleteIncome, { error }] = useMutation(DELETE_INCOME, {
-    refetchQueries: [QUERY_ME, "me"],
-  });
-
-  const removeIncome = async (event, incomeId) => {
-    event.preventDefault();
-
-    try {
-      const { data } = await deleteIncome({ variables: { incomeId } });
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   const { loading, data } = useQuery(QUERY_ME, {
