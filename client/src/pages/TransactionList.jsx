@@ -8,6 +8,7 @@ import IncomeTable from "../components/incomeTable";
 import ExpenseTable from "../components/expenseTable";
 import { Grid, Typography, Paper } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Hello from "../components/Hello";
 
 const Transaction = () => {
   // Check if the user is logged in
@@ -89,7 +90,7 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addIncome} />
+          <AddCircleIcon onClick={addIncome} color="success" />
           <Typography variant="h5" align="center">
             Income
           </Typography>
@@ -114,7 +115,7 @@ const Transaction = () => {
             justifyContent: "center",
           }}
         >
-          <AddCircleIcon onClick={addExpense} />
+          <AddCircleIcon onClick={addExpense} color="success" />
           <Typography variant="h5" align="center">
             Expenses
           </Typography>

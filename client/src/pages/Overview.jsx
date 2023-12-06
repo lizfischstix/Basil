@@ -85,8 +85,6 @@ const Overview = () => {
   // User data is available
   const userInfo = data.me;
 
-
-
   const containerStyle = {
     border: "1px solid #ddd", // Add a border with a light gray color
     borderRadius: "8px", // Add rounded corners
@@ -107,7 +105,7 @@ const Overview = () => {
 
   return (
     <>
-    <div className="{text-center}" id="hello" style={containerStyle}>
+    <div className="text-center" id="hello" style={containerStyle}>
         <Hello userInfo={userInfo} />
       </div>
 
@@ -129,7 +127,8 @@ const Overview = () => {
       </div>
 
     </>
-  );
+  );  
+  
 };
 
 export default Overview;

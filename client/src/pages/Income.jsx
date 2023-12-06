@@ -32,54 +32,53 @@ const Income = () => {
   }
 
   return (
-    
-    <Container maxWidth="sm" justifyContent="center">
-    <Box mt={3}>
-      <form onSubmit={handleFormSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Description"
-              variant="outlined"
-              name="description"
-            />
+    <Container maxWidth="sm" justifyContent="center" style={{ backgroundColor: 'white',marginTop:'30px' }} >
+      <Box mt={3}>
+        <form onSubmit={handleFormSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Description"
+                variant="outlined"
+                name="description"
+              />
+            </Grid>
+  
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Amount"
+                variant="outlined"
+                name="amount"
+              />
+            </Grid>
+  
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label=""
+                variant="outlined"
+                type="date"
+                name="createdAt"
+              />
+            </Grid>
+  
+            <Grid item xs={12} style={{ marginBottom: '20px' }} container justifyContent="center">
+              <Button variant="outlined" startIcon={<InputIcon />} type="submit" color="success">
+                Add Income
+              </Button>
+            </Grid>
           </Grid>
-
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Amount"
-              variant="outlined"
-              name="amount"
-            />
-          </Grid>
-
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label=""
-              variant="outlined"
-              type="date"
-              name="createdAt"
-            />
-          </Grid>
-
-          <Grid item xs={15}>
-            <Button  variant="outlined" startIcon={<InputIcon />} type="submit">
-            Add Income
-            </Button>
-          </Grid>
-        </Grid>
-      </form>
-
-      {error && (
-        <Box mt={2} color="red">
-          {error.message}
-        </Box>
-      )}
-    </Box>
-  </Container>
+        </form>
+  
+        {error && (
+          <Box mt={2} color="red">
+            {error.message}
+          </Box>
+        )}
+      </Box>
+    </Container>
   );
 };
 

@@ -45,7 +45,7 @@ const UpdateExpense = () => {
 
   return (
     <>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm" style={{ backgroundColor: 'white',marginTop:'30px' }}>
         <Box mt={3}>
           <form onSubmit={handleFormSubmit}>
             <Grid container spacing={2}>
@@ -104,7 +104,7 @@ const UpdateExpense = () => {
               </Grid>
 
               <Grid item xs={15}>
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" color="success" type="submit" style={{ textAlign: 'center', marginBottom: '20px' }}>
                   Save Expense
                 </Button>
               </Grid>
