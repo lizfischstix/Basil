@@ -1,6 +1,6 @@
 import { Bar } from "react-chartjs-2";
 import { useState } from 'react';
-import spendingData from "../fakeData";
+
 import {Chart as ChartJS}from 'chart.js/auto';
 
 import { useQuery, useMutation } from "@apollo/client";
@@ -42,7 +42,7 @@ function makeBar() {
     datasets: [{
       label: "Spending Category",
       data: aggregateExpenses.map(expense => expense.amount),
-      backgroundColor: ['rebeccapurple', 'yellow', 'green', 'blue', 'red', 'white']
+      backgroundColor: ['#902b68', '#32620E', '#68902b', '#9dcd5a', '#f3e9d2', 'rgb(144,43,104, .7)', 'rgb(144,43,104, .3)', 'black']
     }]
   };
 

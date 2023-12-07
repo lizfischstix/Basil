@@ -24,7 +24,7 @@ const Income = () => {
       console.error(error);
     }
 
-    window.location.assign("/overview");
+    window.location.assign("/transaction");
   };
 
   if (!Auth.loggedIn()) {
@@ -32,54 +32,71 @@ const Income = () => {
   }
 
   return (
-    
-    <Container maxWidth="sm" justifyContent="center">
-    <Box mt={3}>
-      <form onSubmit={handleFormSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Description"
-              variant="outlined"
-              name="description"
-            />
-          </Grid>
+    <Container
+      maxWidth="sm"
+      justifyContent="center"
+      style={{ backgroundColor: "white", marginTop: "30px" }}
+    >
+      <Box mt={3}>
+        <form onSubmit={handleFormSubmit}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Description"
+                variant="outlined"
+                name="description"
+                color="success"
+              />
+            </Grid>
 
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label="Amount"
-              variant="outlined"
-              name="amount"
-            />
-          </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Amount"
+                variant="outlined"
+                name="amount"
+                color="success"
+              />
+            </Grid>
 
-          <Grid item xs={12}>
-            <TextField
-              fullWidth
-              label=""
-              variant="outlined"
-              type="date"
-              name="createdAt"
-            />
-          </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label=""
+                variant="outlined"
+                type="date"
+                name="createdAt"
+                color="success"
+              />
+            </Grid>
 
-          <Grid item xs={15}>
-            <Button  variant="outlined" startIcon={<InputIcon />} type="submit">
-            Add Income
-            </Button>
+            <Grid
+              item
+              xs={12}
+              style={{ marginBottom: "20px" }}
+              container
+              justifyContent="center"
+            >
+              <Button
+                variant="outlined"
+                startIcon={<InputIcon />}
+                type="submit"
+                color="success"
+              >
+                Add Income
+              </Button>
+            </Grid>
           </Grid>
-        </Grid>
-      </form>
+        </form>
 
-      {error && (
-        <Box mt={2} color="red">
-          {error.message}
-        </Box>
-      )}
-    </Box>
-  </Container>
+        {error && (
+          <Box mt={2} color="red">
+            {error.message}
+          </Box>
+        )}
+      </Box>
+    </Container>
   );
 };
 

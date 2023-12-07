@@ -5,6 +5,7 @@ import { QUERY_INCOME } from "../utils/queries";
 import { useParams } from "react-router-dom";
 import { TextField, Button, Container, Box, Grid } from "@mui/material";
 import formatDateForDefaultValue from "../utils/dateFormate";
+import InputIcon from '@mui/icons-material/Input';
 
 const UpdateIncome = () => {
   if (!Auth.loggedIn()) {
@@ -29,7 +30,7 @@ const UpdateIncome = () => {
       const { data } = await updateIncome({
         variables: { ...formEntries, incomeId },
       });
-      window.location.assign("/overview");
+      window.location.assign("/transaction");
     } catch (error) {
       console.error(error);
     }
@@ -45,7 +46,10 @@ const UpdateIncome = () => {
 
   return (
     <>
-      <Container maxWidth="sm">
+      <Container
+        maxWidth="sm"
+        style={{ backgroundColor: "white", marginTop: "30px" }}
+      >
         <Box mt={3}>
           <form onSubmit={handleFormSubmit}>
             <Grid container spacing={2}>
@@ -56,6 +60,7 @@ const UpdateIncome = () => {
                   variant="outlined"
                   name="description"
                   defaultValue={incomeInfo.description}
+                  color="success"
                 />
               </Grid>
 
@@ -66,6 +71,7 @@ const UpdateIncome = () => {
                   variant="outlined"
                   name="amount"
                   defaultValue={incomeInfo.amount}
+                  color="success"
                 />
               </Grid>
 
@@ -77,11 +83,23 @@ const UpdateIncome = () => {
                   type="date"
                   name="createdAt"
                   defaultValue={date}
+                  color="success"
                 />
               </Grid>
 
-              <Grid item xs={15}>
-                <Button variant="contained" color="primary" type="submit">
+              <Grid
+                item
+                xs={15}
+                style={{ marginBottom: "20px" }}
+                container
+                justifyContent="center"
+              >
+                <Button
+                  variant="outlined"
+                  startIcon={<InputIcon />}
+                  type="submit"
+                  color="success"
+                >
                   Save Income
                 </Button>
               </Grid>
