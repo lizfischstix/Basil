@@ -3,6 +3,8 @@ import { Grid, Box } from '@mui/material';
 import GraphDropdown from '../components/graphs/graphDropdown';
 import Auth from "../utils/auth";
 
+import MakeExtraBar from '../components/graphs/extraGraph/extraGraph';
+
 const Graph = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
@@ -19,6 +21,7 @@ const Graph = () => {
   };
   return (
     <>
+      {/* <Box sx={{width: '100%'}} height={'100%'}> */}
       <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
         <Grid
           container
@@ -29,11 +32,27 @@ const Graph = () => {
           <Grid item xs={9} sm={8}>
             <div id="graphs" style={containerStyle}>
               <GraphDropdown />
+              
             </div>
           </Grid>
         </Grid>
       </Box>
-    </>
+      <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
+        <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        >
+          <Grid item xs={9} sm={8}>
+          <div id="graphs" style={containerStyle}>
+          <MakeExtraBar />
+          </div>
+          </Grid>
+        </Grid>
+      </Box>
+      {/* </Box> */}
+</>
   );
 };
 
