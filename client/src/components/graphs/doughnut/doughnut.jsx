@@ -6,6 +6,7 @@ import { useQuery, useMutation } from "@apollo/client";
 import {QUERY_ME} from '../../../utils/queries';
 
 
+
 function makeDoughnut() {
   const { loading, data } = useQuery(QUERY_ME, {
     fetchPolicy: "no-cache",
@@ -17,11 +18,9 @@ function makeDoughnut() {
 
   const userExpenses = data.me.expenses;
   userExpenses.map(expense => expense.category)
-  console.log(userExpenses)
   
   const aggregateExpenses = userExpenses.reduce((result,expense)=> {
     const{category, amount} = expense
-    console.log(category, amount)
     const existingCategory = result.find((item)=> item.category === category)
     if (existingCategory){
       existingCategory.amount += amount
@@ -33,7 +32,6 @@ function makeDoughnut() {
 
   }, [])
 
-  console.log(aggregateExpenses)
 
   const userData = {
     labels: aggregateExpenses.map(expense => expense.category),

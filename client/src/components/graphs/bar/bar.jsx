@@ -19,11 +19,9 @@ function makeBar() {
   const userExpenses = data.me.expenses;
   const categoryUserExpenses = data.me.expenses.categories;
   userExpenses.map(expense => expense.category)
-  console.log(userExpenses)
   
   const aggregateExpenses = userExpenses.reduce((result,expense)=> {
     const{category, amount} = expense
-    console.log(category, amount)
     const existingCategory = result.find((item)=> item.category === category)
     if (existingCategory){
       existingCategory.amount += amount
@@ -34,8 +32,6 @@ function makeBar() {
     return result
 
   }, [])
-
-  console.log(aggregateExpenses)
 
   const userData = {
     labels: aggregateExpenses.map(expense => expense.category),

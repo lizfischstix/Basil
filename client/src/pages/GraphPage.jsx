@@ -18,6 +18,7 @@ const Graph = () => {
     padding: "20px", // Add internal padding
     marginTop: "20px",
     background: "white",
+    height: "500px"
   };
   return (
     <>
