@@ -37,20 +37,7 @@ const Graph = () => {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ flexGrow: 1 }} justifyContent={"center"}>
-        <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        >
-          <Grid item xs={9} sm={8}>
-          <div id="graphs" style={containerStyle}>
-          <MakeExtraBar />
-          </div>
-          </Grid>
-        </Grid>
-      </Box>
+      
       {/* </Box> */}
 </>
   );

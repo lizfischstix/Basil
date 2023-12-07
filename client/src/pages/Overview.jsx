@@ -7,6 +7,8 @@ import InputIcon from "@mui/icons-material/Input";
 import OutputIcon from "@mui/icons-material/Output";
 import Hello from "../components/Hello";
 
+import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
+
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
@@ -62,6 +64,7 @@ const Overview = () => {
 
   return (
     <>
+   
     <div className="text-center" id="hello" style={containerStyle}>
         <Hello userInfo={userInfo} />
       </div>
@@ -84,6 +87,11 @@ const Overview = () => {
           Add Expense
         </Button>
       </div>
+      <div style={{width: "50%"}}style={{backgroundColor: 'white'}}>
+      <MakeExtraBar />
+      </div>
+
+      
 
     </>
   );  
