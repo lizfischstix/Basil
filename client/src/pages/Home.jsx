@@ -4,17 +4,20 @@ import { Box, Grid, Paper, Typography } from '@mui/material';
 import Graphic from '../assets/Images/Basil-laptop.png'
 const Home = () => {
   return (
-    <Grid container spacing={{ xs: 12, md: 9, xl: 3 }} justifyContent="end">
-    {/* Image and Text Section */}
-    <Grid item xs={12} md={10}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'row', 
-          alignItems: 'center',
-          marginBottom: 0,
-        }}
-      >
+    <Grid container justifyContent={'space-around'} >
+      {/* Image and Text Section */}
+      <Grid container justifyContent="space-around">
+      {/* Image and Text Section */}
+      <Grid item xs={12} sm={6} justifyContent="space-between">
+        <Box
+          gridColumn={4}
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            alignItems: 'center',
+            marginBottom: 2,
+          }}
+        >
           {/* Image */}
           <img
             src={Graphic}
@@ -27,36 +30,35 @@ const Home = () => {
             }}
           />
 
-
           {/* Text Box */}
           <Box
             sx={{
-              textAlign: 'end',
+              textAlign: { xs: 'center', sm: 'end' },
+              marginTop: { xs: 2, sm: 0 }, // Adjust the margin as needed
             }}
           >
-            <Box />
-            <Grid />
-            <Grid container spacing={{ xs: 6 }} justifyContent={'block'}>
-              <Grid item xs={6} md={10}>
-                <Box>
-                  <Typography variant="h3"> 👋 Hey there! We are Basil. </Typography>
-                  <Typography variant="body">
-                    Our revolutionary new budgeting web app is a seamless financial companion designed for simplicity and efficiency.
-                    Unleash control over your finances with an intuitive interface that effortlessly guides you through budgeting, expense tracking, and goal setting. Our user-friendly platform transforms the daunting task of financial management into an enjoyable experience. Gain clear insights into your spending habits and effortlessly achieve your financial goals. Whether you're a seasoned budgeter or just starting your financial journey, our app adapts to your needs. Say goodbye to financial stress and hello to a brighter financial future. Try our simple-to-use budgeting web app today and redefine your relationship with money.
-
-                  </Typography>
-                </Box>
-              </Grid>
-            </Grid>
+            <Paper elevation={3} p={2} >
+              <Typography variant="h3">👋 Hey there! We are Basil.</Typography>
+              <Typography variant="body1">
+                Our revolutionary new budgeting web app is a seamless financial companion designed for simplicity and
+                efficiency. Unleash control over your finances with an intuitive interface that effortlessly guides you
+                through budgeting, expense tracking, and goal setting. Our user-friendly platform transforms the daunting
+                task of financial management into an enjoyable experience. Gain clear insights into your spending habits
+                and effortlessly achieve your financial goals. Whether you're a seasoned budgeter or just starting your
+                financial journey, our app adapts to your needs. Say goodbye to financial stress and hello to a brighter
+                financial future. Try our simple-to-use budgeting web app today and redefine your relationship with money.
+              </Typography>
+            </Paper>
           </Box>
         </Box>
       </Grid>
+    </Grid>
 
       {/* Paper Components Section */}
-      <Grid container spacing={{ xs: 2, md: 3, xl: 4 }} columns={{ xs:2, md: 7, xl: 12 }} justifyContent={'center'}>
+      <Grid container spacing={{ xs: 2, md: 3, xl: 4 }} columns={{ xs: 2, md: 6, xl: 12 }} justifyContent={'center'}>
         <Box
           sx={{
-            display: "flex"  ,
+            display: "flex",
             flexWrap: 'wrap',
             '& > :not(style)': {
 
@@ -74,8 +76,8 @@ const Home = () => {
           <Paper varient='elevation'>"Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.</Paper>
         </Box>
       </Grid>
-      </Grid>
-      );
+    </Grid>
+  );
 };
 
-      export default Home;
+export default Home;

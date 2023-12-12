@@ -87,7 +87,7 @@ const Overview = () => {
           Add Expense
         </Button>
       </div>
-      <div style={{width: "50%"}}style={{backgroundColor: 'white'}}>
+      <div style={{backgroundColor: 'white', width: "50%"}}>
       <MakeExtraBar />
       </div>
 
