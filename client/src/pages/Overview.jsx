@@ -3,11 +3,11 @@ import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Button from "@mui/material/Button";
-import InputIcon from "@mui/icons-material/Input";
-import OutputIcon from "@mui/icons-material/Output";
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Hello from "../components/Hello";
-
 import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
+import { Grid, Paper } from "@mui/material";
 
 const Overview = () => {
   // Check if the user is logged in
@@ -73,7 +73,7 @@ const Overview = () => {
         <Button
           variant="outlined"
           color="success" 
-          startIcon={<InputIcon />}
+          startIcon={<KeyboardDoubleArrowUpIcon />}
           onClick={(event) => addIncome(event)}
         >
           Add Income
@@ -81,15 +81,17 @@ const Overview = () => {
         <Button
           variant="outlined"
           color="success" 
-          startIcon={<OutputIcon />}
+          startIcon={<KeyboardDoubleArrowDownIcon />}
           onClick={(event) => addExpense(event)}
         >
           Add Expense
         </Button>
       </div>
-      <div style={{backgroundColor: 'white', width: "50%"}}>
+      <Grid container xs={12} justifyContent={'center'} >
+      <Grid item>
       <MakeExtraBar />
-      </div>
+      </Grid>
+      </Grid>
 
       
 
