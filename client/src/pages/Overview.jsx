@@ -7,12 +7,27 @@ import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Hello from "../components/Hello";
 import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
-import { Grid, Paper } from "@mui/material";
+import { Grid, Paper, Box } from "@mui/material";
 
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
-    return <p>You need to be logged in to see this page.</p>;
+    return (
+<>
+<Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
+      <a href="/Login" style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="success">
+          Log In
+        </Button>
+      </a>
+      <a href="/Signup" style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="success">
+          Sign Up
+        </Button>
+      </a>
+    </Grid>
+</>
+    );
   }
 
   const addExpense = (event) => {
@@ -87,11 +102,15 @@ const Overview = () => {
           Add Expense
         </Button>
       </div>
-      <Grid container xs={12} justifyContent={'center'} >
-      <Grid item>
-      <MakeExtraBar />
-      </Grid>
-      </Grid>
+      <Grid
+      container
+      justifyContent="center"
+      style={{ maxHeight: '50vh' }} 
+    >
+      <Paper elevation={24} style={{ width: '50%', padding: '16px' }}>
+        <MakeExtraBar style={{ width:'100%' }} justifyContent='center' />
+      </Paper>
+    </Grid>
 
       
 
