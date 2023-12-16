@@ -1,12 +1,7 @@
-<div align="center">
-  <br>
-  <h1>🌿 Basil 🌿</h1>
-  <strong>🔎 Track your money easy and fun 🎉 </strong>
-  </br>
-</div>
 
-## mern-budget-app
-A Full Stack Budget Tracker 💵 with full functionality like adding trasactions, deleting trasactions, showing income and expense history lists, showing expense by category on different graphs.
+ # 🌿 Basil 🌿
+ 
+## A Full Stack Budget Tracker with a robust functionality for signed-in users including adding trasactions, deleting trasactions, showing income and expense history lists, showing expense by category on different graphs.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -16,18 +11,23 @@ A Full Stack Budget Tracker 💵 with full functionality like adding trasactions
 - [Questions](#questions)
 
 ## Installation
+### To view deployed application 
 
-1) Clone this repository  
+### To view project code
+1) Clone code repository  
 ```
-git clone https://github.com/ingridmidia/mern-budget-app.git
+git clone git@github.com:lizfischstix/Basil.git
 ```
 2) Install dependencies  
 ```
-open terminal on root `package.json` 
+open terminal on root directory
+enter command:
 npm install
 ```
-3) Run the server
+3) Run servers
 ```
+in same root directory terminal
+enter command:
 npm run develop
 ```
 

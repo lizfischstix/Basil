@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { Box, Grid, Paper, Typography } from '@mui/material';
-import Graphic from '../assets/Images/Basil-laptop.png'
+import { Box, Grid, Paper, Typography, Button } from '@mui/material';
+import LapTop from '../assets/Images/Basil-laptop.png'
+import PlantGif from '../assets/Images/KatieVosPlant.gif'
 const Home = () => {
   return (
     <>
@@ -17,7 +18,7 @@ const Home = () => {
           >
             {/* Image */}
             <img
-              src={Graphic}
+              src={LapTop}
               alt="laptop open to Basil"
               style={{
                 width: '100%',
@@ -25,6 +26,7 @@ const Home = () => {
                 height: 'auto',
                 objectFit: 'cover',
               }}
+
             />
 
             {/* Text Box */}
@@ -35,18 +37,24 @@ const Home = () => {
               }}
             >
               <Paper elevation={3} style={{ maxHeight: '100vh', overflow: 'auto', padding: 3 }}>
-                <Typography variant="h3">👋 Hey there! We are Basil.</Typography>
-                <Typography variant="body1">
-                  Our revolutionary new budgeting web app is a seamless financial companion designed for simplicity and
-                  efficiency. Unleash control over your finances with an intuitive interface that effortlessly guides you
-                  through budgeting, expense tracking, and goal setting. Our user-friendly platform transforms the daunting
-                  task of financial management into an enjoyable experience. Gain clear insights into your spending habits
-                  and effortlessly achieve your financial goals. Whether you're a seasoned budgeter or just starting your
-                  financial journey, our app adapts to your needs. Say goodbye to financial stress and hello to a brighter
-                  financial future. Try our simple-to-use budgeting web app today and redefine your relationship with money.
-                </Typography>
+                <Typography variant="h4">👋 Hey there! We are Basil.</Typography>
+                <Typography variant='body'>We love helping people take charge of their financial future!
+                <br/>
+                Interested?  Learn more aboout us <a href='/about'><Button variant='contained' color='success' >HERE</Button> </a></Typography>
               </Paper>
             </Box>
+             {/* Image */}
+             <img
+              src={PlantGif}
+              alt="Illustrated Gif of plants"
+              style={{
+                width: '100%',
+                maxWidth: 400,
+                height: 'auto',
+                objectFit: 'cover',
+              }}
+
+            />
           </Box>
         </Grid>
       </Grid>
