@@ -8,6 +8,7 @@ import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import AssignmentRoundedIcon from '@mui/icons-material/AssignmentRounded';
 import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
 import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
+import WavingHandIcon from '@mui/icons-material/WavingHand';
 import { Tooltip } from '@mui/material';
 import { green } from '@mui/material/colors';
 
@@ -110,6 +111,7 @@ export default function Nav({ isAuthenticated }) {
               />
             </Tooltip>
           </Link>
+         
           <Link to="/signup">
             <Tooltip title="Sign Up" placement="bottom" arrow>
               {" "}
@@ -119,6 +121,18 @@ export default function Nav({ isAuthenticated }) {
                 }
                 aria-label="Sign Up"
               />
+            </Tooltip>
+          </Link>
+
+          <Link to='/about'>
+            <Tooltip title="About Us" placement='bottom' arrow>
+              {" "}
+              <Tab
+                icon={
+                  <WavingHandIcon sx={{ color: green[900], fontSize: 30 }} />
+                }
+                aria-label='About Us'
+                />
             </Tooltip>
           </Link>
         </>

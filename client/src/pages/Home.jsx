@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { Box, Grid, Paper, Typography, Button } from '@mui/material';
-import LapTop from '../assets/Images/Basil-laptop.png'
-import PlantGif from '../assets/Images/KatieVosPlant.gif'
+import LapTop from '../assets/Images/Basil-laptop.png';
+import PlantGif from '../assets/Images/KatieVosPlant.gif';
+import lobster from '../assets/Fonts/LobsterTwo-Bold.ttf'
 const Home = () => {
   return (
     <>
@@ -58,7 +59,14 @@ const Home = () => {
           </Box>
         </Grid>
       </Grid>
-
+      <Grid 
+      container
+      alignContent={'center'}
+     >
+<Typography variant='h4' sx={{ fontFamily: 'lobster', }}>
+  Check out what our users are saying!
+</Typography>
+</Grid>
       <Grid container spacing={{ xs: 2, md: 3, xl: 4 }} columns={{ xs: 2, md: 6, xl: 12 }} justifyContent={'center'}>
         <Box
           sx={{
