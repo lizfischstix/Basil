@@ -1,23 +1,22 @@
+# Basil
+  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+  ## Description: 
+  a refactor of mern-budget-app  project to include increased screen size responsiveness, consistancy of typography and style elements across componants, and impoved ui/ux. <br/>
+  See  original project repo [HERE](https://github.com/ingridmidia/mern-budget-app)
+  ## Table of Contents: 
+  * [installation](#installation)
+  * [Techonolgy](#techonolgy)
+  * [credits](#credits)
+  * [features](#features)
+  * [tests](#tests)
+  * [License](#license)
 
- # 🌿 Basil 🌿
- 
-## A Full Stack Budget Tracker with a robust functionality for signed-in users including adding trasactions, deleting trasactions, showing income and expense history lists, showing expense by category on different graphs.
-
-## Table of Contents
-- [Installation](#installation)
-- [Techonolgy](#techonolgy)
-- [Demo](#demo)
-- [License](#license)
-- [Questions](#questions)
-
-## Installation
-### To view deployed application 
-
-### To view project code
-1) Clone code repository  
-```
-git clone git@github.com:lizfischstix/Basil.git
-```
+  ## Installation: 
+ ### Basil's code repository can be accessed [HERE](https://github.com/lizfischstix/Basil)
+  1) Clone code repository  
+  ```
+  git clone git@github.com:lizfischstix/Basil.git
+    ```
 2) Install dependencies  
 ```
 open terminal on root directory
@@ -30,32 +29,30 @@ in same root directory terminal
 enter command:
 npm run develop
 ```
+ 
+  ## Credits: 
+  Basil front-end refactor by:
+  [Liz Fischenich](https://github.com/lizfischstix)
 
-## Techonolgy
-Back-end <br>
-<img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" /> <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge" /> 
+  "Plant GIF" created by [Katie Vaz](https://katievaz.com/)
 
-Front-end <br>
+  Original Mern-Budget-app by: 
+  [Ingrid Media](https://github.com/ingridmidia/)
+  [Carolline Hartwell](https://github.com/chart099)
+  [Tan Fei](https://github.com/tanfei0704)
+  [Liz Fischenich](https://github.com/lizfischstix)
+  
+  ## Technology:
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Material--UI-0081CB?style=for-the-badge&logo=material-ui&logoColor=white"/>
 
-Database <br>
-<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white"/>
-<img src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white">
-
-## Demo
-Please find more through [CLICK ME !](https://basil-budget-e685e272efd5.herokuapp.com/)
-
-Please use below info for fun :
-```
- email: “maggie@email.com”,
- “password”: “pass1234",
-```
-![screenshot](./client/src/assets/Images/screenshot.png)
-
-## License
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) License used for this project - MIT 
-
-
-## Questions
-If you have any questions, please contact us : <br>
-email:  👩 ingridmidia@gmail.com   👩 liz.devlin85@gmail.com   👩 chartwell99@gmail.com  👩  tanfei0704@gmail.com 
+  ## Demo: 
+   The following user credentias have been set up to demo the app:
+  ``
+  email: maggie@email.com
+  password: pass1234
+  
+  ## Contact:
+   [Liz Fischenich](https://github.com/lizfischstix)
+   
+  ## License:
+    This project is licensed under the MIT license
