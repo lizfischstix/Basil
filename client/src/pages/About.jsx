@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Paper, Grid } from '@mui/material';
 import PlantGif from '../assets/Images/KatieVosPlant.gif';
+import '@fontsource/andika';
 
 const About = () => {
     return (
@@ -25,8 +26,8 @@ const About = () => {
                     objectFit: 'cover',
                 }}
             />
-            <Paper elevation={3} style={{ maxWidth: '45vw', maxHeight: '100vh', overflow: 'auto', padding: 3 }}>
-                <Typography variant="body1">
+            <Paper elevation={3} style={{ maxWidth: '45vw', maxHeight: '100vh', overflow: 'auto', padding: 3}}>
+                <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
                     Our revolutionary new budgeting web app was born of the minds of  three brilliant web development students with a deep need to keep track of their spending during a time of rising inflation and limited income. (#studentlife)
                     <br />
                     <br />

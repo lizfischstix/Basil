@@ -53,8 +53,8 @@ function Signup(props) {
           alignItems: "center",
         }}
       >
-        <Typography component="h1" variant="h5" gutterBottom>
-          Start Budgeting With Basil Today
+        <Typography  variant="h5" gutterBottom style={{fontFamily: 'andika, sans-serif'}}>
+          Start Your Basil Budget Today
         </Typography>
         <form
           onSubmit={handleFormSubmit}
@@ -65,7 +65,10 @@ function Signup(props) {
             margin="normal"
             fullWidth
             id="firstName"
-            label="First Name"
+            label={ <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+            First Name
+            </Typography>
+            }
             name="firstName"
             autoComplete="given-name"
             autoFocus
@@ -77,7 +80,10 @@ function Signup(props) {
             margin="normal"
             fullWidth
             id="lastName"
-            label="Last Name"
+            label={ <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+            Last Name
+            </Typography>
+            }
             name="lastName"
             autoComplete="family-name"
             onChange={handleChange}
@@ -88,7 +94,11 @@ function Signup(props) {
             margin="normal"
             fullWidth
             id="email"
-            label="Email Address"
+            label={
+              <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+              Email
+              </Typography>
+            }
             name="email"
             type="email"
             autoComplete="email"
@@ -100,7 +110,11 @@ function Signup(props) {
             margin="normal"
             fullWidth
             id="password"
-            label="Password"
+            label={
+              <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+                Password
+              </Typography>
+            }
             name="password"
             type="password"
             autoComplete="new-password"
@@ -112,7 +126,7 @@ function Signup(props) {
             fullWidth
             variant="outlined"
             color="success"
-            style={{ marginTop: "16px" }}
+            style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
           >
             Submit
           </Button>

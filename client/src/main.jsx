@@ -15,11 +15,13 @@ import Transaction from './pages/TransactionList.jsx';
 import UpdateExpense from './pages/UpdateExpense.jsx';
 import GraphPage from './pages/GraphPage.jsx'; 
 import About from './pages/About.jsx';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: 
+    <App />,
     errorElement: <Error />,
     children: [
       {

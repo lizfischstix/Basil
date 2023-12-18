@@ -9,6 +9,8 @@ import ExpenseTable from "../components/expenseTable";
 import { Grid, Typography, Paper } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Hello from "../components/Hello";
+import '@fontsource/andika'
+import { fontFamily } from "@mui/system";
 
 const Transaction = () => {
   // Check if the user is logged in
@@ -83,6 +85,7 @@ const Transaction = () => {
         spacing={2}
         justifyContent="center"
         alignItems="flex-start"
+        
       >
         {/* First table - Income */}
         <Grid item xs={12} md={8} xl={6}>
@@ -93,6 +96,7 @@ const Transaction = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                
               }}
             >
               <AddCircleIcon
@@ -103,7 +107,7 @@ const Transaction = () => {
               <Typography
                 variant="h4"
                 align="center"
-                style={{ padding: "16px" }}
+                style={{ padding: "16px", fontFamily:'andika, sans-serif' }}
               >
                 Income
               </Typography>
@@ -126,6 +130,7 @@ const Transaction = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
+                fontFamily:'andika, sans-serif'
               }}
             >
               <AddCircleIcon
@@ -136,7 +141,7 @@ const Transaction = () => {
               <Typography
                 variant="h4"
                 align="center"
-                style={{ padding: "16px" }}
+                style={{ padding: "16px", fontFamily:'andika, sans-serif' }}
               >
                 Expenses
               </Typography>

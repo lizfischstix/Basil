@@ -10,6 +10,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
+
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',

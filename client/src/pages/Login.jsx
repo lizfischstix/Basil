@@ -49,46 +49,56 @@ function Login(props) {
           alignItems: "center",
         }}
       >
-        <Typography component="h1" variant="h5" gutterBottom>
+        <Typography component="h1" variant="h4" style={{ fontFamily: 'Andika, sans-serif' }} gutterBottom>
           Log In
         </Typography>
-        <form
-          onSubmit={handleFormSubmit}
-          style={{ width: "100%", marginTop: "16px" }}
-        >
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            type="email"
-            autoComplete="email"
-            autoFocus
-            onChange={handleChange}
-            color="success"
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            fullWidth
-            id="password"
-            label="Password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            onChange={handleChange}
-            color="success"
-          />
+        <form onSubmit={handleFormSubmit} style={{ width: '100%', marginTop: '16px' }}>
+      <TextField
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        id="email"
+        label={
+          <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+            Email Address
+          </Typography>
+        }
+        name="email"
+        type="email"
+        autoComplete="email"
+        autoFocus
+        onChange={handleChange}
+        InputProps={{ style: { fontFamily: 'Andika, sans-serif' } }}
+        InputLabelProps={{ style: { fontFamily: 'Andika, sans-serif' } }}
+        color="success"
+      />
+      <TextField
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        id="password"
+        label={
+          <Typography variant="body1" style={{ fontFamily: 'Andika, sans-serif' }}>
+            Password
+          </Typography>
+        }
+        name="password"
+        type="password"
+        autoComplete="current-password"
+        onChange={handleChange}
+        InputProps={{ style: { fontFamily: 'Andika, sans-serif' } }}
+        InputLabelProps={{ style: { fontFamily: 'Andika, sans-serif' } }}
+        color="success"
+      />
+ 
           {error ? (
             <Typography
               variant="body2"
               color="error"
               align="center"
-              style={{ marginTop: "16px" }}
+              style={{ fontFamily: 'Andika, sans-serif', marginTop: "16px" }}
             >
-              The provided credentials are incorrect
+              incorrect email or password
             </Typography>
           ) : null}
           <Button
@@ -96,7 +106,7 @@ function Login(props) {
             fullWidth
             variant="outlined"
             color="success"
-            style={{ marginTop: "16px" }}
+            style={{ marginTop: "16px", fontFamily:'andika, sans-serif' }}
           >
             Submit
           </Button>

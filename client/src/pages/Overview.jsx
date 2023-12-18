@@ -8,13 +8,14 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import Hello from "../components/Hello";
 import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
 import { Grid, Paper, Box } from "@mui/material";
+import '@fontsource/andika';
 
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
     return (
 <>
-<Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
+ <Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
       <a href="/Login" style={{ textDecoration: 'none' }}>
         <Button variant="contained" color="success">
           Log In
@@ -80,14 +81,15 @@ const Overview = () => {
   return (
     <>
    
-    <div className="text-center" id="hello" style={containerStyle}>
-        <Hello userInfo={userInfo} />
+    <div className="text-center" id="hello" style={{containerStyle, fontFamily: 'andika, sans-serif'}}>
+        <Hello userInfo={userInfo}  />
       </div>
 
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
           color="success" 
+          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
           startIcon={<KeyboardDoubleArrowUpIcon />}
           onClick={(event) => addIncome(event)}
         >
@@ -96,6 +98,7 @@ const Overview = () => {
         <Button
           variant="outlined"
           color="success" 
+          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
           startIcon={<KeyboardDoubleArrowDownIcon />}
           onClick={(event) => addExpense(event)}
         >
@@ -108,7 +111,7 @@ const Overview = () => {
       style={{ maxHeight: '50vh' }} 
     >
       <Paper elevation={24} style={{ width: '50%', padding: '16px' }}>
-        <MakeExtraBar style={{ width:'100%' }} justifyContent='center' />
+        <MakeExtraBar style={{ width:'100%', fontFamily:'andika, sans-serif' }} justifyContent='center' />
       </Paper>
     </Grid>
 

@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { Box, Grid, Paper, Typography, Button } from '@mui/material';
+import { Box, Grid, Paper, Typography, Button, ThemeProvider } from '@mui/material';
 import LapTop from '../assets/Images/Basil-laptop.png';
 import PlantGif from '../assets/Images/KatieVosPlant.gif';
-import lobster from '../assets/Fonts/LobsterTwo-Bold.ttf'
+import '@fontsource/Andika';
+
 const Home = () => {
   return (
     <>
@@ -38,14 +39,14 @@ const Home = () => {
               }}
             >
               <Paper elevation={3} style={{ maxHeight: '100vh', overflow: 'auto', padding: 3 }}>
-                <Typography variant="h4">👋 Hey there! We are Basil.</Typography>
-                <Typography variant='body'>We love helping people take charge of their financial future!
-                <br/>
-                Interested?  Learn more aboout us <a href='/about'><Button variant='contained' color='success' >HERE</Button> </a></Typography>
+                <Typography variant='h4' style={{ fontFamily: 'Lobster Two, sans-serif' }}>👋 Hey there! We are Basil.</Typography>
+                <Typography variant='body' style={{ fontFamily: 'Andika, sans-serif' }}> We love helping people take charge of their financial future!
+                  <br />
+                  Interested?  Learn more aboout us <a href='/about'><Button variant='contained' color='success' >HERE</Button> </a></Typography>
               </Paper>
             </Box>
-             {/* Image */}
-             <img
+            {/* Image */}
+            <img
               src={PlantGif}
               alt="Illustrated Gif of plants"
               style={{
@@ -59,20 +60,26 @@ const Home = () => {
           </Box>
         </Grid>
       </Grid>
-      <Grid 
-      container
-      alignContent={'center'}
-     >
-<Typography variant='h4' sx={{ fontFamily: 'lobster', }}>
-  Check out what our users are saying!
-</Typography>
-</Grid>
+
+      <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      pb: 3
+      }} 
+   >
+      <Typography variant='h3' style={{ fontFamily: 'lobster Two, sans-serif', }}>
+        Check out what Basil users are saying!
+      </Typography>
+    </Box >
+
       <Grid container spacing={{ xs: 2, md: 3, xl: 4 }} columns={{ xs: 2, md: 6, xl: 12 }} justifyContent={'center'}>
         <Box
           sx={{
             display: "flex",
             flexWrap: 'wrap',
-            justifyContent: 'center', // Center the items horizontally
+            justifyContent: 'end', // Center the items horizontally
             textAlign: 'center',
             '& > :not(style)': {
 
@@ -84,10 +91,10 @@ const Home = () => {
             },
           }}
         >
-          <Paper varient='elevation'>"Absolutely love this budgeting app! It's user-friendly, visually appealing, and has transformed my financial habits. The intuitive features make budgeting a breeze, providing insightful analytics. A must-have for anyone seeking financial control!" - Sophia R.</Paper>
-          <Paper varient='elevation'>"Impressive! This app simplifies budgeting like never before. Alex-friendly interface, powerful tools, and insightful reports. My financial game has never been stronger!" - Alex T.</Paper>
-          <Paper varient='elevation'>"Five stars for this brilliant budgeting app! Its simplicity and effectiveness makes using it FUN! From tracking expenses to setting goals, it's the financial companion everyone needs. A total game-changer!" -Olivia H.</Paper>
-          <Paper varient='elevation'>"Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.</Paper>
+          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Absolutely love this budgeting app! It's user-friendly, visually appealing, and has transformed my financial habits. The intuitive features make budgeting a breeze, providing insightful analytics. A must-have for anyone seeking financial control!" - Sophia R.</Paper>
+          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Impressive! This app simplifies budgeting like never before. Alex-friendly interface, powerful tools, and insightful reports. My financial game has never been stronger!" - Alex T.</Paper>
+          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Five stars for this brilliant budgeting app! Its simplicity and effectiveness makes using it FUN! From tracking expenses to setting goals, it's the financial companion everyone needs. A total game-changer!" -Olivia H.</Paper>
+          <Paper varient='elevation' style={{ fontFamily: 'Andika, sans-serif' }}>"Basil changed my life! This app is a game-changer. It effortlessly guides you through budgeting, offers clear insights, and motivates financial growth. A must for stress-free money management!" -Emily C.</Paper>
         </Box>
       </Grid>
    </>

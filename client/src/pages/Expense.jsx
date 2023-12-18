@@ -4,6 +4,7 @@ import { ADD_EXPENSE } from "../utils/mutations";
 import React from 'react';
 import { TextField, Button, Container, Box, Grid, Select, MenuItem, InputLabel, FormControl} from '@mui/material';
 import OutputIcon from '@mui/icons-material/Output';
+import '@fontsource/andika'
 
 const Expense = () => {
   const [addExpense, { error }] = useMutation(ADD_EXPENSE);
@@ -33,7 +34,7 @@ const Expense = () => {
     <Container
       maxWidth="sm"
       justifyContent="center"
-      style={{ backgroundColor: "white", marginTop: "20px" }}
+      style={{ backgroundColor: "white", marginTop: "20px", fontFamily: 'andika, sans-serif' }}
     >
       <Box
         mt={3}
