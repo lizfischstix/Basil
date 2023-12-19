@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Typography, Container, Link, Box, Button, Dialog } from '@mui/material';
 import IGBTN from '../../assets/Images/SocialIcons/Instagram-button.png';
 import SPOTIFYBTN from '../../assets/Images/SocialIcons/Spotify-button.png';
-import LNKDINBTN from '../../assets/Images/SocialIcons/Linkedin-button.png';
+import LNKDINBTN from '../../assets/Images/SocialIcons/LinkedIn-button.png';
 import ImageButton from '../ImgBtn/index';
 
 
