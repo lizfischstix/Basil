@@ -17,8 +17,8 @@
     "concurrently": "^5.1.0"
   },
   "engines": {
-    "node": "18.x",
-    "npm": "9.x"
+    "node": "18.18.0",
+    "npm": "9.8.1"
   },
   "dependencies": {
     "@fontsource/andika": "^5.0.18",
