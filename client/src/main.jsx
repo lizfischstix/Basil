@@ -16,6 +16,7 @@ import UpdateExpense from './pages/UpdateExpense.jsx';
 import GraphPage from './pages/GraphPage.jsx'; 
 import About from './pages/About.jsx';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import Andika from '../src/assets/Andika-R.ttf'
 
 const router = createBrowserRouter([
   {
