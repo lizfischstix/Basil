@@ -21,7 +21,6 @@
     "npm": "9.8.1"
   },
   "dependencies": {
-    "@fontsource/andika": "^5.0.18",
     "@mui/icons-material": "^5.15.0",
     "chart.js": "^4.4.0",
     "react-animated-css": "^1.2.1",
