@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'Andika';
+    src: url('./Fonts/Andika-R.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Amatic-R';
+    src: url('./Fonts/AmaticSC-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Lobster2';
+    src: url(../assets/Fonts/LobsterTwo-Bold.ttf) format('truetype'),
+}
+
+.basil {
+    font-size: 2rem;
+    font-family: 'Lobster2';
+
+}
+
+.header {
+    padding: 50px;
+    padding-top: 50px;
+    background-image: url('./Images/BasilHeader.png');
+    max-width: 100%;
+    height: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.headerText {
+    display: flex;
+    justify-content: center;
+    font-size: 12rem;
+    font-family: 'Lobster2';
+    color: #3c5318;
+    padding-bottom: 2rem;
+}
+
+
+#root {
+    background-color: #FFFDD0;
+    font-family: 'andika';
+    min-height: 100vh;
+}
+
+#error-page {
+    background-image: url(../assets/Images/404-page-Basil.png);
+    min-height: 100vh;
+}
+
+.errorBox {
+    display: block;
+    padding: 7rem;
+
+}
+.errorBox > h1{
+    font-family: 'Lobster2';
+    font-size: 6rem;
+    color: #3c5318 ;
+}
+.errorBox > i{
+   padding-left: 10rem;
+   padding: bottom 10px;
+    font-size: 3rem;
+    color:#902b68  ;
+}
+.errorBox > strong{
+    display: flex;
+    font-size: 3rem;
+    color: #3c5318 ;
+    padding-top: 25px;
+    padding-left:10rem ;
+}
