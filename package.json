@@ -23,6 +23,7 @@
   "dependencies": {
     "@mui/icons-material": "^5.15.0",
     "chart.js": "^4.4.0",
+    "mongodb": "^6.3.0",
     "react-animated-css": "^1.2.1",
     "react-chartjs-2": "^5.2.0"
   }
