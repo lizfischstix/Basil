@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Box, Grid, Paper, Typography } from '@mui/material';
-import Graphic from '../assets/Images/basil-laptop.png'
+import Graphic from '../assets/Images/Basil-laptop.png';
 const Home = () => {
   return (
     <Grid container spacing={{ xs: 12, md: 9, xl: 3 }} justifyContent="end">
