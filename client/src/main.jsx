@@ -13,15 +13,16 @@ import UpdateIncome from "./pages/UpdateIncome";
 import Expense from './pages/Expense.jsx';
 import Transaction from './pages/TransactionList.jsx';
 import UpdateExpense from './pages/UpdateExpense.jsx';
-import GraphPage from './pages/GraphPage.jsx'; 
+import GraphPage from './pages/GraphPage.jsx';
 import About from './pages/About.jsx';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: 
-    <App />,
+    element:
+      <App />,
     errorElement: <Error />,
     children: [
       {
@@ -73,5 +74,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+ 
+    <RouterProvider router={router} />
+
 )

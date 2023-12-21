@@ -13,6 +13,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import currencyFormater from '../../utils/currencyFormater';
 import { pink } from "@mui/material/colors";
 
+
+
 const ExpenseTable = ({ data, onUpdate, onDelete }) => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {

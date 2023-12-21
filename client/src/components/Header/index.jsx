@@ -1,5 +1,5 @@
 import { Typography } from '@mui/material';
-import { Box, flexbox, fontFamily, typography } from '@mui/system';
+import { Box, fontFamily } from '@mui/system';
 import React from 'react';
 import { Animated } from 'react-animated-css';
 import '@fontsource/lobster-two';
