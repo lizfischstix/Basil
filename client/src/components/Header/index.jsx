@@ -9,7 +9,6 @@ import Banner from '../../assets/Images/BasilHeader.png';
 const Header = () => {
   const CustomGrn = '#2a3a10';
   return (
-   
       <Box
         style={{
           backgroundImage: `url(${Banner})`,
@@ -27,7 +26,6 @@ const Header = () => {
           </Typography>
         </Animated>
       </Box>
-   
   );
 };
 
