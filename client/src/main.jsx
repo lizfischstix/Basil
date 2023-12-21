@@ -11,14 +11,17 @@ import Overview from "./pages/Overview";
 import Income from "./pages/Income";
 import UpdateIncome from "./pages/UpdateIncome";
 import Expense from './pages/Expense.jsx';
-import  Transaction  from './pages/TransactionList.jsx';
+import Transaction from './pages/TransactionList.jsx';
 import UpdateExpense from './pages/UpdateExpense.jsx';
-import GraphPage from './pages/GraphPage.jsx';
+import GraphPage from './pages/GraphPage.jsx'; 
+import About from './pages/About.jsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: 
+    <App />,
     errorElement: <Error />,
     children: [
       {
@@ -54,14 +57,17 @@ const router = createBrowserRouter([
         element: <UpdateExpense />,
       },
       {
-        path:"/transaction",
-        element:<Transaction />
+        path: "/transaction",
+        element: <Transaction />
       },
       {
-        path:"/graphpage",
-        element:<GraphPage />
+        path: "/graphpage",
+        element: <GraphPage />
+      },
+      {
+        path: "/about",
+        element: <About />
       }
-
     ],
   },
 ]);
