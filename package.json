@@ -21,6 +21,7 @@
     "npm": "9.x"
   },
   "dependencies": {
+    "@fontsource/andika": "^5.0.18",
     "@fontsource/lobster-two": "^5.0.18",
     "chart.js": "^4.4.0",
     "react-animated-css": "^1.2.1",

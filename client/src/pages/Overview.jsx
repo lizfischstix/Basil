@@ -3,14 +3,32 @@ import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Button from "@mui/material/Button";
-import InputIcon from "@mui/icons-material/Input";
-import OutputIcon from "@mui/icons-material/Output";
+import KeyboardDoubleArrowUpIcon from '@mui/icons-material/KeyboardDoubleArrowUp';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 import Hello from "../components/Hello";
+import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
+import { Grid, Paper, Box } from "@mui/material";
+
 
 const Overview = () => {
   // Check if the user is logged in
   if (!Auth.loggedIn()) {
-    return <p>You need to be logged in to see this page.</p>;
+    return (
+<>
+ <Grid container justifyContent="space-around" sx={{ marginTop: 2 }}>
+      <a href="/Login" style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="success">
+          Log In
+        </Button>
+      </a>
+      <a href="/Signup" style={{ textDecoration: 'none' }}>
+        <Button variant="contained" color="success">
+          Sign Up
+        </Button>
+      </a>
+    </Grid>
+</>
+    );
   }
 
   const addExpense = (event) => {
@@ -62,15 +80,17 @@ const Overview = () => {
 
   return (
     <>
-    <div className="text-center" id="hello" style={containerStyle}>
-        <Hello userInfo={userInfo} />
+   
+    <div className="text-center" id="hello" style={{containerStyle, fontFamily: 'andika, sans-serif'}}>
+        <Hello userInfo={userInfo}  />
       </div>
 
       <div className="container" style={buttoncontainer}>
         <Button
           variant="outlined"
           color="success" 
-          startIcon={<InputIcon />}
+          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
+          startIcon={<KeyboardDoubleArrowUpIcon />}
           onClick={(event) => addIncome(event)}
         >
           Add Income
@@ -78,12 +98,24 @@ const Overview = () => {
         <Button
           variant="outlined"
           color="success" 
-          startIcon={<OutputIcon />}
+          style={{ marginTop: "16px", fontFamily:'andika, sans-serif'}}
+          startIcon={<KeyboardDoubleArrowDownIcon />}
           onClick={(event) => addExpense(event)}
         >
           Add Expense
         </Button>
       </div>
+      <Grid
+      container
+      justifyContent="center"
+      style={{ maxHeight: '50vh' }} 
+    >
+      <Paper elevation={24} style={{ width: '50%', padding: '16px' }}>
+        <MakeExtraBar style={{ width:'100%', fontFamily:'andika, sans-serif' }} justifyContent='center' />
+      </Paper>
+    </Grid>
+
+      
 
     </>
   );  
