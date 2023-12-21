@@ -31,7 +31,7 @@ const footer = function StickyFooter() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column', // Set flexDirection to 'column'
           alignItems: 'center', // Center the content vertically
         }}
       >
@@ -44,22 +44,29 @@ const footer = function StickyFooter() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center', // Center the content horizontally
+            // position: 'fixed',  // Fixed position at the bottom
+            bottom: 0,          // Stick to the bottom
+            width: '100%',      // Full width
           }}
         >
           <Container maxWidth="sm">
-            <Copyright />
+            {/* Stack Copyright component on top */}
+            <div style={{ marginBottom: '10px', textAlign: 'center' }}>
+              <Copyright />
+            </div>
+            <Container sx={{
+              display: 'flex',
+              justifyContent: 'center', // Center the content horizontally
+            }}>
+              <ImageButton imageSource={IGBTN} />
+              <ImageButton imageSource={LNKDINBTN} />
+              <ImageButton imageSource={SPOTIFYBTN} />
+            </Container>
           </Container>
-          <Container sx={{display:'flex',
-            
-          }}>
-    <ImageButton imageSource={IGBTN} />
-    <ImageButton imageSource={LNKDINBTN} />
-    <ImageButton imageSource={SPOTIFYBTN} />
-    </Container>
-          </Box>
         </Box>
-     
+      </Box>
     </ThemeProvider>
-  )
-}
+  );
+};
+
 export default footer;

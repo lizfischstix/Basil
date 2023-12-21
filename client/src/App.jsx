@@ -43,7 +43,7 @@ function App() {
       <div className="min-vh-100" >
         <Header />
         <Nav id="nav-bar"/>
-        <div className='row' style={{justifyContent: 'center'}}>
+        <div className='row' style={{justifyContent: 'center', minHeight: '100vh'}}>
           
           <Outlet />
         </div>
