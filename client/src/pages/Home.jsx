@@ -3,7 +3,6 @@ import React from 'react';
 import { Box, Grid, Paper, Typography, Button, ThemeProvider } from '@mui/material';
 import LapTop from '../assets/Images/Basil-laptop.png';
 import PlantGif from '../assets/Images/KatieVosPlant.gif';
-import '@fontsource/Andika';
 
 const Home = () => {
   return (
