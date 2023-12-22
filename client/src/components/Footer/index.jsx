@@ -7,10 +7,10 @@ import SPOTIFYBTN from '../../assets/Images/SocialIcons/Spotify-button.png';
 import LNKDINBTN from '../../assets/Images/SocialIcons/LinkedIn-button.png';
 import ImageButton from '../ImgBtn/index';
 
-
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" justifyContent="center">
+
+    <Typography variant="body2" justifyContent="center" fontFamily={'Andika, sans-serif'}>
       {'Copyright © '}
       <Link color="inherit" href="https://basil-budget-e685e272efd5.herokuapp.com/">
         Basil 🌿
@@ -18,6 +18,7 @@ function Copyright() {
       {new Date().getFullYear()}
       {'.'}
     </Typography>
+
   );
 }
 
@@ -26,6 +27,7 @@ const defaultTheme = createTheme();
 
 const footer = function StickyFooter() {
   return (
+
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Box
@@ -33,6 +35,7 @@ const footer = function StickyFooter() {
           display: 'flex',
           flexDirection: 'column', // Set flexDirection to 'column'
           alignItems: 'center', // Center the content vertically
+          fontFamily: 'Andika, sans-serif',
         }}
       >
         <Box
