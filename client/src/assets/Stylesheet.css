@@ -2,9 +2,11 @@
     font-family: 'Andika'; 
     src: url('./Fonts/Andika-R.ttf') format('truetype'); 
   }
-
 .andika{
     font-family:'Andika, sans-serif';
+}
+body {
+  font-family: 'Andika', sans-serif;
 }
   @font-face {
     font-family: 'Lobster'; 

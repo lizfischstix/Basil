@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom/dist'
-import './index.css'
-
-import App from './App'
+import './index.css';
+import '@fontsource/lobster-two';
+import '@fontsource/andika';
+import App from './App';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
