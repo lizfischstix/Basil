@@ -39,18 +39,17 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
-    <CssBaseline />
-    <ApolloProvider client={client}>
-      <div className="min-vh-100" >
-        <Header />
-        <Nav id="nav-bar"/>
-        <div className='row' style={{justifyContent: 'center', minHeight: '100vh'}}>
-          
-          <Outlet />
+      <CssBaseline />
+      <ApolloProvider client={client}>
+        <div className="min-vh-100" >
+          <Header />
+          <Nav id="nav-bar" />
+          <div className='row' style={{ justifyContent: 'center', minHeight: '100vh' }}>
+            <Outlet />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </ ApolloProvider>
+      </ ApolloProvider>
     </>
   );
 }

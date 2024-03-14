@@ -18,7 +18,7 @@ import { pink } from "@mui/material/colors";
 const ExpenseTable = ({ data, onUpdate, onDelete }) => {
   const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
-      backgroundColor: 'green',
+      backgroundColor: ['green', '#902b68'],
       color: 'white',
       fontSize: 18,
     },
