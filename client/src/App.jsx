@@ -39,7 +39,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <>
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <ApolloProvider client={client}>
         <div className="min-vh-100" >
           <Header />

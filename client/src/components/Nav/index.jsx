@@ -10,6 +10,10 @@ import EnergySavingsLeafIcon from '@mui/icons-material/EnergySavingsLeaf';
 import AutoGraphRoundedIcon from '@mui/icons-material/AutoGraphRounded';
 import WavingHandIcon from '@mui/icons-material/WavingHand';
 import { Tooltip } from '@mui/material';
+import { green } from '@mui/material/colors';
+
+const color = green[800];
+
 
 
 import Auth from "../../utils/auth";
