@@ -25,6 +25,7 @@ body {
 #error-page {
     background-image: url(../assets/Images/404-page-Basil.png);
     min-height: 100vh;
+    background-color: #000000;
 }
 
 .errorBox {

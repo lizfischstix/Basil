@@ -1,22 +1,22 @@
 import { useRouteError } from "react-router-dom";
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import Header from '../components/Header/index';
+import Nav from '../components/Nav/index';
+import Footer from "../components/Footer/index";
 
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
 
   return (
-    <div id="error-page">
-      <div className="errorBox">
+    // <div id="error-page">
+    <>
+      <Header />
+      <Nav />
         <h1>Oops...Nothing to budget here!</h1>
         <br />
         <i>Page {error.statusText || error.message}</i>
-       <br />
-       <strong> Let's go  <a href="/"><Button variant="contained" color="success">
-          HOME
-        </Button></a><>!</></strong>
-    </div>
-    </div >
+        <br />
+      <Footer />
+      </>
   );
 }
