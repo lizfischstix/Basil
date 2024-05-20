@@ -38,7 +38,7 @@
 
   ## Demo: 
    The following user credentias have been set up to demo the app:  
-  email: maggie@email.com  
+  email: demo.user@email.com  
   password: pass1234  
   
   ## Contact:

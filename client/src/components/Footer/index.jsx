@@ -61,9 +61,6 @@ const footer = function StickyFooter() {
               display: 'flex',
               justifyContent: 'center', // Center the content horizontally
             }}>
-              <ImageButton imageSource={IGBTN} />
-              <ImageButton imageSource={LNKDINBTN} />
-              <ImageButton imageSource={SPOTIFYBTN} />
             </Container>
           </Container>
         </Box>
