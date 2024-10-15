@@ -12,7 +12,7 @@ function Copyright() {
 
     <Typography variant="body2" justifyContent="center" fontFamily={'Andika, sans-serif'}>
       {'Copyright © '}
-      <Link color="inherit" href="https://basil-budget-e685e272efd5.herokuapp.com/">
+      <Link color="inherit" href="https://basilbudget-9b3cb2309ed1.herokuapp.com/">
         Basil 🌿
       </Link>
       {new Date().getFullYear()}

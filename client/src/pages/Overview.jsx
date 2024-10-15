@@ -8,6 +8,7 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import Hello from "../components/Hello";
 import MakeExtraBar from "../components/graphs/extraGraph/extraGraph";
 import { Grid, Paper, Box } from "@mui/material";
+import Spinner from "../components/Spinner/index";
 
 
 const Overview = () => {
@@ -47,8 +48,9 @@ const Overview = () => {
 
   // Handle loading state
   if (loading) {
-    // You can use loading skeletons or placeholders here
-    return <div>Loading...</div>;
+    return <div>
+      <Spinner/>
+    </div>;
   }
 
   if (!data) {
